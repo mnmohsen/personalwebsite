@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Sonos Teardown
+title: Multidisciplinary Design Program
 description: Conducted detailed teardown analysis of Sonos Era speaker, documenting internal components, driver configuration, and PCB design. Created technical documentation with photos and assembly insights for engineering reference. 
 skills: 
   - drumel
