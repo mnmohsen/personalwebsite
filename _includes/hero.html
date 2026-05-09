@@ -7,7 +7,7 @@
                 I'm {{ site.name | split: ' ' | first }} 
                 {% if site.external-links %}
                 <span class="external-links">
-                    {% assign platforms = "linkedin,x-twitter,github,stackoverflow,discord,medium,threads,bluesky,instagram,youtube" | split: "," %}
+                    {% assign platforms = "linkedin,x-twitter,github,stackoverflow,discord,medium,threads,bluesky,instagram,youtube,unsplash" | split: "," %}
                     {% for platform in platforms %}
                         {% if site.external-links[platform] %}
                             {% case platform %}
@@ -59,6 +59,10 @@
                             {% when 'youtube' %}
                                 <a href="https://youtube.com/@{{ site.external-links[platform] }}/" target="_blank">
                                     <i class="fa-brands fa-youtube"></i>
+                                </a>
+                            {% when 'unsplash' %}
+                                <a href="https://unsplash.com/@{{ site.external-links[platform] }}/" target="_blank">
+                                    <i class="fa-brands fa-unsplash"></i>
                                 </a>
 
                             {% endcase %}
