@@ -70,10 +70,10 @@ nav {
     position: relative;
 }
 
-nav .left a {
-    color: var(--text-color);
-    font-size: 30px;
-    font-weight: 600;
+nav .left img.nav-logo {
+    height: 42px;
+    width: auto;
+    display: block;
 }
 
 nav .right {
@@ -102,7 +102,9 @@ nav .mobile-nav a span:last-child:hover,{
     background-color: var(--light-background-color);
     border-radius: 10px;
 }
-
+nav .menu-toggle i {
+    color: var(--link-color);
+}
 /* Navbar Mobile Menu Button */
 nav .menu-toggle {
     display: none;
