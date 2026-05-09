@@ -71,9 +71,10 @@ nav {
 }
 
 nav .left img.nav-logo {
-    height: 42px;
+    height: 28px;
+    max-width: 120px;
     width: auto;
-    display: block;
+    object-fit: contain;
 }
 
 nav .right {
