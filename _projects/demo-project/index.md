@@ -12,7 +12,7 @@ skills:
   - Metal forming
   - Thermal simulation
 
-main-image: /worm_blue (1).jpg
+main-image: /worm_blue.jpg
 ---
 
 ---
