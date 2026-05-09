@@ -71,10 +71,11 @@ nav {
 }
 
 nav .left img.nav-logo {
-    height: 28px;
-    max-width: 120px;
+    height: 32px;
     width: auto;
+    max-width: 140px;
     object-fit: contain;
+    display: block;
 }
 
 nav .right {
