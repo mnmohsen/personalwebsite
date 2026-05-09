@@ -43,46 +43,61 @@ external-links:    # input only your own url slug. The icons with missing entrie
 
 # Skills Section - Add the list of your Skills by categories/tools. The indentation for each level needs to be precise. 
 skills:
-  - category: 3D Modeling
+  - category: CAD / Engineering Software
     tools:
-    - Onshape
-    - Solidworks
-    - Creo
-    - Fusion 360 (Autodesk)
-    - Blender (for complex shapes or animations)
+    - SolidWorks (CSWA)
     - Siemens NX
-    - Inventor (Autodesk)
-    - CATIA (Dassault Systèmes)
-  - category: Prototyping
+    - ANSYS Mechanical
+    - MATLAB
+    - Python
+    - AutoCAD
+    - Excel
+    - Epicor ERP
+
+  - category: Mechanical Design / Analysis
     tools:
-    - SLA
-    - CNC
-    - FDM
-    - SLS
-    - DMLS
-    - PolyJet Printing
-    - Vacuum Casting
-    - Laser Cutting
-    - Water Jet Cutting
-    - Arduino / Raspberry Pi
-    - Breadboarding for circuit testing
-  - category: Design Standards / Practices
+    - Product Development
+    - Mechanical Design
+    - Design for Manufacturing (DFM)
+    - GD&T
+    - FEA
+    - Tolerance Stack Awareness
+    - Root Cause Analysis
+    - FMEA
+    - SPC
+
+  - category: Prototyping / Fabrication
     tools:
-    - GD&T ASME Y14
-    - ISO fits and tolerances
-    - PLM (PTC Windchill / Arena)   
-  - category: PCB Design
+    - FDM 3D Printing
+    - SLA 3D Printing
+    - Conventional Milling
+    - Conventional Lathe
+    - Waterjet
+    - Sheet Metal Fabrication
+    - Band Saw
+    - Rapid Prototyping
+    - Fixture / Test Rig Development
+
+  - category: Hardware / Systems
     tools:
-    - Altium Designer
-    - Altium
-    - Eagle 
-    - KiCad
-  - category: Problem Solving / Risk Management
+    - Structural Design
+    - Experimental Testing
+    - Mechanical Assembly
+    - Sensor Integration
+    - Raspberry Pi
+    - Arduino
+    - Data Acquisition
+    - Test Platform Development
+
+  - category: Engineering Collaboration
     tools:
-    - Root Cause Analysis (e.g., 5 Whys, Fishbone Diagram)
-    - DFMEA / PFMEA 
-    - Six Sigma methodologies
-    - Shain Red-X
+    - Cross-Functional Collaboration
+    - Design Reviews
+    - Technical Documentation
+    - Work Instructions
+    - Supplier Coordination
+    - Make-vs-Buy Analysis
+    - Manufacturing Process Improvement
 
 
 # Contact Form Setup. Setup an account and copy over the key. When someone fills out the form, it will be received in your email.
