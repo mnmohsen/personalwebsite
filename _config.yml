@@ -91,13 +91,13 @@ formspree-key:   https://formspree.io/f/{8-digit key}
 
 
 # Active theme (Updatethis to switch themes). Make sure to keep the indentation the samne.
-colors: # this is the basic theme
+colors:
   text: "#1a1c20"
   border: "#ddd"
-  link: "#4a76ee"
-  highlight: "#0c0cf2"
+  link: "#e67e22"
+  highlight: "#d35400"
   background: "#ffffff"
-  light_background: "#f3f5fb"
+  light_background: "#fff6ed"
 
 # A few examples. 
 basic theme:
