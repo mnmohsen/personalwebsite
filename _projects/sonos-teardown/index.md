@@ -9,7 +9,7 @@ skills:
   - PCB analysis
   - audio system design
 
-main-image: /sonos.png
+main-image: /AAHOM_logo.png
 ---
 
 # This is another demo
