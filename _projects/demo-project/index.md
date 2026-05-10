@@ -12,7 +12,7 @@ skills:
   - Metal forming
   - Thermal simulation
 
-main-image: /worm_blue.jpg
+main-image: /image_rockit.png
 ---
 
 ---
