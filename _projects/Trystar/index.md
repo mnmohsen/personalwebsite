@@ -29,7 +29,7 @@ The common thread across these projects was practical engineering: identifying b
 
 Following a workplace injury involving one of the wire crimping stations, I was tasked with developing an operator safety solution that reduced risk without disrupting production efficiency.
 
-{% include image-gallery.html images="assets/images/safetyguard.png" height="420" %}
+<img src="/assets/images/safetyguard.png" alt="Safety guard redesign" style="width:100%; max-height:420px; object-fit:contain; margin: 20px 0;">
 
 The challenge was balancing protection with usability. A guard that slowed operators or interfered with normal workflow would likely be bypassed or rejected entirely.
 
@@ -48,7 +48,7 @@ This project reinforced the importance of designing for human behavior, not just
 
 One of the production constraints at Trystar involved powder coating throughput, where existing rack geometry limited the size and quantity of panels processed in each batch.
 
-{% include image-gallery.html images="assets/images/rack.jpg" height="420" %}
+<img src="/assets/images/rack.jpg" alt="Powder coat baking rack redesign" style="width:100%; max-height:420px; object-fit:contain; margin: 20px 0;">
 
 I redesigned the rack structure to increase usable envelope dimensions while preserving manufacturability and structural integrity.
 
