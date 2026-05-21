@@ -46,7 +46,7 @@ This project reinforced the importance of designing for human behavior, not just
 
 ## Powder Coat Baking Rack Redesign
 
-One of the production constraints at Trystar involved powder coating throughput, where existing rack geometry limited the size and quantity of panels processed in each batch.
+One production bottleneck at Trystar involved the powder coating process, where existing rack geometry limited the size of panels that could be processed and created usability frustrations for operators during loading and transport.
 
 <img src="/assets/images/rack.jpg" alt="Powder coat baking rack redesign" style="width:100%; max-height:420px; object-fit:contain; margin: 20px 0 8px 0;">
 
@@ -54,14 +54,22 @@ One of the production constraints at Trystar involved powder coating throughput,
 Reference image adapted from <a href="https://reliantfinishingsystems.com/10-tips-for-building-the-perfect-powder-coating-parts-rack/" target="_blank">Reliant Finishing Systems</a>.
 </p>
 
-I redesigned the rack structure to increase usable envelope dimensions while preserving manufacturability and structural integrity.
+Rather than simply scaling the existing design, I approached the project as a full fixture redesign. I worked directly with operators to understand workflow pain points, handling difficulties, and ergonomic concerns that affected day-to-day usability.
+
+Based on this feedback, I redesigned the rack geometry to increase usable envelope dimensions by **15.7%**, allowing larger panels to be processed while also improving operator interaction through more practical handling features, including repositioned handles for better ergonomics during movement and loading.
+
+Because the rack would routinely carry heavy suspended parts in production, I validated the redesign structurally using finite element analysis under a conservative worst-case loading scenario to ensure adequate strength and safe operation.
+
+This project highlighted how effective manufacturing design requires balancing throughput, structural integrity, and operator usability rather than optimizing for a single metric.
 
 ### Engineering Focus
-- Welded structure redesign
-- Structural FEA
-- Fixture design
+- Welded fixture redesign
+- Human-centered manufacturing design
+- Ergonomic design improvements
+- Finite element structural validation
+- Worst-case load case analysis
 - Throughput optimization
-- Practical manufacturing constraints
+- Design for manufacturability
 
 ## Heat Sink Supplier Transition and Drawing Modernization
 
