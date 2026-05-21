@@ -48,13 +48,13 @@ This project reinforced the importance of designing for human behavior, not just
 
 One of the production constraints at Trystar involved powder coating throughput, where existing rack geometry limited the size and quantity of panels processed in each batch.
 
-<img src="/assets/images/rack.jpg" alt="Powder coat baking rack redesign" style="width:100%; max-height:420px; object-fit:contain; margin: 20px 0;">
+<img src="/assets/images/rack.jpg" alt="Powder coat baking rack redesign" style="width:100%; max-height:420px; object-fit:contain; margin: 20px 0 8px 0;">
+
+<p style="font-size: 12px; color: #666; margin-top: 0;">
+Reference image adapted from <a href="https://reliantfinishingsystems.com/10-tips-for-building-the-perfect-powder-coating-parts-rack/" target="_blank">Reliant Finishing Systems</a>.
+</p>
 
 I redesigned the rack structure to increase usable envelope dimensions while preserving manufacturability and structural integrity.
-
-The updated design increased rack dimensions by **15.7%**, enabling larger panel accommodation and improving coating throughput. Structural performance was validated using finite element analysis prior to implementation.
-
-This was a straightforward but highly practical structural design problem where manufacturability mattered as much as analysis accuracy.
 
 ### Engineering Focus
 - Welded structure redesign
