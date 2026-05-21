@@ -25,11 +25,11 @@ Unlike purely observational internship roles, this position involved ownership o
 
 The common thread across these projects was practical engineering: identifying bottlenecks, designing around real manufacturing constraints, and delivering solutions that improved safety, throughput, or repeatability.
 
-{% include image-gallery.html images="/trystar/safety-guard.jpg, /trystar/baking-rack.jpg" height="420" %}
-
 ## Safety Guard Redesign for Wire Crimping Stations
 
 Following a workplace injury involving one of the wire crimping stations, I was tasked with developing an operator safety solution that reduced risk without disrupting production efficiency.
+
+{% include image-gallery.html images="/assets/images/trystar/safetyguard.png" height="420" %}
 
 The challenge was balancing protection with usability. A guard that slowed operators or interfered with normal workflow would likely be bypassed or rejected entirely.
 
@@ -47,6 +47,8 @@ This project reinforced the importance of designing for human behavior, not just
 ## Powder Coat Baking Rack Redesign
 
 One of the production constraints at Trystar involved powder coating throughput, where existing rack geometry limited the size and quantity of panels processed in each batch.
+
+{% include image-gallery.html images="/assets/images/trystar/rack.jpg" height="420" %}
 
 I redesigned the rack structure to increase usable envelope dimensions while preserving manufacturability and structural integrity.
 
@@ -83,7 +85,7 @@ The final recommendation supported outsourcing both CNC machining and material s
 In addition to design-focused work, I contributed to manufacturing systems and process documentation.
 
 This included:
-- Authoring work instructions for high-volume power conditioner assemblies
+- Authoring work instructions for high-volume 50 kVA and 160 kVA power conditioner assemblies
 - Creating bills of operations in Epicor for 22 parts and assemblies
 - Identifying production bottlenecks and workflow inefficiencies
 - Presenting project outcomes and recommendations to senior leadership
@@ -101,5 +103,3 @@ Key lessons included:
 - Mechanical design decisions often have supply chain and business implications
 
 This experience significantly strengthened my interest in mechanical product development by showing how engineering ideas move from CAD models into production.
-
-
