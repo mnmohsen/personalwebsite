@@ -1,114 +1,105 @@
 ---
 layout: post
 title: Trystar
-description:  (I have never been employed by / affiliated with SpaceX. This is for demo use only) 
-    Developing the Super Heavy booster catch project involves designing a robust launch tower with "chopstick" arms, advanced control systems for precise booster alignment, and integrating sophisticated software for real-time trajectory adjustments and structural engineering to handle immense forces.
-skills: 
-  - Structural analysis
-  - Aerodynamic design
-  - Propulsion system integration
-  - Control Algorithem 
-  - Welding
-  - Metal forming
-  - Thermal simulation
+description: Manufacturing Engineering internship focused on product improvement, safety-focused mechanical design, throughput optimization, and engineering process development for industrial power systems.
+skills:
+  - Mechanical Design
+  - SolidWorks
+  - Finite Element Analysis (FEA)
+  - Design for Manufacturing (DFM)
+  - GD&T
+  - Safety Engineering
+  - Prototyping
+  - Additive Manufacturing
+  - Process Improvement
+  - Supplier Engineering
 
-main-image: /Article-Placeholder.jpg
+main-image: /trystar/trystar-main.jpg
 ---
 
----
-# Header 1 
-Used for the title (already generated automatically at the top)
-## Header 2  
-Use this for the header of each section
-### Header 3 
-Use this to have subsection if needed
+## Overview
 
+During my internship at Trystar, I worked on a range of engineering projects supporting the manufacturing of industrial power equipment. My work spanned mechanical design, safety engineering, supplier transition support, and process optimization.
 
-## Embedding images 
-### External images
-{% include image-gallery.html images="https://live.staticflickr.com/65535/52821641477_d397e56bc4_k.jpg, https://live.staticflickr.com/65535/52822650673_f074b20d90_k.jpg" height="400"%}
-<span style="font-size: 10px">"Starship Test Flight Mission" from https://www.flickr.com/photos/spacex/52821641477/</span>  
-You can put in multiple entries. All images will be at a fixed height in the same row. With smaller window, they will switch to columns.  
+Unlike purely observational internship roles, this position involved ownership of projects that moved into implementation, requiring collaboration with manufacturing, sourcing, production scheduling, and engineering leadership.
 
-### Embeed images
-{% include image-gallery.html images="project2.jpg" height="400" %} 
-place the images in project folder/images then update the file path.   
+The common thread across these projects was practical engineering: identifying bottlenecks, designing around real manufacturing constraints, and delivering solutions that improved safety, throughput, or repeatability.
 
+{% include image-gallery.html images="/trystar/safety-guard.jpg, /trystar/baking-rack.jpg" height="420" %}
 
-## Embedding youtube video
-The second video has the autoplay on. copy and paste the 11-digit id found in the url link. <br>
-*Example* : https://www.youtube.com/watch?v={**MhVw-MHGv4s**}&ab_channel=engineerguy
-{% include youtube-video.html id="MhVw-MHGv4s" autoplay= "false"%}
-{% include youtube-video.html id="XGC31lmdS6s" autoplay = "true" %}
+## Safety Guard Redesign for Wire Crimping Stations
 
-you can also set up custom size by specifying the width (the aspect ratio has been set to 16/9). The default size is 560 pixels x 315 pixels.  
+Following a workplace injury involving one of the wire crimping stations, I was tasked with developing an operator safety solution that reduced risk without disrupting production efficiency.
 
-The width of the video below. Regardless of initial width, all the videos is responsive and will fit within the smaller screen.
-{% include youtube-video.html id="tGCdLEQzde0" autoplay = "false" width= "900px" %}  
+The challenge was balancing protection with usability. A guard that slowed operators or interfered with normal workflow would likely be bypassed or rejected entirely.
 
-<br>
+I modeled several design concepts in SolidWorks before prototyping the final solution using additive manufacturing. The final guard design was installed across three crimping stations and maintained normal operator access while introducing a physical safety barrier around the hazardous motion path.
 
-## Adding a hozontal line
----
+This project reinforced the importance of designing for human behavior, not just mechanical functionality.
 
-## Starting a new line
-leave two spaces "  " at the end or enter <br>
+### Engineering Focus
+- Human-centered mechanical design
+- Rapid CAD iteration
+- 3D printed prototyping
+- Safety constraint-driven design
+- Design validation through operator usability feedback
 
-## Adding bold text
-this is how you input **bold text**
+## Powder Coat Baking Rack Redesign
 
-## Adding italic text
-Italicized text is the *cat's meow*.
+One of the production constraints at Trystar involved powder coating throughput, where existing rack geometry limited the size and quantity of panels processed in each batch.
 
-## Adding ordered list
-1. First item
-2. Second item
-3. Third item
-4. Fourth item
+I redesigned the rack structure to increase usable envelope dimensions while preserving manufacturability and structural integrity.
 
-## Adding unordered list
-- First item
-- Second item
-- Third item
-- Fourth item
+The updated design increased rack dimensions by **15.7%**, enabling larger panel accommodation and improving coating throughput. Structural performance was validated using finite element analysis prior to implementation.
 
-## Adding code block
-```ruby
-def hello_world
-  puts "Hello, World!"
-end
-```
+This was a straightforward but highly practical structural design problem where manufacturability mattered as much as analysis accuracy.
 
-```python
-def start()
-  print("time to start!")
-```
+### Engineering Focus
+- Welded structure redesign
+- Structural FEA
+- Fixture design
+- Throughput optimization
+- Practical manufacturing constraints
 
-```javascript
-let x = 1;
-if (x === 1) {
-  let x = 2;
-  console.log(x);
-}
-console.log(x);
+## Heat Sink Supplier Transition and Drawing Modernization
 
-```
+I supported a make-vs-buy evaluation for Trystar’s six highest-volume aluminum heat sinks, analyzing internal machining capacity versus outsourced production options.
 
-## Adding external links
-[Wikipedia](https://en.wikipedia.org)
+The effort involved collaboration across sourcing, scheduling, and engineering to evaluate cost, lead time, and manufacturing capability.
 
+To support supplier onboarding, I updated engineering drawings using modern GD&T practices and improved documentation clarity for external manufacturing partners.
 
-## Adding block quote
-> A blockquote would look great if you need to highlight something
+The final recommendation supported outsourcing both CNC machining and material sourcing, freeing internal manufacturing capacity while reducing lead time.
 
+### Engineering Focus
+- Make-vs-buy analysis
+- Supplier engineering
+- GD&T modernization
+- Cross-functional decision making
+- Capacity optimization
 
-## Adding table 
+## Process Engineering and Manufacturing Documentation
 
-| Header 1 | Header 2 |
-|----------|----------|
-| Row 1, Col 1 | Row 1, Col 2 |
-| Row 2, Col 1 | Row 2, Col 2 |
+In addition to design-focused work, I contributed to manufacturing systems and process documentation.
 
-make sure to leave aline betwen the table and the header
+This included:
+- Authoring work instructions for high-volume power conditioner assemblies
+- Creating bills of operations in Epicor for 22 parts and assemblies
+- Identifying production bottlenecks and workflow inefficiencies
+- Presenting project outcomes and recommendations to senior leadership
+
+These projects strengthened my understanding of how engineering design decisions interact with production reality.
+
+## Key Takeaways
+
+Trystar gave me my first exposure to engineering in a real manufacturing environment where solutions needed to be practical, implementable, and measurable.
+
+Key lessons included:
+- Good engineering balances ideal design with production constraints
+- Safety solutions fail if usability is ignored
+- Documentation quality directly affects manufacturing consistency
+- Mechanical design decisions often have supply chain and business implications
+
+This experience significantly strengthened my interest in mechanical product development by showing how engineering ideas move from CAD models into production.
 
 
