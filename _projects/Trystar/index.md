@@ -14,7 +14,7 @@ skills:
   - Process Improvement
   - Supplier Engineering
 
-main-image: /trystar/trystar-main.jpg
+main-image: /Article-Placeholder.jpg
 ---
 
 ## Overview
