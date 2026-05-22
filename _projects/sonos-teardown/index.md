@@ -14,7 +14,8 @@ skills:
   - System Architecture Trade Studies
   - Museum Exhibit Design
 
-main-image: /assets/images/mdp-cover.jpg
+main-image: /AAHOM_logo.jpg
+
 ---
 
 ## Overview
