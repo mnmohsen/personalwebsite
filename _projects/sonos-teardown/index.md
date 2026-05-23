@@ -52,7 +52,7 @@ Early in the project, the team compared two main architectures: an electromagnet
 
 The electromagnet route offered adjustability and potential reset advantages, but introduced thermal management, wiring, controls, and electrical safety concerns. The permanent magnet route preserved the original exhibit’s visible cause-and-effect relationship while avoiding power and overheating concerns.
 
-<img src="/assets/images/mdp-pugh-chart.jpg" alt="Permanent magnet versus electromagnet trade study" style="width:100%; max-height:460px; object-fit:contain; margin: 20px 0;">
+<img src="/assets/images/pugh.png" alt="Permanent magnet versus electromagnet trade study" style="width:100%; max-height:460px; object-fit:contain; margin: 20px 0;">
 
 The permanent magnet system was selected because it better preserved the educational objective of the exhibit while keeping the physics visible and intuitive. Users can see the sequence of alignment, collision, and launch rather than interacting with a hidden electrical system.
 
