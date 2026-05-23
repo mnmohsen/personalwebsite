@@ -58,7 +58,9 @@ The permanent magnet system was selected because it better preserved the educati
 
 My main work focused on the permanent magnet architecture. I played a key role in developing and testing physical prototypes to understand how magnet spacing, ball spacing, track constraints, and impact geometry affected launch consistency.
 
-{% include youtube-video.html id="cNdgnf6qzSo" autoplay="false" width="900px" %}
+<div style="text-align:center; margin: 20px 0;">
+  <img src="/assets/images/initialtst.gif" alt="Reset mechanism demonstration" style="max-width:800px; width:100%; height:auto;">
+</div>
 
 The prototype work focused on answering practical design questions:
 
