@@ -98,8 +98,6 @@ Permanent magnets create a clear and intuitive launch interaction, but they also
 
 One concept used a lead screw driven by a hand wheel. The lead screw translated rotational input into controlled linear motion, moving a platform connected to the sacrificial plate and stage hardware. Linear guide shafts prevented unwanted rotation, while a connection rod kept the stages aligned.
 
-<img src="/assets/images/resetmechanismdiagram2.png" alt="Lead screw reset mechanism CAD concept" style="width:100%; max-height:460px; object-fit:contain; margin: 20px 0;">
-
 The mechanism was designed around several goals:
 
 - Keep the user interaction simple
