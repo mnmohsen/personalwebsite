@@ -75,13 +75,14 @@ The prototype work focused on answering practical design questions:
   Your browser does not support the video tag.
 </video>
 
+<img src="/assets/images/permalauncher.png" alt="Permanent magnet prototype setup" style="width:100%; max-height:460px; object-fit:contain; margin: 20px 0;">
 ## Sacrificial Impact Shield Development
 
 A major durability issue was repeated steel-on-magnet impact. Permanent magnets are useful for the learning objective, but they are not ideal impact surfaces for a museum exhibit that may be fired hundreds of times per day.
 
 To address this, I tested a hardened spring steel strip as a sacrificial impact shield placed in front of the magnet. The goal was to protect the magnet while still allowing effective momentum transfer through the collision.
 
-<img src="/assets/images/mdp-sacrificial-shield.jpg" alt="Sacrificial spring steel impact shield testing" style="width:100%; max-height:460px; object-fit:contain; margin: 20px 0;">
+<img src="/assets/images/platetesting.png" alt="Sacrificial spring steel impact shield testing" style="width:100%; max-height:460px; object-fit:contain; margin: 20px 0;">
 
 Because the strip was magnetic, it held itself firmly against the magnet face, reducing energy loss from vibration or looseness. I compared multiple shield setups and found that a shorter shield configuration showed the most promising combination of durability and launch performance.
 
