@@ -24,7 +24,7 @@ For my Multidisciplinary Design Program project, I worked with the Ann Arbor Han
 
 The original exhibit demonstrated the additive effect of magnetic forces, but it was difficult to reset, hard for children to use, and impractical for daily museum operation. Our goal was to create a durable hands-on exhibit that preserved the core physics while making the interaction understandable and reliable for young users.
 
-<img src="/assets/images/mdp-original-exhibit.jpg" alt="Original Gauss cannon exhibit" style="width:100%; max-height:460px; object-fit:contain; margin: 20px 0;">
+<img src="/assets/images/originalexhibit.png" alt="Original Gauss cannon exhibit" style="width:100%; max-height:460px; object-fit:contain; margin: 20px 0;">
 
 ## Project Goal
 
