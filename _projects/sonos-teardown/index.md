@@ -107,10 +107,7 @@ The mechanism was designed around several goals:
 - Allow worn sacrificial plates to be swapped out
 - Keep the system modular for future refinement
 
-<video controls style="width:100%; max-height:520px; object-fit:contain; margin: 20px 0;">
-  <source src="/assets/videos/mdp-reset-mechanism.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+{% include youtube-video.html id="mnxXMfzArDM" autoplay="false" width="900px" %}
 
 ## Proof-of-Concept Testing
 
