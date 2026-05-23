@@ -126,7 +126,7 @@ This prototype showed that one component could serve two roles: transferring mom
 
 The team also explored using a slight track angle to reduce the amount of reset travel required. Testing showed that even a small incline could let gravity assist the return motion after the ball moved a short distance away from the magnet.
 
-<img src="/assets/images/mdp-gravity-reset.jpg" alt="Gravity-assisted reset testing" style="width:100%; max-height:460px; object-fit:contain; margin: 20px 0;">
+<img src="/assets/images/gra.png" alt="Gravity-assisted reset testing" style="width:100%; max-height:460px; object-fit:contain; margin: 20px 0;">
 
 This made the lead screw concept more practical. Rather than forcing the mechanism to pull the ball through the entire return path, the lead screw only needed to move the system far enough for gravity to take over.
 
