@@ -105,7 +105,9 @@ The mechanism was designed around several goals:
 - Allow worn sacrificial plates to be swapped out
 - Keep the system modular for future refinement
 
-{% include youtube-video.html id="mnxXMfzArDM" autoplay="false" width="900px" %}
+<div style="display: flex; justify-content: center; margin: 20px 0;">
+  {% include youtube-video.html id="mnxXMfzArDM" autoplay="false" width="900px" %}
+</div>
 
 ## Proof-of-Concept Testing
 
