@@ -94,9 +94,8 @@ The hardest part of the permanent magnet concept was not launching the ball. It 
 
 Permanent magnets create a clear and intuitive launch interaction, but they also make reset difficult because the balls and magnets naturally want to stay together. I explored reset concepts that could separate and reposition the stages without requiring children to pull directly against high magnetic forces.
 
-<img src="/assets/images/whiteboard.png" alt="Reset mechanism concept sketches" style="width:100%; max-height:230px; object-fit:contain; margin: 20px 0;">
-
 One concept used a lead screw driven by a hand wheel. The lead screw translated rotational input into controlled linear motion, moving a platform connected to the sacrificial plate and stage hardware. Linear guide shafts prevented unwanted rotation, while a connection rod kept the stages aligned.
+<img src="/assets/images/whiteboard.png" alt="Reset mechanism concept sketches" style="width:100%; max-height:300px; object-fit:contain; margin: 20px 0;">
 
 The mechanism was designed around several goals:
 
