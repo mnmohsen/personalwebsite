@@ -34,7 +34,7 @@ For a museum exhibit, the engineering problem was not just making the launcher w
 
 ## Design Constraints
 
-The project was shaped by several real-world constraints:
+The project was shaped by several constraints:
 
 - Children above age 5 should be able to achieve a successful launch using only the exhibit and posted instructions
 - All magnets must be contained within the exhibit
@@ -43,8 +43,6 @@ The project was shaped by several real-world constraints:
 - The exhibit must run continuously through a normal museum day
 - Wear parts should be replaceable and preferably off the shelf
 - The physics should remain visible and understandable to users
-
-<img src="/assets/images/mdp-design-constraints.jpg" alt="Design constraints for child-friendly museum exhibit" style="width:100%; max-height:460px; object-fit:contain; margin: 20px 0;">
 
 ## System Architecture Trade Study
 
