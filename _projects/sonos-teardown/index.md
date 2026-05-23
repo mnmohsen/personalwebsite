@@ -70,12 +70,12 @@ The prototype work focused on answering practical design questions:
 - Can each added stage create a visible velocity increase?
 - How can repeated impacts be handled without destroying the system?
 
-<video controls style="width:100%; max-height:520px; object-fit:contain; margin: 20px 0;">
-  <source src="/assets/videos/mdp-launch-demo.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+<div style="display: flex; justify-content: center; margin: 20px 0;">
+  {% include youtube-video.html id="A5auE6Idx-g" autoplay="false" width="500px" %}
+</div>
 
 <img src="/assets/images/permalauncher.png" alt="Permanent magnet prototype setup" style="width:100%; max-height:460px; object-fit:contain; margin: 20px 0;">
+
 ## Sacrificial Impact Shield Development
 
 A major durability issue was repeated steel-on-magnet impact. Permanent magnets are useful for the learning objective, but they are not ideal impact surfaces for a museum exhibit that may be fired hundreds of times per day.
