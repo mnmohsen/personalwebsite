@@ -58,9 +58,9 @@ The permanent magnet system was selected because it better preserved the educati
 
 ## Permanent Magnet Prototype Development
 
-My main work focused on the permanent magnet architecture. I helped develop and test physical prototypes to understand how magnet spacing, ball spacing, track constraints, and impact geometry affected launch consistency.
+My main work focused on the permanent magnet architecture. I played a key role in developing and testing physical prototypes to understand how magnet spacing, ball spacing, track constraints, and impact geometry affected launch consistency.
 
-<img src="/assets/images/mdp-pm-prototype.jpg" alt="Permanent magnet prototype setup" style="width:100%; max-height:460px; object-fit:contain; margin: 20px 0;">
+{% include youtube-video.html id="cNdgnf6qzSo" autoplay="false" width="900px" %}
 
 The prototype work focused on answering practical design questions:
 
