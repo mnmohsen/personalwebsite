@@ -1,6 +1,6 @@
 ---
 layout: post
-title: UAV Magnetometer Interference Reduction Research
+title: Magnetometer Laboratory
 description: NASA-funded sensor system integration and experimental validation exploring compact alternatives to conventional drone magnetometer architectures.
 skills:
   - Hardware Integration
