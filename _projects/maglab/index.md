@@ -89,7 +89,7 @@ Good engineering comes from understanding when each approach makes sense.
 
 This work was presented through the University of Michigan Undergraduate Research Opportunity Program.
 
-<img src="/assets/images/magnetometer-poster.png" alt="UAV magnetometer research poster" style="width:100%; margin: 20px 0;">
+<img src="/assets/images/maglab_poster.png" alt="UAV magnetometer research poster" style="width:100%; margin: 20px 0;">
 
 ## What I Contributed
 
