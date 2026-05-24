@@ -63,14 +63,19 @@ This phase was important for establishing confidence in the measurement pipeline
 
 ## Quad-Magnetometer Experimental Testing
 
+## Quad-Magnetometer Experimental Testing
+
 After early validation, the project scaled to a quad-magnetometer sensing system integrated with Raspberry Pi-based synchronized acquisition hardware.
 
 This full setup enabled synchronized magnetic field data collection at 100 Hz during drone interference testing.
 
-<img src="/assets/images/quadmag-test-bed.png" alt="Quad magnetometer drone test setup" style="width:100%; max-height:550px; object-fit:contain; margin: 20px 0;">
+<div style="display: flex; gap: 20px; justify-content: center; align-items: flex-start; margin: 20px 0; flex-wrap: wrap;">
+  <img src="/assets/images/quadmag-testbed.png" alt="Quad magnetometer outdoor test setup" style="width:48%; max-width:500px; object-fit:contain;">
+  <img src="/assets/images/quadmag-drone-test.png" alt="Quad magnetometer drone interference test setup" style="width:48%; max-width:500px; object-fit:contain;">
+</div>
 
-<p style="font-size: 12px; color: #666; margin-top: 0;">
-Outdoor experimental setup used to characterize drone-induced magnetic interference using the quad-magnetometer platform.
+<p style="font-size: 12px; color: #666; margin-top: 8px; text-align: center;">
+Outdoor experimental setup showing the quad-magnetometer platform before testing (left) and during drone interference characterization (right).
 </p>
 
 This phase moved the work from controlled validation into realistic operating conditions where environmental noise, propulsion behavior, and practical testing constraints became part of the engineering challenge.
