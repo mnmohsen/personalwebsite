@@ -91,7 +91,7 @@ That led me to develop a MATLAB-based structural sizing GUI to accelerate early 
 
 <img src="/assets/images/gui_results.png" alt="MATLAB GUI analysis results" style="width:100%; max-height:500px; object-fit:contain; margin: 20px 0;">
 
-<img src="/assets/images/gui_parasweep.png" alt="MATLAB GUI parametric sweep" style="width:100%; max-height:500px; object-fit:contain; margin: 20px 0;">
+<img src="/assets/images/fixed_parasweep.png" alt="MATLAB GUI parametric sweep" style="width:100%; max-height:500px; object-fit:contain; margin: 20px 0;">
 
 <p style="font-size: 12px; color: #666; margin-top: 8px;">
 MATLAB structural sizing tool developed for rapid structural trade studies, design iteration, and preliminary member validation.
