@@ -47,7 +47,13 @@ A major part of my work involved helping integrate sensing hardware and validati
 
 Early testing involved a single PNI magnetometer setup used for calibration and baseline characterization in a controlled environment.
 
-{% include youtube-video.html id="-CG8KkDmSJ0" autoplay="false" width="900px" %}
+<div style="text-align: center; margin: 20px 0;">
+  {% include youtube-video.html id="-CG8KkDmSJ0" autoplay="false" width="700px" %}
+</div>
+
+<p style="font-size: 12px; color: #666; margin-top: 8px; text-align: center;">
+Early calibration and validation testing using a single magnetometer measurement setup.
+</p>
 
 <p style="font-size: 12px; color: #666; margin-top: 0;">
 Early indoor validation setup used for sensor calibration and baseline magnetic characterization.
