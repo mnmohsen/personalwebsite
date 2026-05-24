@@ -1,6 +1,6 @@
 ---
 layout: post
-title: MASA Thrust Transfer Structure
+title: Michigan Aeronautical Science Association
 description: Structural system design for MASA’s Citron liquid rocket, including concept architecture, analytical design tooling, structural trade studies, and validation planning.
 skills:
   - Mechanical Design
