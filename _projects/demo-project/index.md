@@ -69,36 +69,54 @@ Even though the concept was not carried forward, it served its purpose. It helpe
 
 ## Structural Design Tool Development
 
-As the architecture evolved, one major engineering question emerged:
+One of the earliest engineering questions in the project was deceptively simple:
 
 **What structural members actually make sense for this application?**
 
-Rather than manually checking tube geometries one at a time, I developed a MATLAB-based structural sizing GUI to accelerate early design iteration.
+Initial rod sizing began the traditional way, with hand calculations to estimate axial loads, stress, and Euler buckling behavior for candidate members.
+
+<img src="/assets/images/masa-handcalc.png" alt="Initial hand calculations for TTS rod sizing" style="width:100%; max-height:500px; object-fit:contain; margin: 20px 0;">
+
+<p style="font-size: 12px; color: #666; margin-top: 0;">
+Early hand calculations used to establish first-pass structural sizing assumptions.
+</p>
+
+That process worked, but it quickly became obvious how inefficient it was.
+
+Every design change meant recalculating rod forces, stress, buckling behavior, geometry assumptions, and comparing multiple cross sections by hand. Since the design space included changing rod lengths, angles, wall thicknesses, diameters, and cross-sectional geometries, manually iterating through possibilities would have been painfully slow.
+
+That led me to develop a MATLAB-based structural sizing GUI to accelerate early design iteration.
 
 {% include image-gallery.html images="/assets/images/masa-gui-main.png, /assets/images/masa-gui-results.png, /assets/images/masa-gui-sweep.png" height="320" %}
 
 <p style="font-size: 12px; color: #666; margin-top: 8px;">
-MATLAB structural sizing tool developed for rapid design iteration, member comparison, and preliminary buckling analysis.
+MATLAB structural sizing tool developed for rapid structural trade studies, design iteration, and preliminary member validation.
 </p>
 
-The tool models each TTS rod as a pin-pin two-force member under axial compression and allows rapid exploration of design alternatives.
+The tool models each TTS rod as a pin-pin two-force member under axial compression and allows rapid exploration of candidate designs.
 
-Outputs include:
+Key outputs include:
 
 - axial stress
 - reaction forces
-- Euler buckling load
-- buckling factor of safety
+- buckling load
+- factor of safety
 - cross-section comparisons
-- parametric design sweeps
+- parametric design sweeps across geometry variables
 
-This became a practical engineering design tool because it enabled fast structural trade studies before committing to higher-fidelity modeling.
+This transformed what would have been repetitive manual analysis into a much faster design workflow.
 
-The goal was never to replace validation.
+Instead of checking one geometry at a time, we could rapidly explore design trends and identify promising structural directions.
 
-The goal was to make design iteration faster and smarter.
+An important engineering lesson came when the original tool relied primarily on Euler buckling assumptions.
 
-Analytical tools like this are valuable because they help eliminate poor concepts early and focus engineering effort on more promising design directions.
+That worked well for slender members, but feedback during design review highlighted that Euler buckling becomes less accurate as members become less slender. At lower slenderness ratios, Johnson buckling provides a better approximation.
+
+Rather than ignoring that limitation, I expanded the tool to incorporate Johnson buckling behavior so the analysis better reflected realistic structural conditions across a wider design space.
+
+That evolution was important because it reinforced the actual purpose of engineering analysis tools:
+
+not to generate pretty numbers, but to improve design decisions by becoming more accurate as understanding improves.
 
 ## Structural Trade Studies
 
