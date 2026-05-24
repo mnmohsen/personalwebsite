@@ -87,7 +87,7 @@ Every design change meant recalculating rod forces, stress, buckling behavior, g
 
 That led me to develop a MATLAB-based structural sizing GUI to accelerate early design iteration.
 
-{% include image-gallery.html images="/assets/images/masa-gui-main.png, /assets/images/masa-gui-results.png, /assets/images/masa-gui-sweep.png" height="320" %}
+{% include image-gallery.html images="/assets/images/homepage_gui.png, /assets/images/masa-gui-results.png, /assets/images/masa-gui-sweep.png" height="320" %}
 
 <p style="font-size: 12px; color: #666; margin-top: 8px;">
 MATLAB structural sizing tool developed for rapid structural trade studies, design iteration, and preliminary member validation.
