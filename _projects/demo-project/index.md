@@ -75,7 +75,7 @@ One of the earliest engineering questions in the project was deceptively simple:
 
 Initial rod sizing began the traditional way, with hand calculations to estimate axial loads, stress, and Euler buckling behavior for candidate members.
 
-<img src="/assets/images/masa-handcalc.png" alt="Initial hand calculations for TTS rod sizing" style="width:100%; max-height:500px; object-fit:contain; margin: 20px 0;">
+<img src="/assets/images/ttshandcalc1.png" alt="Initial hand calculations for TTS rod sizing" style="width:100%; max-height:500px; object-fit:contain; margin: 20px 0;">
 
 <p style="font-size: 12px; color: #666; margin-top: 0;">
 Early hand calculations used to establish first-pass structural sizing assumptions.
