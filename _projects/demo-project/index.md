@@ -45,7 +45,7 @@ This became a systems design problem, not just a structural calculation.
 
 ## Early Architecture Exploration
 
-Early in the project, I developed a full conceptual TTS architecture inspired by the Keg rocket’s structural layout.
+Early in the project, I developed a full conceptual TTS architecture inspired by the <a href="https://www.kegrocket.com/" target="_blank">Keg rocket</a> structural layout.
 
 The design intent was to explore whether manufacturing complexity could be reduced by using standard perforated structural members, sheet metal plates, and circular interfaces rather than relying on more custom joint-heavy architecture.
 
