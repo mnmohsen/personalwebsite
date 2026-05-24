@@ -126,7 +126,7 @@ Joint design became equally important, since connection geometry directly affect
 
 I explored early joint concepts intended to balance structural simplicity with practical assembly needs.
 
-<img src="/assets/images/masa-joint-concept.png" alt="Preliminary joint concept design" style="width:100%; max-height:500px; object-fit:contain; margin: 20px 0;">
+<img src="/assets/images/tts_joint.png" alt="Preliminary joint concept design" style="width:100%; max-height:500px; object-fit:contain; margin: 20px 0;">
 
 <p style="font-size: 12px; color: #666; margin-top: 0;">
 Preliminary joint/interface concept exploration focused on manufacturability, alignment, and structural simplicity.
