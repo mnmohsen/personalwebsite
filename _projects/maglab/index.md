@@ -63,8 +63,6 @@ This phase was important for establishing confidence in the measurement pipeline
 
 ## Quad-Magnetometer Experimental Testing
 
-## Quad-Magnetometer Experimental Testing
-
 After early validation, the project scaled to a quad-magnetometer sensing system integrated with Raspberry Pi-based synchronized acquisition hardware.
 
 This full setup enabled synchronized magnetic field data collection at 100 Hz during drone interference testing.
