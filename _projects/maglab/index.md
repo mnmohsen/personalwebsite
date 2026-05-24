@@ -14,7 +14,7 @@ skills:
   - Embedded Systems
   - Test Engineering
 
-main-image: /Article-Placeholder.jpg
+main-image: /magbanner.png
 ---
 
 ## Overview
