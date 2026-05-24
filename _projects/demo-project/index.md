@@ -15,7 +15,7 @@ skills:
   - Design for Manufacturability
   - Design Iteration
 
-main-image: /Article-Placeholder.jpg
+main-image: /image_rockit.png
 ---
 
 ## Overview
