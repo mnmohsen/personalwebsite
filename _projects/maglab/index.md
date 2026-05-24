@@ -71,7 +71,7 @@ This full setup enabled synchronized magnetic field data collection at 100 Hz du
 
 <div style="display: flex; gap: 20px; justify-content: center; align-items: flex-start; margin: 20px 0; flex-wrap: wrap;">
   <img src="/assets/images/quadmag-testbed.jpeg" alt="Quad magnetometer outdoor test setup" style="width:48%; max-width:500px; object-fit:contain;">
-  <img src="/assets/images/quadmag-drone-test.jpeg" alt="Quad magnetometer drone interference test setup" style="width:48%; max-width:500px; object-fit:contain;">
+  <img src="/assets/images/quadmag-drone-testbed.jpeg" alt="Quad magnetometer drone interference test setup" style="width:48%; max-width:500px; object-fit:contain;">
 </div>
 
 <p style="font-size: 12px; color: #666; margin-top: 8px; text-align: center;">
