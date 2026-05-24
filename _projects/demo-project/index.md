@@ -1,114 +1,210 @@
 ---
 layout: post
-title: Michigan Aeronautical Science Association
-description:  (I have never been employed by / affiliated with SpaceX. This is for demo use only) 
-    Developing the Super Heavy booster catch project involves designing a robust launch tower with "chopstick" arms, advanced control systems for precise booster alignment, and integrating sophisticated software for real-time trajectory adjustments and structural engineering to handle immense forces.
-skills: 
-  - Structural analysis
-  - Aerodynamic design
-  - Propulsion system integration
-  - Control Algorithem 
-  - Welding
-  - Metal forming
-  - Thermal simulation
+title: MASA Thrust Transfer Structure
+description: Structural system design for MASA’s Citron liquid rocket, including concept architecture, analytical design tooling, structural trade studies, and validation planning.
+skills:
+  - Mechanical Design
+  - Structural Analysis
+  - Siemens NX
+  - MATLAB
+  - ANSYS
+  - Finite Element Analysis
+  - Aerospace Structures
+  - Buckling Analysis
+  - System Integration
+  - Design for Manufacturability
+  - Design Iteration
 
-main-image: /image_rockit.png
+main-image: /Article-Placeholder.jpg
 ---
 
----
-# Header 1 
-Used for the title (already generated automatically at the top)
-## Header 2  
-Use this for the header of each section
-### Header 3 
-Use this to have subsection if needed
+## Overview
 
+As part of the Michigan Aeronautical Science Association (MASA) Structures team, I have been working on the Thrust Transfer Structure (TTS) for Citron, MASA’s liquid rocket vehicle.
 
-## Embedding images 
-### External images
-{% include image-gallery.html images="https://live.staticflickr.com/65535/52821641477_d397e56bc4_k.jpg, https://live.staticflickr.com/65535/52822650673_f074b20d90_k.jpg" height="400"%}
-<span style="font-size: 10px">"Starship Test Flight Mission" from https://www.flickr.com/photos/spacex/52821641477/</span>  
-You can put in multiple entries. All images will be at a fixed height in the same row. With smaller window, they will switch to columns.  
+The TTS is the structural subsystem responsible for transferring engine thrust loads into the rocket airframe. While that sounds simple on paper, the design challenge is highly constrained. The structure must carry significant compressive loads while fitting within a crowded engine bay shared with propulsion hardware, plumbing, injector interfaces, and tank structure.
 
-### Embeed images
-{% include image-gallery.html images="project2.jpg" height="400" %} 
-place the images in project folder/images then update the file path.   
+This project has been especially valuable because it blends structural engineering with mechanical design thinking. Rather than simply sizing compression members analytically, we have approached the TTS as a full engineered system requiring architecture decisions, structural validation, packaging awareness, manufacturability, and iterative refinement.
 
+## The Design Challenge
 
-## Embedding youtube video
-The second video has the autoplay on. copy and paste the 11-digit id found in the url link. <br>
-*Example* : https://www.youtube.com/watch?v={**MhVw-MHGv4s**}&ab_channel=engineerguy
-{% include youtube-video.html id="MhVw-MHGv4s" autoplay= "false"%}
-{% include youtube-video.html id="XGC31lmdS6s" autoplay = "true" %}
+A good thrust transfer structure cannot be optimized for only one metric.
 
-you can also set up custom size by specifying the width (the aspect ratio has been set to 16/9). The default size is 560 pixels x 315 pixels.  
+Making members thicker may improve buckling performance, but it increases joint size and creates packaging conflicts. Reducing mass too aggressively may create fragile geometry or difficult manufacturing. Simplifying interfaces can improve reliability, but may reduce alignment flexibility during assembly.
 
-The width of the video below. Regardless of initial width, all the videos is responsive and will fit within the smaller screen.
-{% include youtube-video.html id="tGCdLEQzde0" autoplay = "false" width= "900px" %}  
+The engineering challenge quickly became balancing competing priorities:
 
-<br>
+- safely transfer engine thrust into the vehicle structure
+- minimize structural mass
+- preserve room for propulsion hardware and plumbing
+- remain manufacturable with available team resources
+- allow inspection, assembly, and future testing
+- improve on previous MASA architectures rather than simply inheriting them
 
-## Adding a hozontal line
----
+This became a systems design problem, not just a structural calculation.
 
-## Starting a new line
-leave two spaces "  " at the end or enter <br>
+## Early Architecture Exploration
 
-## Adding bold text
-this is how you input **bold text**
+Early in the project, I developed a full conceptual TTS architecture inspired by the Keg rocket’s structural layout.
 
-## Adding italic text
-Italicized text is the *cat's meow*.
+The design intent was to explore whether manufacturing complexity could be reduced by using standard perforated structural members, sheet metal plates, and circular interfaces rather than relying on more custom joint-heavy architecture.
 
-## Adding ordered list
-1. First item
-2. Second item
-3. Third item
-4. Fourth item
+<img src="/assets/images/masa-tts-concept.png" alt="Early TTS concept architecture" style="width:100%; max-height:600px; object-fit:contain; margin: 20px 0;">
 
-## Adding unordered list
-- First item
-- Second item
-- Third item
-- Fourth item
+<p style="font-size: 12px; color: #666; margin-top: 0;">
+Early architecture concept exploring sheet-metal construction and standardized structural components.
+</p>
 
-## Adding code block
-```ruby
-def hello_world
-  puts "Hello, World!"
-end
-```
+The motivation was straightforward: if the structure could be built using simpler standard components, manufacturing and assembly might become significantly easier.
 
-```python
-def start()
-  print("time to start!")
-```
+This concept also helped evaluate alternate thrust load paths, packaging strategies, and structural layouts.
 
-```javascript
-let x = 1;
-if (x === 1) {
-  let x = 2;
-  console.log(x);
-}
-console.log(x);
+However, after team review, two major limitations became clear.
 
-```
+First, the architecture consumed too much valuable space inside an already constrained engine bay.
 
-## Adding external links
-[Wikipedia](https://en.wikipedia.org)
+Second, the propulsion team was understandably uncomfortable with a structural concept where major thrust loads would be transferred through fasteners in shear rather than through cleaner axial load paths.
 
+Even though the concept was not carried forward, it served its purpose. It helped define what the final architecture needed to avoid and reinforced the importance of subsystem integration in structural design.
 
-## Adding block quote
-> A blockquote would look great if you need to highlight something
+## Structural Design Tool Development
 
+As the architecture evolved, one major engineering question emerged:
 
-## Adding table 
+**What structural members actually make sense for this application?**
 
-| Header 1 | Header 2 |
-|----------|----------|
-| Row 1, Col 1 | Row 1, Col 2 |
-| Row 2, Col 1 | Row 2, Col 2 |
+Rather than manually checking tube geometries one at a time, I developed a MATLAB-based structural sizing GUI to accelerate early design iteration.
 
-make sure to leave aline betwen the table and the header
+{% include image-gallery.html images="/assets/images/masa-gui-main.png, /assets/images/masa-gui-results.png, /assets/images/masa-gui-sweep.png" height="320" %}
+
+<p style="font-size: 12px; color: #666; margin-top: 8px;">
+MATLAB structural sizing tool developed for rapid design iteration, member comparison, and preliminary buckling analysis.
+</p>
+
+The tool models each TTS rod as a pin-pin two-force member under axial compression and allows rapid exploration of design alternatives.
+
+Outputs include:
+
+- axial stress
+- reaction forces
+- Euler buckling load
+- buckling factor of safety
+- cross-section comparisons
+- parametric design sweeps
+
+This became a practical engineering design tool because it enabled fast structural trade studies before committing to higher-fidelity modeling.
+
+The goal was never to replace validation.
+
+The goal was to make design iteration faster and smarter.
+
+Analytical tools like this are valuable because they help eliminate poor concepts early and focus engineering effort on more promising design directions.
+
+## Structural Trade Studies
+
+The structural design space was less obvious than it initially appeared.
+
+For example, larger diameter thin-wall tubes can dramatically improve buckling efficiency while reducing mass. However, that same decision increases joint size, consumes packaging volume, and complicates surrounding interfaces.
+
+Using the sizing tool alongside team design discussions, we evaluated tradeoffs between:
+
+- hollow circular vs hollow square sections
+- diameter vs wall thickness
+- buckling efficiency vs packaging
+- lightweight optimization vs robustness
+- theoretical efficiency vs practical manufacturability
+
+This reinforced an important engineering lesson:
+
+**the mathematically optimal component is not always the best system design.**
+
+## Joint and Interface Design
+
+The structural members themselves are only part of the engineering problem.
+
+Joint design became equally important, since connection geometry directly affects load transfer, manufacturability, alignment tolerance, assembly complexity, and structural reliability.
+
+I explored early joint concepts intended to balance structural simplicity with practical assembly needs.
+
+<img src="/assets/images/masa-joint-concept.png" alt="Preliminary joint concept design" style="width:100%; max-height:500px; object-fit:contain; margin: 20px 0;">
+
+<p style="font-size: 12px; color: #666; margin-top: 0;">
+Preliminary joint/interface concept exploration focused on manufacturability, alignment, and structural simplicity.
+</p>
+
+A recurring design question was how much adjustability should exist in the system.
+
+Too much adjustability introduces unnecessary complexity, additional failure points, and manufacturing burden.
+
+Too little makes alignment and assembly frustrating.
+
+These interface decisions felt much closer to real mechanical product design than purely academic structural analysis.
+
+## Current Development Phase
+
+The project is currently transitioning from preliminary architecture and analytical sizing into higher-fidelity structural validation.
+
+Current work includes:
+
+- refining full CAD geometry
+- improving subsystem integration
+- evaluating packaging conflicts
+- preparing ANSYS finite element analysis
+- identifying non-ideal failure modes
+- planning physical validation testing
+
+The MATLAB sizing tool was intentionally built as a first-pass design aid, not final structural proof.
+
+Future validation will examine:
+
+- full assembly stress behavior
+- joint loading
+- local yielding
+- local buckling
+- Johnson buckling effects
+- interface stiffness
+- full-system load distribution
+
+## Prototype and Validation Roadmap
+
+A major strength of this project is that it does not end at theoretical design.
+
+The planned engineering workflow includes:
+
+1. CAD refinement
+2. ANSYS structural validation
+3. prototype fabrication
+4. physical load testing
+5. iteration based on measured results
+
+That feedback loop is where engineering becomes real.
+
+The most elegant analysis means very little if the hardware disagrees.
+
+## What I Owned
+
+My contributions have focused on concept generation, analytical design tooling, and system-level structural design thinking.
+
+This includes:
+
+- early TTS architecture concept development
+- structural concept iteration
+- system-level trade studies
+- MATLAB structural sizing GUI development
+- axial stress and buckling analysis
+- parametric design exploration
+- cross-section trade comparisons
+- joint/interface concept exploration
+- preparation for higher-fidelity validation
+
+## Key Takeaways
+
+This project has been one of my strongest engineering experiences because it blends structural analysis with real design iteration.
+
+The biggest lesson has been that engineering is rarely about finding a single correct answer.
+
+It is about balancing performance, manufacturability, packaging, validation strategy, and uncertainty while continuously refining the design.
+
+That mindset translates directly to mechanical product development.
 
 
