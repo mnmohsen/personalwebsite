@@ -49,7 +49,7 @@ Early in the project, I developed a full conceptual TTS architecture inspired by
 
 The design intent was to explore whether manufacturing complexity could be reduced by using standard perforated structural members, sheet metal plates, and circular interfaces rather than relying on more custom joint-heavy architecture.
 
-<img src="/assets/images/masa-tts-concept.png" alt="Early TTS concept architecture" style="width:100%; max-height:600px; object-fit:contain; margin: 20px 0;">
+<img src="/assets/images/tts_conc1.png" alt="Early TTS concept architecture" style="width:100%; max-height:600px; object-fit:contain; margin: 20px 0;">
 
 <p style="font-size: 12px; color: #666; margin-top: 0;">
 Early architecture concept exploring sheet-metal construction and standardized structural components.
