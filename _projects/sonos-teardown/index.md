@@ -113,7 +113,7 @@ The mechanism was designed around several goals:
 
 To validate the reset idea before building a full exhibit-scale system, I helped create a handheld proof-of-concept prototype using a hardened spring steel strip and clamping columns.
 
-<img src="/assets/images/strippyconc" alt="Handheld proof-of-concept prototype" style="width:100%; max-height:460px; object-fit:contain; margin: 20px 0;">
+<img src="/assets/images/strippyconc.png" alt="Handheld proof-of-concept prototype" style="width:100%; max-height:460px; object-fit:contain; margin: 20px 0;">
 
 This prototype showed that one component could serve two roles: transferring momentum during launch and helping the system reset afterward. That finding was important because it reduced the number of separate mechanisms needed in the final design.
 
