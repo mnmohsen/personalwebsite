@@ -247,10 +247,10 @@ I then used the redesigned joint to create a new full TTS concept consisting of 
 <img src="/assets/images/tts_full_concept.png" alt="Full Citron thrust transfer structure concept using circular hollow-section struts" style="width:100%; max-height:650px; object-fit:contain; margin: 20px 0;">
 
 <p style="font-size: 12px; color: #666; margin-top: 0;">
-Full Citron TTS concept integrating the compact clevis joints, circular hollow-section struts, and annular interface rings into a complete structural assembly.
+Full Citron TTS concept integrating the compact clevis joints, circular hollow-section struts, and placeholder annular interface rings into a complete structural assembly.
 </p>
 
-This concept brought the analytical member sizing, joint design, and full-system architecture together in one CAD assembly.
+This concept brought the analytical member sizing, joint design, and full-system architecture together in one CAD assembly.The tank interface ring and rocket engine interface ring shown in this assembly are simplified placeholders used to establish the overall structural layout. Their geometry, mounting features, thicknesses, and interfaces will be developed in future design phases. This concept primarily focuses on the tubular member arrangement and the redesigned clevis-style joints rather than finalized interface-ring design.
 
 Developing the complete assembly also helped identify the next areas requiring detailed analysis, including:
 
