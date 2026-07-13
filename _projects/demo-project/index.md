@@ -209,6 +209,8 @@ My contributions have focused on concept generation, analytical design tooling, 
 
 This includes:
 
+- compact clevis-style joint redesign using a clevis pin and retaining ring
+- full TTS assembly concept using circular hollow-section struts and annular interface rings
 - early TTS architecture concept development
 - structural concept iteration
 - system-level trade studies
@@ -218,6 +220,49 @@ This includes:
 - cross-section trade comparisons
 - joint/interface concept exploration
 - preparation for higher-fidelity validation
+
+### Summer 2026 Joint and Architecture Redesign
+
+During Summer 2026, I developed a new compact joint design and integrated it into a complete TTS assembly concept using circular hollow-section struts.
+
+The redesigned joint consolidates the member connection into a compact clevis-style bracket. A clevis pin and retaining ring connect each tubular strut to the bracket, while two hex-head bolts fasten the bracket directly to the upper or lower interface ring.
+
+<img src="/assets/images/tts_joint_redesign.png" alt="Compact clevis-style TTS joint redesign" style="width:100%; max-height:500px; object-fit:contain; margin: 20px 0;">
+
+<p style="font-size: 12px; color: #666; margin-top: 0;">
+Compact joint design using a clevis pin and retaining ring for the strut connection and two hex-head bolts for attachment to the interface ring.
+</p>
+
+The redesign was developed to:
+
+- reduce the size of each joint
+- consolidate the connection into fewer components
+- eliminate the need for threaded inserts
+- provide a removable and serviceable strut connection
+- simplify repeated assembly around the circular interface rings
+- create a direct load path between the tubular struts and interface rings
+
+I then used the redesigned joint to create a new full TTS concept consisting of multiple circular hollow-section struts arranged between annular upper and lower interface rings.
+
+<img src="/assets/images/tts_full_concept.png" alt="Full Citron thrust transfer structure concept using circular hollow-section struts" style="width:100%; max-height:650px; object-fit:contain; margin: 20px 0;">
+
+<p style="font-size: 12px; color: #666; margin-top: 0;">
+Full Citron TTS concept integrating the compact clevis joints, circular hollow-section struts, and annular interface rings into a complete structural assembly.
+</p>
+
+This concept brought the analytical member sizing, joint design, and full-system architecture together in one CAD assembly.
+
+Developing the complete assembly also helped identify the next areas requiring detailed analysis, including:
+
+- clevis pin shear
+- bearing stress around the pin holes
+- bracket bending and local yielding
+- bolt loading at the interface rings
+- joint stiffness
+- interface-ring deformation
+- strut buckling
+- assembly and tool access
+- packaging around propulsion hardware
 
 ## Key Takeaways
 
