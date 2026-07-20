@@ -221,57 +221,132 @@ This includes:
 - joint/interface concept exploration
 - preparation for higher-fidelity validation
 
-### Summer 2026 Joint and Architecture Redesign
+### Summer 2026 Redesign and Structural Validation
 
-During Summer 2026, I developed a new compact joint design and integrated it into a complete TTS assembly concept using circular hollow-section struts.
+During Summer 2026, I redesigned the TTS around six circular hollow-section aluminum struts connecting the engine and tank interface rings.
 
-The redesigned joint consolidates the member connection into a compact clevis-style bracket. A clevis pin and retaining ring connect each tubular strut to the bracket, while two hex-head bolts fasten the bracket directly to the upper or lower interface ring.
+The updated architecture uses compact clevis-style connections that allow the struts to behave approximately as two-force members. Each strut is connected by a clevis pin and retaining ring, while the brackets attach directly to the interface rings using two bolts.
 
-<img src="/assets/images/tts_joint_redesign.png" alt="Compact clevis-style TTS joint redesign" style="width:100%; max-height:500px; object-fit:contain; margin: 20px 0;">
+The redesign focused on creating a cleaner axial load path while reducing joint size, part count, and assembly complexity.
 
-<p style="font-size: 12px; color: #666; margin-top: 0;">
-Compact joint design using a clevis pin and retaining ring for the strut connection and two hex-head bolts for attachment to the interface ring.
-</p>
-
-The redesign was developed to:
-
-- reduce the size of each joint
-- consolidate the connection into fewer components
-- eliminate the need for threaded inserts
-- provide a removable and serviceable strut connection
-- simplify repeated assembly around the circular interface rings
-- create a direct load path between the tubular struts and interface rings
-
-I then used the redesigned joint to create a new full TTS concept consisting of multiple circular hollow-section struts arranged between annular upper and lower interface rings.
-
-<img src="/assets/images/tts_full_concept.png" alt="Full Citron thrust transfer structure concept using circular hollow-section struts" style="width:100%; max-height:650px; object-fit:contain; margin: 20px 0;">
+<img src="/assets/images/tts_summer2026_concept.png" alt="Updated Citron thrust transfer structure concept with six tubular struts and compact clevis joints" style="width:100%; max-height:650px; object-fit:contain; margin: 20px 0;">
 
 <p style="font-size: 12px; color: #666; margin-top: 0;">
-Full Citron TTS concept integrating the compact clevis joints, circular hollow-section struts, and placeholder annular interface rings into a complete structural assembly.
+Updated six-member TTS architecture integrating hollow aluminum struts, compact clevis-style joints, and preliminary engine and tank interface rings.
 </p>
 
-This concept brought the analytical member sizing, joint design, and full-system architecture together in one CAD assembly.The tank interface ring and rocket engine interface ring shown in this assembly are simplified placeholders used to establish the overall structural layout. Their geometry, mounting features, thicknesses, and interfaces will be developed in future design phases. This concept primarily focuses on the tubular member arrangement and the redesigned clevis-style joints rather than finalized interface-ring design.
+The interface rings shown in this model are preliminary geometry used to establish the structural layout, member locations, and overall packaging envelope. Their final thicknesses, mounting features, and local reinforcement will be developed as the surrounding propulsion interfaces mature.
 
-Developing the complete assembly also helped identify the next areas requiring detailed analysis, including:
+The updated assembly also corrected an earlier overconstrained member arrangement. Reducing the structure to six primary struts created a clearer and more predictable load path without introducing redundant members whose force distribution would depend heavily on manufacturing tolerances and joint stiffness.
 
-- clevis pin shear
+The selected members are 6061-T6 aluminum tubes with:
+
+- 5/8-inch outside diameter
+- 1/8-inch wall thickness
+- 3/8-inch inside diameter
+- approximately 21-inch pin-center-to-pin-center length
+
+Aluminum was selected because it provided sufficient strength and buckling resistance while remaining lightweight, weldable, readily available, and straightforward to analyze. Unlike a composite tube, aluminum can be treated as approximately isotropic and does not require laminate-specific material properties, directional failure criteria, or bonded metallic end inserts.
+
+#### Static Stress Validation
+
+I first created a simplified ANSYS model of a single tubular strut to validate its basic axial behavior.
+
+The ends were modeled as pinned connections, allowing rotation while restraining the translations necessary to represent the clevis interfaces. A compressive load of 2,965 N, or approximately 667 lbf, was applied to represent a conservative 4,000 lbf total thrust load divided equally among six struts.
+
+The analytical axial stress was calculated using:
+
+\[
+\sigma = \frac{F}{A}
+\]
+
+For the selected tube geometry, the cross-sectional area is approximately 126.7 mm², producing an expected compressive stress of approximately 23.4 MPa.
+
+<img src="/assets/images/tts_static_stress_fea.png" alt="ANSYS static structural stress result for the TTS aluminum strut" style="width:100%; max-height:650px; object-fit:contain; margin: 20px 0;">
+
+<p style="font-size: 12px; color: #666; margin-top: 0;">
+Static structural analysis of one TTS strut under a 2,965 N compressive load. The approximately 23.4 MPa FEA result closely matched the analytical axial-stress calculation.
+</p>
+
+ANSYS predicted approximately 23.4 MPa of axial and equivalent stress through the uniform section of the tube, closely matching the hand calculation.
+
+This agreement was important because it confirmed that the applied loading, material properties, cross-sectional geometry, and boundary conditions were behaving as intended before progressing to buckling analysis.
+
+A separate higher-detail model including the tube and end geometry produced a higher local stress near the load-transfer region. This identified the tube-to-end-fitting interface as an area requiring additional joint-level analysis rather than treating the entire strut as a perfectly uniform member.
+
+#### Eigenvalue Buckling Validation
+
+Because the members carry compression, material yielding was not the only potential failure mode. Global column buckling also needed to be evaluated.
+
+I first estimated the critical load analytically using Euler buckling for a pin-pin column:
+
+\[
+P_{cr} = \frac{\pi^2EI}{L^2}
+\]
+
+The hand calculation predicted a critical buckling load of approximately 1,460 lbf.
+
+I then performed a pre-stressed eigenvalue buckling analysis in ANSYS using the solved static load case. The first buckling mode produced a load multiplier of 2.2485.
+
+Using the 2,965 N reference load:
+
+\[
+P_{cr} = 2.2485(2965\text{ N})
+\]
+
+\[
+P_{cr} \approx 6667\text{ N} \approx 1499\text{ lbf}
+\]
+
+<img src="/assets/images/tts_buckling_fea.png" alt="First eigenvalue buckling mode of the TTS aluminum strut" style="width:100%; max-height:650px; object-fit:contain; margin: 20px 0;">
+
+<p style="font-size: 12px; color: #666; margin-top: 0;">
+First global buckling mode of the TTS strut. ANSYS predicted a critical load of approximately 1,499 lbf, within about 3% of the Euler buckling calculation.
+</p>
+
+The FEA prediction was within approximately 3% of the analytical result. The first mode also showed the expected smooth lateral bow of a pin-pin column, providing a useful qualitative check that the model was producing the correct global failure mode.
+
+The deformation magnitude displayed in an eigenvalue buckling result is an arbitrary visualization scale. The meaningful result is the mode shape and the load multiplier, not the displayed displacement value.
+
+#### Interpretation and Limitations
+
+The static and eigenvalue models validate the first-order axial stress and ideal global buckling behavior of an individual strut.
+
+They do not represent complete flight qualification.
+
+Additional validation is still needed to evaluate:
+
+- unequal load sharing among the six struts
+- thrust misalignment and load eccentricity
+- clevis pin shear and bending
 - bearing stress around the pin holes
 - bracket bending and local yielding
 - bolt loading at the interface rings
-- joint stiffness
-- interface-ring deformation
-- strut buckling
-- assembly and tool access
-- packaging around propulsion hardware
+- weld and heat-affected-zone strength
+- interface-ring flexibility
+- geometric imperfections
+- nonlinear buckling behavior
+- vibration and dynamic launch loading
+- packaging and tool access around propulsion hardware
+
+The next phase will incorporate more detailed joint geometry, realistic interface stiffness, and full-assembly load distribution. Physical testing will ultimately be used to compare the analytical and numerical predictions against actual hardware behavior.
 
 ## Key Takeaways
 
-This project has been one of my strongest engineering experiences because it blends structural analysis with real design iteration.
+This project progressed from an open-ended structural problem into a traceable engineering workflow:
 
-The biggest lesson has been that engineering is rarely about finding a single correct answer.
+1. establish the load path and system requirements
+2. perform first-pass hand calculations
+3. automate design exploration using MATLAB
+4. develop the joints and complete CAD architecture
+5. validate axial stress using static FEA
+6. validate global buckling using hand calculations and eigenvalue FEA
+7. identify the limitations requiring higher-fidelity analysis and testing
 
-It is about balancing performance, manufacturability, packaging, validation strategy, and uncertainty while continuously refining the design.
+The strongest lesson was that analysis is most valuable when it is used to build confidence step by step.
 
-That mindset translates directly to mechanical product development.
+The hand calculations provided an independent prediction. The simplified static model verified the loading and boundary conditions. The buckling model reproduced both the expected failure shape and critical load. The remaining uncertainty is now concentrated in the joints, interfaces, imperfections, and full-system behavior rather than the basic compression-member sizing.
+
+That progression from concept development to analytical sizing and numerical validation has made the TTS one of my most complete mechanical engineering projects.
 
 
