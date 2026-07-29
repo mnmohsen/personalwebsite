@@ -44,7 +44,7 @@ Current Summer 2026 TTS design integrating six hollow aluminum struts, compact c
 
 ## Where the TTS Sits in the Rocket
 
-<img src="/assets/images/tts_rocket_context_sketch.jpg" alt="Mohamad sketching the location of the thrust transfer structure within the Citron rocket" style="width:100%; max-height:650px; object-fit:contain; margin:20px 0;">
+<img src="/assets/images/tts_rocket_context_sketch.png" alt="Mohamad sketching the location of the thrust transfer structure within the Citron rocket" style="width:100%; max-height:650px; object-fit:contain; margin:20px 0;">
 
 <p style="font-size:12px; color:#666; margin-top:0;">
 Sketching the location of the thrust transfer structure relative to the engine, propulsion bay, tank structure, and surrounding rocket airframe.
