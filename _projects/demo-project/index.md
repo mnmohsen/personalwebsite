@@ -368,7 +368,7 @@ I developed compact clevis-style joints intended to:
 
 ### Bottom Joint
 
-<img src="/assets/images/tts_bottom_joint_closeup.png" alt="Closeup of the current lower TTS clevis-style joint" style="width:100%; max-height:650px; object-fit:contain; margin:20px 0;">
+<img src="/assets/images/bottomjoint.png" alt="Closeup of the current lower TTS clevis-style joint" style="width:100%; max-height:650px; object-fit:contain; margin:20px 0;">
 
 <p style="font-size:12px; color:#666; margin-top:0;">
 Current lower joint design using a clevis pin and retaining ring at the strut connection, with two bolts attaching the bracket to the engine-side interface.
@@ -386,7 +386,7 @@ The connection uses:
 
 ### Top Joint
 
-<img src="/assets/images/tts_top_joint_closeup.png" alt="Closeup of the current upper TTS clevis-style joint" style="width:100%; max-height:650px; object-fit:contain; margin:20px 0;">
+<img src="/assets/images/topjoint.png" alt="Closeup of the current upper TTS clevis-style joint" style="width:100%; max-height:650px; object-fit:contain; margin:20px 0;">
 
 <p style="font-size:12px; color:#666; margin-top:0;">
 Current upper joint design adapted to the tank-side interface while maintaining the same basic axial load-path intent.
