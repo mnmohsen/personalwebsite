@@ -222,7 +222,7 @@ The analytical axial stress was:
   ≈ 23.4 MPa
 </div>
 
-<img src="/assets/images/tts_static_stress_fea.png" alt="ANSYS static structural stress result for the TTS aluminum strut" style="width:100%; max-height:650px; object-fit:contain; margin:20px 0;">
+<img src="/assets/images/newmeshy.png" alt="ANSYS static structural stress result for the TTS aluminum strut" style="width:100%; max-height:650px; object-fit:contain; margin:20px 0;">
 
 <p style="font-size:12px; color:#666; margin-top:0;">
 Static structural analysis of the isolated TTS strut under a 2,965 N compressive reference load.
