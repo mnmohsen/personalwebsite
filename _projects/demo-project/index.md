@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Michigan Aeronautical Science Association
-description: Structural system design for MASA’s Citron liquid rocket, including concept architecture, analytical design tooling, structural trade studies, and validation planning.
+description: Design and structural validation of the thrust transfer structure for MASA’s Citron liquid rocket.
 skills:
   - Mechanical Design
   - Structural Analysis
@@ -11,233 +11,122 @@ skills:
   - Finite Element Analysis
   - Aerospace Structures
   - Buckling Analysis
+  - Joint Design
   - System Integration
   - Design for Manufacturability
   - Design Iteration
 
-main-image: /image_rockit.png
+main-image: /assets/images/tts_summer2026_concept.png
 ---
 
-## Overview
+## Thrust Transfer Structure Design and Validation
 
-As part of the Michigan Aeronautical Science Association (MASA) Structures team, I have been working on the Thrust Transfer Structure (TTS) for Citron, MASA’s liquid rocket vehicle.
+I redesigned the structural system that transfers engine thrust into MASA’s Citron liquid rocket, developed a MATLAB sizing tool from first principles, designed compact clevis-style joints, and verified the selected aluminum struts through analytical calculations and ANSYS finite element analysis.
 
-The TTS is the structural subsystem responsible for transferring engine thrust loads into the rocket airframe. While that sounds simple on paper, the design challenge is highly constrained. The structure must carry significant compressive loads while fitting within a crowded engine bay shared with propulsion hardware, plumbing, injector interfaces, and tank structure.
+**Current design summary**
 
-This project has been especially valuable because it blends structural engineering with mechanical design thinking. Rather than simply sizing compression members analytically, we have approached the TTS as a full engineered system requiring architecture decisions, structural validation, packaging awareness, manufacturability, and iterative refinement.
+- six primary 6061-T6 aluminum struts
+- 2,965 N conservative reference load per strut
+- static FEA matched the analytical axial-stress result
+- global buckling FEA matched Euler buckling within approximately 3%
+- local buckling was length- and mesh-converged
+- the ideal local-buckling eigenvalue was approximately 2.13 MN, screening local wall buckling out as a governing failure mode
 
-## The Design Challenge
+<img src="/assets/images/tts_summer2026_concept.png" alt="Current six-member thrust transfer structure assembly for MASA Citron" style="width:100%; max-height:700px; object-fit:contain; margin:20px 0;">
 
-A good thrust transfer structure cannot be optimized for only one metric.
-
-Making members thicker may improve buckling performance, but it increases joint size and creates packaging conflicts. Reducing mass too aggressively may create fragile geometry or difficult manufacturing. Simplifying interfaces can improve reliability, but may reduce alignment flexibility during assembly.
-
-The engineering challenge quickly became balancing competing priorities:
-
-- safely transfer engine thrust into the vehicle structure
-- minimize structural mass
-- preserve room for propulsion hardware and plumbing
-- remain manufacturable with available team resources
-- allow inspection, assembly, and future testing
-- improve on previous MASA architectures rather than simply inheriting them
-
-This became a systems design problem, not just a structural calculation.
-
-## Early Architecture Exploration
-
-Early in the project, I developed a full conceptual TTS architecture inspired by the <a href="https://www.kegrocket.com/" target="_blank">Keg rocket</a> structural layout.
-
-The design intent was to explore whether manufacturing complexity could be reduced by using standard perforated structural members, sheet metal plates, and circular interfaces rather than relying on more custom joint-heavy architecture.
-
-<img src="/assets/images/tts_conc1.png" alt="Early TTS concept architecture" style="width:100%; max-height:600px; object-fit:contain; margin: 20px 0;">
-
-<p style="font-size: 12px; color: #666; margin-top: 0;">
-Early architecture concept exploring sheet-metal construction and standardized structural components.
+<p style="font-size:12px; color:#666; margin-top:0;">
+Current six-member TTS architecture using hollow aluminum struts, compact clevis-style joints, and preliminary engine and tank interface rings.
 </p>
 
-The motivation was straightforward: if the structure could be built using simpler standard components, manufacturing and assembly might become significantly easier.
+## Where the TTS Sits in the Rocket
 
-This concept also helped evaluate alternate thrust load paths, packaging strategies, and structural layouts.
+<img src="/assets/images/tts_rocket_context_sketch.jpg" alt="Sketch showing the thrust transfer structure relative to the rest of the rocket" style="width:100%; max-height:650px; object-fit:contain; margin:20px 0;">
 
-However, after team review, two major limitations became clear.
+<p style="font-size:12px; color:#666; margin-top:0;">
+The TTS sits between the propulsion system and the vehicle structure, transferring engine thrust through the struts and into the rocket airframe.
+</p>
 
-First, the architecture consumed too much valuable space inside an already constrained engine bay.
+The thrust transfer structure sits inside the lower vehicle between the engine-side and tank-side interfaces.
 
-Second, the propulsion team was understandably uncomfortable with a structural concept where major thrust loads would be transferred through fasteners in shear rather than through cleaner axial load paths.
+Its job is to:
 
-Even though the concept was not carried forward, it served its purpose. It helped define what the final architecture needed to avoid and reinforced the importance of subsystem integration in structural design.
+- receive engine thrust at the lower interface
+- carry that load primarily as axial compression through the struts
+- transfer the load into the upper vehicle structure
+- fit around propulsion hardware, plumbing, injector interfaces, fasteners, and assembly tooling
+
+This made the project a system-integration and joint-design problem as much as a structural calculation.
+
+## What I Owned
+
+My work included:
+
+- MATLAB structural sizing GUI development
+- first-principles reaction-force and member-load calculations
+- Euler and Johnson buckling implementation
+- cross-section and geometry trade studies
+- six-strut TTS architecture development
+- compact clevis-style top and bottom joint design
+- tube end-fitting and interface development
+- static stress verification in ANSYS
+- global eigenvalue-buckling analysis
+- local wall-buckling analysis
+- length- and mesh-convergence studies
+- full assembly CAD integration
 
 ## Structural Design Tool Development
 
-One of the earliest engineering questions in the project was deceptively simple:
+The first engineering question was:
 
 **What structural members actually make sense for this application?**
 
-Initial rod sizing began the traditional way, with hand calculations to estimate axial loads, stress, and Euler buckling behavior for candidate members.
+Initial sizing began with free-body diagrams and hand calculations for:
 
-<img src="/assets/images/ttshandcalc1.png" alt="Initial hand calculations for TTS rod sizing" style="width:100%; max-height:500px; object-fit:contain; margin: 20px 0;">
+- reaction forces
+- axial member load
+- axial stress
+- Euler buckling
+- factor of safety
 
-<p style="font-size: 12px; color: #666; margin-top: 0;">
-Early hand calculation used to establish first-pass structural sizing assumptions.
+<img src="/assets/images/ttshandcalc1.png" alt="Initial hand calculations for TTS rod sizing" style="width:100%; max-height:500px; object-fit:contain; margin:20px 0;">
+
+<p style="font-size:12px; color:#666; margin-top:0;">
+Initial hand calculations used to establish the load path and first-pass structural sizing assumptions.
 </p>
 
-That process worked, but it quickly became obvious how inefficient it was.
+That process worked, but every change in rod length, angle, diameter, wall thickness, or cross-section required another full calculation.
 
-Every design change meant recalculating rod forces, stress, buckling behavior, geometry assumptions, and comparing multiple cross sections by hand. Since the design space included changing rod lengths, angles, wall thicknesses, diameters, and cross-sectional geometries, manually iterating through possibilities would have been painfully slow.
+I converted the analysis into a MATLAB GUI so candidate designs could be evaluated rapidly.
 
-That led me to develop a MATLAB-based structural sizing GUI to accelerate early design iteration.
+<img src="/assets/images/homepage_gui.png" alt="MATLAB GUI main interface for TTS member sizing" style="width:100%; max-height:550px; object-fit:contain; margin:20px 0;">
 
-<img src="/assets/images/homepage_gui.png" alt="MATLAB GUI main interface" style="width:100%; max-height:500px; object-fit:contain; margin: 20px 0;">
+<img src="/assets/images/gui_results.png" alt="MATLAB GUI results for member load, stress, and buckling" style="width:100%; max-height:550px; object-fit:contain; margin:20px 0;">
 
-<img src="/assets/images/gui_results.png" alt="MATLAB GUI analysis results" style="width:100%; max-height:500px; object-fit:contain; margin: 20px 0;">
+<img src="/assets/images/fixed_parasweep.png" alt="MATLAB GUI parametric sweep for TTS geometry" style="width:100%; max-height:550px; object-fit:contain; margin:20px 0;">
 
-<img src="/assets/images/fixed_parasweep.png" alt="MATLAB GUI parametric sweep" style="width:100%; max-height:500px; object-fit:contain; margin: 20px 0;">
-
-<p style="font-size: 12px; color: #666; margin-top: 8px;">
-MATLAB structural sizing tool developed for rapid structural trade studies, design iteration, and preliminary member validation.
+<p style="font-size:12px; color:#666; margin-top:8px;">
+MATLAB structural sizing tool used for rapid load calculations, section comparisons, and parametric design sweeps.
 </p>
 
-The tool models each TTS rod as a pin-pin two-force member under axial compression and allows rapid exploration of candidate designs.
+The tool models each rod as an idealized pin-pin two-force member under axial compression.
 
 Key outputs include:
 
 - axial stress
 - reaction forces
-- buckling load
+- critical buckling load
 - factor of safety
 - cross-section comparisons
-- parametric design sweeps across geometry variables
+- geometry sweeps
+- buckling performance across the design space
 
-This transformed what would have been repetitive manual analysis into a much faster design workflow.
+The original version relied primarily on Euler buckling. After recognizing that Euler becomes less accurate for lower-slenderness members, I added Johnson buckling so the model changes with the applicable slenderness regime.
 
-Instead of checking one geometry at a time, we could rapidly explore design trends and identify promising structural directions.
+The GUI was used as a first-pass design-space filter, not as final structural proof.
 
-An important engineering lesson came when the original tool relied primarily on Euler buckling assumptions.
+## ANSYS Structural Verification
 
-That worked well for slender members, but feedback during design review highlighted that Euler buckling becomes less accurate as members become less slender. At lower slenderness ratios, Johnson buckling provides a better approximation.
-
-Rather than ignoring that limitation, I expanded the tool to incorporate Johnson buckling behavior so the analysis better reflected realistic structural conditions across a wider design space.
-
-That evolution was important because it reinforced the actual purpose of engineering analysis tools:
-
-not to generate pretty numbers, but to improve design decisions by becoming more accurate as understanding improves.
-
-## Structural Trade Studies
-
-The structural design space was less obvious than it initially appeared.
-
-For example, larger diameter thin-wall tubes can dramatically improve buckling efficiency while reducing mass. However, that same decision increases joint size, consumes packaging volume, and complicates surrounding interfaces.
-
-Using the sizing tool alongside team design discussions, we evaluated tradeoffs between:
-
-- hollow circular vs hollow square sections
-- diameter vs wall thickness
-- buckling efficiency vs packaging
-- lightweight optimization vs robustness
-- theoretical efficiency vs practical manufacturability
-
-This reinforced an important engineering lesson:
-
-**the mathematically optimal component is not always the best system design.**
-
-## Joint and Interface Design
-
-The structural members themselves are only part of the engineering problem.
-
-Joint design became equally important, since connection geometry directly affects load transfer, manufacturability, alignment tolerance, assembly complexity, and structural reliability.
-
-I explored early joint concepts intended to balance structural simplicity with practical assembly needs.
-
-<img src="/assets/images/tts_joint.png" alt="Preliminary joint concept design" style="width:100%; max-height:500px; object-fit:contain; margin: 20px 0;">
-
-<p style="font-size: 12px; color: #666; margin-top: 0;">
-Preliminary joint/interface concept exploration focused on manufacturability, alignment, and structural simplicity.
-</p>
-
-A recurring design question was how much adjustability should exist in the system.
-
-Too much adjustability introduces unnecessary complexity, additional failure points, and manufacturing burden.
-
-Too little makes alignment and assembly frustrating.
-
-These interface decisions felt much closer to real mechanical product design than purely academic structural analysis.
-
-## Current Development Phase
-
-The project is currently transitioning from preliminary architecture and analytical sizing into higher-fidelity structural validation.
-
-Current work includes:
-
-- refining full CAD geometry
-- improving subsystem integration
-- evaluating packaging conflicts
-- preparing ANSYS finite element analysis
-- identifying non-ideal failure modes
-- planning physical validation testing
-
-The MATLAB sizing tool was intentionally built as a first-pass design aid, not final structural proof.
-
-Future validation will examine:
-
-- full assembly stress behavior
-- joint loading
-- local yielding
-- local buckling
-- Johnson buckling effects
-- interface stiffness
-- full-system load distribution
-
-## Prototype and Validation Roadmap
-
-A major strength of this project is that it does not end at theoretical design.
-
-The planned engineering workflow includes:
-
-1. CAD refinement
-2. ANSYS structural validation
-3. prototype fabrication
-4. physical load testing
-5. iteration based on measured results
-
-That feedback loop is where engineering becomes real.
-
-The most elegant analysis means very little if the hardware disagrees.
-
-## What I Owned
-
-My contributions have focused on concept generation, analytical design tooling, and system-level structural design thinking.
-
-This includes:
-
-- compact clevis-style joint redesign using a clevis pin and retaining ring
-- full TTS assembly concept using circular hollow-section struts and annular interface rings
-- early TTS architecture concept development
-- structural concept iteration
-- system-level trade studies
-- MATLAB structural sizing GUI development
-- axial stress and buckling analysis
-- parametric design exploration
-- cross-section trade comparisons
-- joint/interface concept exploration
-- preparation for higher-fidelity validation
-
-### Summer 2026 Redesign and Structural Validation
-
-During Summer 2026, I redesigned the thrust transfer structure around six circular hollow-section aluminum struts connecting the engine and tank interface rings.
-
-The updated architecture uses compact clevis-style connections intended to let each strut behave approximately as a two-force member. A clevis pin and retaining ring connect each tubular strut to its bracket, while two bolts attach the bracket to the corresponding interface ring.
-
-The redesign focused on creating a clearer axial load path while reducing joint size, part count, and assembly complexity.
-
-<img src="/assets/images/tts_summer2026_concept.png" alt="Updated Citron thrust transfer structure concept with six tubular struts and compact clevis joints" style="width:100%; max-height:650px; object-fit:contain; margin:20px 0;">
-
-<p style="font-size:12px; color:#666; margin-top:0;">
-Updated six-member TTS concept integrating hollow aluminum struts, compact clevis-style joints, and preliminary engine and tank interface rings.
-</p>
-
-The interface rings shown in this model are preliminary geometry used to establish the structural layout, member locations, and overall packaging envelope. Their final thicknesses, mounting features, and local reinforcement will be developed as the surrounding propulsion interfaces mature.
-
-The updated assembly also corrected an earlier overconstrained member arrangement. Reducing the structure to six primary struts created a clearer and more predictable load path without introducing redundant members whose force distribution would depend heavily on manufacturing tolerances and joint stiffness.
+### Static Axial Stress
 
 The selected struts use 6061-T6 aluminum tubing with:
 
@@ -246,29 +135,9 @@ The selected struts use 6061-T6 aluminum tubing with:
 - 3/8-inch inside diameter
 - approximately 21-inch pin-center-to-pin-center length
 
-Aluminum provided sufficient strength and buckling resistance while remaining lightweight, readily available, weldable, and straightforward to analyze. It can also be treated as approximately isotropic, while a composite tube would require laminate-specific material properties, directional failure criteria, bonded metallic end fittings, and additional joint testing.
+A conservative 4,000 lbf total engine-thrust case was divided equally among six struts for the simplified member-level analysis, producing a 2,965 N reference load per strut.
 
-#### Static Stress Validation
-
-I first created a simplified ANSYS model of a single tubular strut to validate its basic axial behavior.
-
-The ends were modeled as pinned connections, allowing rotation while restraining the translations needed to represent the clevis interfaces. A compressive load of 2,965 N, or approximately 667 lbf, was applied to represent a conservative 4,000 lbf total thrust load divided equally among six struts.
-
-The analytical axial stress was calculated using:
-
-<div style="text-align:center; font-size:1.2rem; margin:24px 0;">
-  σ =
-  <span style="display:inline-block; vertical-align:middle; text-align:center; margin-left:6px;">
-    <span style="display:block; border-bottom:1px solid currentColor; padding:0 10px;">
-      F
-    </span>
-    <span style="display:block; padding-top:2px;">
-      A
-    </span>
-  </span>
-</div>
-
-For the selected tube geometry, the cross-sectional area is approximately 126.7 mm².
+The analytical axial stress was:
 
 <div style="text-align:center; font-size:1.2rem; margin:24px 0;">
   σ =
@@ -286,20 +155,16 @@ For the selected tube geometry, the cross-sectional area is approximately 126.7 
 <img src="/assets/images/tts_static_stress_fea.png" alt="ANSYS static structural stress result for the TTS aluminum strut" style="width:100%; max-height:650px; object-fit:contain; margin:20px 0;">
 
 <p style="font-size:12px; color:#666; margin-top:0;">
-Static structural analysis of one TTS strut under a 2,965 N compressive load. The approximately 23.4 MPa FEA result closely matched the analytical axial-stress calculation.
+Static structural analysis of one TTS strut under a 2,965 N compressive reference load. The approximately 23.4 MPa FEA result closely matched the analytical axial-stress calculation.
 </p>
 
-ANSYS predicted approximately 23.4 MPa of equivalent stress through the uniform section of the tube, closely matching the analytical result.
+The close agreement verified that the loading, cross-sectional geometry, material properties, and simplified boundary conditions were behaving as intended.
 
-This agreement confirmed that the applied loading, material properties, cross-sectional geometry, and boundary conditions were behaving as intended before progressing to buckling analysis.
+A higher-detail model including the tube end geometry produced a larger local stress near the load-transfer region. This shifted attention toward the tube-to-end-fitting interface and joint geometry rather than the uniform tube wall.
 
-A separate higher-detail model including the tube and end geometry produced a larger local stress near the load-transfer region. This identified the tube-to-end-fitting interface as an area requiring additional joint-level analysis rather than treating the complete strut as a perfectly uniform member.
+### Global Eigenvalue Buckling
 
-#### Eigenvalue Buckling Validation
-
-Because the members carry compression, material yielding was not the only potential failure mode. Global column buckling also needed to be evaluated.
-
-I first estimated the critical load analytically using Euler buckling for a pin-pin column:
+Global column buckling was first estimated analytically using Euler buckling for an ideal pin-pin member:
 
 <div style="text-align:center; font-size:1.2rem; margin:24px 0;">
   <em>P</em><sub>cr</sub> =
@@ -313,67 +178,186 @@ I first estimated the critical load analytically using Euler buckling for a pin-
   </span>
 </div>
 
-The hand calculation predicted a critical buckling load of approximately 1,460 lbf.
+The hand calculation predicted a critical load of approximately 1,460 lbf.
 
-I then performed a pre-stressed eigenvalue buckling analysis in ANSYS using the solved static load case. The first buckling mode produced a load multiplier of 2.2485.
-
-Using the 2,965 N reference load:
+The first ANSYS global buckling mode produced a load multiplier of 2.2485 using the 2,965 N reference load:
 
 <div style="text-align:center; font-size:1.2rem; margin:24px 0;">
-  <em>P</em><sub>cr</sub> = 2.2485 × 2,965 N
+  <em>P</em><sub>cr</sub> = 2.2485 × 2,965 N ≈ 6,667 N ≈ 1,499 lbf
 </div>
 
-<div style="text-align:center; font-size:1.2rem; margin:24px 0;">
-  <em>P</em><sub>cr</sub> ≈ 6,667 N ≈ 1,499 lbf
-</div>
-
-<img src="/assets/images/tts_buckling_fea.png" alt="First eigenvalue buckling mode of the TTS aluminum strut" style="width:100%; max-height:650px; object-fit:contain; margin:20px 0;">
+<img src="/assets/images/tts_buckling_fea.png" alt="First global eigenvalue buckling mode of the TTS aluminum strut" style="width:100%; max-height:650px; object-fit:contain; margin:20px 0;">
 
 <p style="font-size:12px; color:#666; margin-top:0;">
-First global buckling mode of the TTS strut. ANSYS predicted a critical load of approximately 1,499 lbf, within about 3% of the Euler buckling calculation.
+First global buckling mode of the TTS strut. The ANSYS critical load was within approximately 3% of the Euler prediction and showed the expected smooth lateral bow of a pin-pin column.
 </p>
 
-The FEA prediction was within approximately 3% of the analytical result. The first mode also showed the expected smooth lateral bow of a pin-pin column, providing a qualitative check that the model was producing the correct global failure mode.
+The displayed deformation magnitude in an eigenvalue result is arbitrary. The meaningful outputs are the mode shape and load multiplier.
 
-The deformation displayed in an eigenvalue buckling result is an arbitrary visualization scale. The meaningful outputs are the buckling mode shape and the load multiplier, not the displayed displacement magnitude.
+### Local Wall Buckling
 
-#### Interpretation and Limitations
+I also evaluated whether the tube wall could wrinkle locally before global column buckling or another failure mode became critical.
 
-The static and eigenvalue models validate the first-order axial stress and ideal global buckling behavior of an individual strut.
+The local mode family showed repeated helical wall lobing rather than a smooth lateral bow of the complete member.
 
-They do not represent complete flight qualification.
+<img src="/assets/images/tts_local_buckling_refined.png" alt="Refined ANSYS local wall buckling mode showing repeated helical lobing" style="width:100%; max-height:650px; object-fit:contain; margin:20px 0;">
 
-Additional validation is still needed to evaluate:
+<p style="font-size:12px; color:#666; margin-top:0;">
+Refined local wall-buckling mode showing repeated helical lobing. Eigenmode displacement magnitude is arbitrary; the meaningful outputs are the mode shape and load multiplier.
+</p>
 
-- unequal load sharing among the six struts
-- thrust misalignment and load eccentricity
+To verify that the result was not controlled by coupon length, I compared matching local-mode families:
+
+- 2.5-inch coupon: 2.1304 MN
+- 5-inch coupon: 2.1235 MN
+- difference: approximately 0.32%
+
+To verify that the result was not controlled by mesh density, I compared the baseline and refined meshes:
+
+- baseline mesh: 2.1304 MN
+- refined mesh: 2.1293 MN
+- difference: approximately 0.052%
+
+The same local-lobing family appeared in each study while the predicted critical load remained essentially unchanged.
+
+The converged linear eigenvalue prediction was approximately 2.13 MN.
+
+Compared with the 2,965 N reference member load, this is roughly 718 times higher.
+
+This ratio is not a real-world factor of safety because linear eigenvalue buckling assumes ideal geometry and linear elastic behavior. However, the separation is large enough to screen local wall buckling out as a governing failure mode for this design.
+
+## Current Joint Design
+
+Once the basic member geometry was established, the main design uncertainty shifted to the joints.
+
+I developed compact clevis-style connections intended to:
+
+- preserve a clear axial load path
+- let each strut behave approximately as a two-force member
+- reduce joint size
+- reduce part count
+- simplify assembly
+- provide positive pin retention
+
+### Bottom Joint
+
+<img src="/assets/images/tts_bottom_joint_closeup.png" alt="Closeup of the current lower TTS clevis-style joint" style="width:100%; max-height:650px; object-fit:contain; margin:20px 0;">
+
+<p style="font-size:12px; color:#666; margin-top:0;">
+Current lower joint concept using a clevis pin and retaining ring at the strut connection, with two bolts attaching the bracket to the engine-side interface.
+</p>
+
+### Top Joint
+
+<img src="/assets/images/tts_top_joint_closeup.png" alt="Closeup of the current upper TTS clevis-style joint" style="width:100%; max-height:650px; object-fit:contain; margin:20px 0;">
+
+<p style="font-size:12px; color:#666; margin-top:0;">
+Current upper joint concept adapted to the tank-side interface while preserving the same basic axial-member intent.
+</p>
+
+The real clevis joint permits rotation primarily about the pin axis. The simplified member-level FEA used idealized constraints to isolate tube stress and buckling behavior rather than claim that the complete joint had already been verified.
+
+Future joint-level analysis will evaluate:
+
 - clevis pin shear and bending
-- bearing stress around the pin holes
-- bracket bending and local yielding
-- bolt loading at the interface rings
+- bearing stress around pin holes
+- bracket bending
+- local yielding
+- bolt loading
 - weld and heat-affected-zone strength
-- interface-ring flexibility
+- interface stiffness
+- eccentric load introduction
+
+## Current Integrated Assembly
+
+<img src="/assets/images/tts_summer2026_concept.png" alt="Complete current six-strut thrust transfer structure assembly" style="width:100%; max-height:700px; object-fit:contain; margin:20px 0;">
+
+<p style="font-size:12px; color:#666; margin-top:0;">
+Current integrated TTS assembly with six hollow aluminum struts, compact clevis-style joints, and preliminary engine and tank interface rings.
+</p>
+
+The six-member layout replaced an earlier overconstrained arrangement.
+
+Reducing the system to six primary struts produced a clearer and more predictable load path without redundant members whose force distribution would depend heavily on manufacturing tolerances and joint stiffness.
+
+The interface rings remain preliminary. Their final thicknesses, bolt patterns, mounting features, and local reinforcement will be developed as the surrounding propulsion interfaces mature.
+
+## Current Engineering Conclusion
+
+The basic compression-member design is now supported by independent analytical and numerical evidence.
+
+- static stress matched the analytical axial-stress calculation
+- global buckling matched Euler within approximately 3%
+- local buckling was length-converged
+- local buckling was mesh-converged
+- local wall buckling was screened out as non-governing
+
+The remaining uncertainty is concentrated in:
+
+- joints
+- interfaces
+- unequal load sharing
+- thrust misalignment
 - geometric imperfections
-- nonlinear buckling behavior
-- vibration and dynamic launch loading
-- packaging and tool access around propulsion hardware
+- nonlinear behavior
+- full-system dynamics
+- physical test correlation
 
-The next phase will incorporate more detailed joint geometry, realistic interface stiffness, and full-assembly load distribution. Physical testing will ultimately be used to compare the analytical and numerical predictions against actual hardware behavior.
+## Background and Earlier Concepts
 
-## Key Takeaways
+The current design is the result of several earlier concepts and trade studies. These are included below for readers who want the full development history.
 
-This project progressed from an open-ended structural problem into a traceable engineering workflow:
+<details>
+<summary><strong>Original Sleeve-Bearing and Ball-Joint Concept</strong></summary>
 
-1. establish the load path and system requirements
-2. perform first-pass hand calculations
-3. automate design exploration using MATLAB
-4. develop the joints and complete CAD architecture
-5. validate axial stress using static FEA
-6. validate global buckling using hand calculations and eigenvalue FEA
-7. identify the limitations requiring higher-fidelity analysis and testing
+<img src="/assets/images/tts_joint.png" alt="Earlier TTS joint concept using custom sleeve bearings and a ball joint" style="width:100%; max-height:550px; object-fit:contain; margin:20px 0;">
 
-The strongest lesson was that analysis is most valuable when it is used to build confidence step by step.
+<p style="font-size:12px; color:#666; margin-top:0;">
+Earlier joint concept using custom sleeve bearings, a shoulder screw, and a ball-joint interface to provide alignment adjustment.
+</p>
 
-The hand calculations provided an independent prediction. The simplified static model verified the loading and boundary conditions. The buckling model reproduced both the expected failure shape and critical load. The remaining uncertainty is now concentrated in the joints, interfaces, imperfections, and full-system behavior rather than the basic compression-member sizing.
+This concept explored adjustability and alignment tolerance, but introduced additional custom hardware, manufacturing complexity, and potential failure points.
 
-That progression from concept development to analytical sizing and numerical validation has made the TTS one of my most complete mechanical engineering projects.
+The later clevis-style design reduced the mechanism to a simpler and more compact load path.
+
+</details>
+
+<details>
+<summary><strong>Original Full-System Architecture</strong></summary>
+
+Early in the project, I developed a conceptual TTS architecture inspired by the <a href="https://www.kegrocket.com/" target="_blank">Keg rocket</a> structural layout.
+
+<img src="/assets/images/tts_conc1.png" alt="Early TTS architecture using perforated structural members and sheet metal" style="width:100%; max-height:600px; object-fit:contain; margin:20px 0;">
+
+<p style="font-size:12px; color:#666; margin-top:0;">
+Early architecture exploring standardized perforated members, sheet-metal construction, and circular interfaces.
+</p>
+
+The concept explored whether standard components could simplify manufacturing.
+
+It was not carried forward because:
+
+- it consumed too much engine-bay volume
+- major thrust loads would have passed through fasteners in shear
+- the resulting load path was less direct than the later axial-strut architecture
+
+Even though it was rejected, it helped define what the final architecture needed to avoid.
+
+</details>
+
+<details>
+<summary><strong>Structural Trade Studies</strong></summary>
+
+Using the MATLAB tool and team design discussions, I evaluated tradeoffs between:
+
+- hollow circular and hollow square sections
+- outside diameter and wall thickness
+- buckling efficiency and packaging volume
+- lightweight optimization and robustness
+- theoretical efficiency and practical manufacturability
+
+A larger-diameter thin-wall tube may be mathematically efficient, but it also increases joint size and consumes more packaging volume.
+
+The best member was therefore not simply the geometry with the highest analytical factor of safety. It had to work as part of the complete mechanical system.
+
+</details>
