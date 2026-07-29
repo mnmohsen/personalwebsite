@@ -296,7 +296,7 @@ Local buckling is different. It occurs when the tube wall itself wrinkles, ovali
 
 I created short tube coupon models to isolate the local wall-buckling family without requiring the complete 21-inch member.
 
-<img src="/assets/images/tts_local_buckling_refined.png" alt="Refined ANSYS local wall buckling mode showing repeated helical wall lobing" style="width:100%; max-height:650px; object-fit:contain; margin:20px 0;">
+<img src="/assets/images/locbuckling.png" alt="Refined ANSYS local wall buckling mode showing repeated helical wall lobing" style="width:100%; max-height:650px; object-fit:contain; margin:20px 0;">
 
 <p style="font-size:12px; color:#666; margin-top:0;">
 Refined local wall-buckling mode showing repeated helical lobing of the tube wall.
