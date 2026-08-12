@@ -461,7 +461,7 @@ I therefore investigated alternative retaining-ring designs and transitioned to 
   </div>
 
   <div>
-    <img src="/assets/images/smalley_retaining_ring.png"
+    <img src="/assets/images/retainingring.png"
          alt="Smalley retaining ring selected for TTS clevis-pin retention"
          style="width:100%; height:360px; object-fit:contain;">
     <p style="font-size:12px; color:#666; margin-top:6px;">
