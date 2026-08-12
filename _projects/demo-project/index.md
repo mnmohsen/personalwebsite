@@ -427,10 +427,10 @@ I developed compact clevis-style joints intended to:
 
 ### Bottom Joint
 
-<img src="/assets/images/bottomjoint.png" alt="Closeup of the current lower TTS clevis-style joint" style="width:100%; max-height:650px; object-fit:contain; margin:20px 0;">
+<img src="/assets/images/bottomjoint_smalley.png" alt="Current lower TTS clevis-style joint using a Smalley retaining ring for clevis-pin retention" style="width:100%; max-height:650px; object-fit:contain; margin:20px 0;">
 
 <p style="font-size:12px; color:#666; margin-top:0;">
-Current lower joint design using a clevis pin and retaining ring at the strut connection, with two bolts attaching the bracket to the engine-side interface.
+Current lower joint design using a clevis pin and Smalley retaining ring at the strut connection, with two bolts attaching the bracket to the engine-side interface.
 </p>
 
 The bottom joint transfers load between the engine-side interface and the tubular strut.
@@ -445,33 +445,35 @@ The connection uses:
 
 ### Retaining-Ring Development
 
-I evaluated retaining-ring options for positive axial retention of the clevis pins while keeping the joint compact and easy to assemble.
+The initial clevis-pin retention concept used conventional C-clips. Although compact, the C-clips provided limited engagement with the pin groove and were not a robust choice for a vibration-sensitive rocket structure.
 
-After developing the groove and pin concept, I worked directly with Smalley to review the application and identify a compatible retaining-ring solution. Their engineering team confirmed the concept was viable and provided sample rings for prototype evaluation.
+I therefore investigated alternative retaining-ring designs and transitioned to a Smalley retaining ring with greater circumferential engagement around the clevis pin.
 
-<div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:18px; align-items:center; margin:20px 0;">
+<div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:18px; align-items:start; margin:20px 0;">
 
   <div>
     <img src="/assets/images/bottomjoint.png"
-         alt="TTS clevis joint using a clevis pin and retaining ring"
-         style="width:100%; max-height:400px; object-fit:contain;">
+         alt="Earlier TTS clevis joint concept using conventional C-clips for clevis-pin retention"
+         style="width:100%; height:360px; object-fit:contain;">
     <p style="font-size:12px; color:#666; margin-top:6px;">
-      Clevis-pin joint architecture developed for a compact axial load path and positive pin retention.
+      <strong>Initial concept:</strong> Conventional C-clips provided a compact retention method but limited engagement around the clevis-pin groove.
     </p>
   </div>
 
   <div>
     <img src="/assets/images/smalley_retaining_ring.png"
-         alt="Smalley retaining ring selected for prototype TTS clevis-pin retention"
-         style="width:100%; max-height:400px; object-fit:contain;">
+         alt="Smalley retaining ring selected for TTS clevis-pin retention"
+         style="width:100%; height:360px; object-fit:contain;">
     <p style="font-size:12px; color:#666; margin-top:6px;">
-      Smalley retaining-ring hardware selected for prototype fit and retention testing.
+      <strong>Refined solution:</strong> Smalley retaining ring selected for greater circumferential engagement and positive axial pin retention.
     </p>
   </div>
 
 </div>
 
-This moved the joint beyond a CAD-only concept by incorporating supplier feedback and physical hardware intended for prototype evaluation.
+After developing the revised groove and pin concept, I worked directly with Smalley to review the application and identify a compatible retaining ring. Their engineering team reviewed the concept, confirmed the retaining-ring approach was viable, and provided sample rings for prototype fit and retention testing.
+
+This progression moved the joint from an initial C-clip concept to a supplier-reviewed retention solution with physical hardware available for prototype evaluation.
 
 ### Top Joint
 
