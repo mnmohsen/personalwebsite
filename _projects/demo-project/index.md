@@ -427,7 +427,7 @@ I developed compact clevis-style joints intended to:
 
 ### Bottom Joint
 
-<img src="/assets/images/bottomjoint_smalley.png" alt="Current lower TTS clevis-style joint using a Smalley retaining ring for clevis-pin retention" style="width:100%; max-height:650px; object-fit:contain; margin:20px 0;">
+<img src="/assets/images/newbotjoints.png" alt="Current lower TTS clevis-style joint using a Smalley retaining ring for clevis-pin retention" style="width:100%; max-height:650px; object-fit:contain; margin:20px 0;">
 
 <p style="font-size:12px; color:#666; margin-top:0;">
 Current lower joint design using a clevis pin and Smalley retaining ring at the strut connection, with two bolts attaching the bracket to the engine-side interface.
