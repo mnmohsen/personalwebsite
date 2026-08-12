@@ -26,7 +26,7 @@ As part of the Michigan Aeronautical Science Association Structures team, I rede
 
 The TTS transfers engine thrust into the rocket airframe through six compression-loaded aluminum struts. My work combined first-principles structural analysis, automated design exploration, finite element analysis, joint design, packaging, and full-system CAD integration.
 
-<img src="/assets/images/tts_summer2026_concept.png" alt="Current Citron thrust transfer structure assembly with six tubular struts and compact clevis-style joints" style="width:100%; max-height:750px; object-fit:contain; margin:20px 0;">
+<img src="/assets/images/tts_summer2026_conceptv2.png" alt="Current Citron thrust transfer structure assembly with six tubular struts and compact clevis-style joints" style="width:100%; max-height:750px; object-fit:contain; margin:20px 0;">
 
 <p style="font-size:12px; color:#666; margin-top:0;">
 Current Summer 2026 TTS design integrating six hollow aluminum struts, compact clevis-style joints, and preliminary engine and tank interface rings.
