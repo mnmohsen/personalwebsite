@@ -1,13 +1,14 @@
 ---
 layout: post
 title: Michigan Aeronautical Science Association
-description: Design and structural verification of the thrust transfer structure for MASA’s Citron liquid rocket, including analytical sizing, finite element analysis, joint design, and system integration.
+description: Design and structural verification of the thrust transfer structure for MASA’s Citron liquid rocket, including analytical sizing, FEA, topology optimization, joint design, and system integration.
 skills:
   - Mechanical Design
   - Structural Analysis
   - Siemens NX
   - MATLAB
   - ANSYS
+  - Topology Optimization
   - Finite Element Analysis
   - Aerospace Structures
   - Buckling Analysis
@@ -35,6 +36,9 @@ Current Summer 2026 TTS design integrating six hollow aluminum struts, compact c
 
 - six primary 6061-T6 aluminum struts
 - compact clevis-style top and bottom joints
+- engine-side interface ring redesigned using ANSYS topology optimization
+- topology result converted into simplified, manufacturable CAD
+- clevis-pin retention concept developed using Smalley retaining rings
 - 2,965 N axial reference load used for isolated strut verification
 - analytical and FEA axial stress of approximately 23.4 MPa
 - global buckling FEA within approximately 3% of the Euler calculation
@@ -75,6 +79,10 @@ My work included:
 - parametric geometry and cross-section trade studies
 - six-strut TTS architecture development
 - compact clevis-style top and bottom joint design
+- clevis-pin retention and retaining-ring selection
+- supplier coordination for prototype retaining-ring samples
+- engine-side interface-ring topology optimization
+- topology-driven CAD redesign for manufacturability
 - tube end-fitting and interface development
 - static stress verification in ANSYS
 - global eigenvalue-buckling analysis
@@ -351,6 +359,57 @@ However, the difference is sufficiently large to screen local wall buckling out 
 
 The more credible member-level concern remains global column buckling, followed by the joint, weld, and interface behavior.
 
+## Engine-Side Ring Topology Optimization
+
+After establishing the six-strut architecture, I used ANSYS topology optimization to reduce material in the preliminary engine-side interface ring while maintaining the primary thrust load paths.
+
+The baseline model applied the full engine thrust through the central interface and transferred the load into the six strut-joint locations. Critical engine and joint interfaces were preserved while the remaining plate material was treated as the design region.
+
+<div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:18px; align-items:start; margin:24px 0;">
+
+  <div>
+    <img src="/assets/images/tts_ring_original.png"
+         alt="Original solid engine-side TTS interface ring before topology optimization"
+         style="width:100%; height:240px; object-fit:contain;">
+    <p style="font-size:12px; color:#666; margin-top:6px;">
+      <strong>Baseline:</strong> Original solid interface ring used to establish the load path and protected mounting regions.
+    </p>
+  </div>
+
+  <div>
+    <img src="/assets/images/tts_ring_topology.png"
+         alt="ANSYS topology optimization result for the TTS engine-side interface ring"
+         style="width:100%; height:240px; object-fit:contain;">
+    <p style="font-size:12px; color:#666; margin-top:6px;">
+      <strong>Topology result:</strong> Optimization concentrated material along the primary paths between the engine interface and strut joints while opening three low-value regions.
+    </p>
+  </div>
+
+  <div>
+    <img src="/assets/images/tts_ring_refined.png"
+         alt="Refined manufacturable TTS interface ring based on the topology optimization result"
+         style="width:100%; height:240px; object-fit:contain;">
+    <p style="font-size:12px; color:#666; margin-top:6px;">
+      <strong>Refined design:</strong> The raw density result was rebuilt as clean CAD with three through-pockets, smooth load paths, joint pads, and manufacturable fillets.
+    </p>
+  </div>
+
+</div>
+
+Rather than directly manufacturing the organic optimization mesh, I treated it as a load-path study. The result showed that the original continuous plate could be reorganized into a triangular three-lobed structure surrounding the central engine interface.
+
+As a load-magnitude sensitivity check, I repeated the optimization at 2,945 lbf and 4,000 lbf system-thrust cases. Both produced essentially the same three-lobed load-path architecture, indicating that the identified topology was insensitive to load magnitude over the evaluated range under the same loading direction and boundary conditions.
+
+I rebuilt the result as conventional CAD with:
+
+- three large through-pockets
+- continuous material around the engine interface
+- reinforced regions around the strut mounting holes
+- smooth transitions and fillets instead of element-scale topology features
+- constant plate thickness for straightforward machining
+
+The refined geometry is then evaluated in a separate static structural model using the same loading and interface assumptions as the baseline design. This provides a direct comparison of mass, stiffness, deformation, and stress after removing the low-value material.
+
 ## Current Joint Design
 
 Once the basic tube behavior was established, the main uncertainty shifted to the joints and load-transfer interfaces.
@@ -381,8 +440,38 @@ The connection uses:
 - a tubular welded end fitting
 - a clevis-style bracket
 - a clevis pin
-- a retaining ring
+- a Smalley retaining ring for axial pin retention
 - two bolts connecting the bracket to the interface ring
+
+### Retaining-Ring Development
+
+I evaluated retaining-ring options for positive axial retention of the clevis pins while keeping the joint compact and easy to assemble.
+
+After developing the groove and pin concept, I worked directly with Smalley to review the application and identify a compatible retaining-ring solution. Their engineering team confirmed the concept was viable and provided sample rings for prototype evaluation.
+
+<div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:18px; align-items:center; margin:20px 0;">
+
+  <div>
+    <img src="/assets/images/bottomjoint.png"
+         alt="TTS clevis joint using a clevis pin and retaining ring"
+         style="width:100%; max-height:400px; object-fit:contain;">
+    <p style="font-size:12px; color:#666; margin-top:6px;">
+      Clevis-pin joint architecture developed for a compact axial load path and positive pin retention.
+    </p>
+  </div>
+
+  <div>
+    <img src="/assets/images/smalley_retaining_ring.png"
+         alt="Smalley retaining ring selected for prototype TTS clevis-pin retention"
+         style="width:100%; max-height:400px; object-fit:contain;">
+    <p style="font-size:12px; color:#666; margin-top:6px;">
+      Smalley retaining-ring hardware selected for prototype fit and retention testing.
+    </p>
+  </div>
+
+</div>
+
+This moved the joint beyond a CAD-only concept by incorporating supplier feedback and physical hardware intended for prototype evaluation.
 
 ### Top Joint
 
@@ -545,7 +634,6 @@ The structural design space included tradeoffs between:
 - theoretical efficiency and practical manufacturability
 
 A mathematically optimal component is not necessarily the best system-level design.
-
 The final member geometry had to provide adequate structural performance while also fitting within the engine bay, connecting to manufacturable joints, preserving plumbing space, and remaining realistic for the team to fabricate and inspect.
 
 </div>
