@@ -58,7 +58,6 @@ main-image: /image_rockit.png
 
 <div class="tts-project" markdown="1">
 
-
 ## Thrust Transfer Structure Design and Verification
 
 As part of the Michigan Aeronautical Science Association Structures team, I redesigned the Thrust Transfer Structure for Citron, MASA’s liquid rocket vehicle.
@@ -203,7 +202,7 @@ For each candidate section, the same analytical model reported cross-sectional a
 
 I also participated in team discussions around the broader member selection, where the structural results from the MATLAB tool were considered alongside packaging, fabrication, integration, and availability constraints. These discussions, together with input from other Structures team members, guided the final selection rather than the decision coming from the analytical model alone.
 
-Composite tubing, including carbon fiber, was considered because of its potential mass savings. However, for a student-built launch vehicle, sourcing and fabricating suitable composite members would have been more difficult, and integrating metallic end fittings would introduce additional joint complexity. Structural validation would also require laminate-specific orthotropic material properties and more specialized failure criteria than the approximately isotropic aluminum model.
+Composite tubing, including carbon fiber, was also considered because of its potential mass savings. However, sourcing and fabricating suitable composite tubes would have been more difficult for a student team. The existing welded end cap concept would also require a different load transfer method for a composite tube, introducing additional interface design and validation work. Structural analysis would be more involved as well because the composite would require orthotropic material properties and laminate-specific failure criteria rather than the simpler isotropic aluminum model.
 
 The team ultimately selected hollow circular 6061-T6 aluminum tubing as the best overall fit for the TTS. My contribution was developing the sizing tool, performing the cross-section and buckling analysis, and participating in the team trade discussions that supported that decision.
 
@@ -274,9 +273,9 @@ This agreement verified that the simplified model’s:
 
 were behaving as intended before progressing to buckling analysis.
 
-A separate higher-detail model that included the tube end geometry produced a larger local stress near the load-transfer region.
+A separate higher-detail model that included the tube end cap geometry produced a larger local stress near the load-transfer region.
 
-This indicated that the tube-to-end-fitting interface required joint-level investigation rather than treating the complete strut as a perfectly uniform member.
+This indicated that the tube to end-cap interface required joint-level investigation rather than treating the complete strut as a perfectly uniform member.
 
 ### Global Eigenvalue Buckling
 
@@ -478,13 +477,13 @@ The bottom joint transfers load between the engine-side interface and the tubula
 
 The connection uses:
 
-- a tubular welded end fitting
+- a welded tube end cap
 - a clevis-style bracket
 - a clevis pin
 - a Smalley retaining ring for axial pin retention
 - two bolts connecting the bracket to the interface ring
 
-The tubular welded end-fitting concept and supporting weld calculations were developed by another Structures team member and incorporated into the current strut assembly.
+The welded tube end cap concept and supporting weld calculations were developed by Gabe Popso and incorporated into the current strut assembly.
 
 ### Retaining-Ring Development
 
@@ -680,6 +679,7 @@ The structural design space included tradeoffs between:
 - theoretical efficiency and practical manufacturability
 
 A mathematically optimal component is not necessarily the best system-level design.
+
 The final member geometry had to provide adequate structural performance while also fitting within the engine bay, connecting to manufacturable joints, preserving plumbing space, and remaining realistic for the team to fabricate and inspect.
 
 </div>
