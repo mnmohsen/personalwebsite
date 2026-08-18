@@ -20,6 +20,45 @@ skills:
 main-image: /image_rockit.png
 ---
 
+<style>
+.tts-project h2 {
+  font-size: 2rem !important;
+  font-weight: 700 !important;
+  line-height: 1.2 !important;
+  margin: 2.4rem 0 1rem !important;
+}
+
+.tts-project h3 {
+  font-size: 1.5rem !important;
+  font-weight: 700 !important;
+  line-height: 1.25 !important;
+  margin: 2rem 0 0.8rem !important;
+}
+
+.tts-project h4 {
+  font-size: 1.25rem !important;
+  font-weight: 700 !important;
+  line-height: 1.3 !important;
+  margin: 1.6rem 0 0.7rem !important;
+}
+
+.tts-project ul,
+.tts-project ol {
+  margin-top: 0.65rem !important;
+  margin-bottom: 1.25rem !important;
+  padding-left: 1.5rem !important;
+}
+
+.tts-project li {
+  font-size: 1.08rem !important;
+  line-height: 1.5 !important;
+  margin: 0.18rem 0 !important;
+}
+</style>
+
+<div class="tts-project" markdown="1">
+
+
 ## Thrust Transfer Structure Design and Verification
 
 As part of the Michigan Aeronautical Science Association Structures team, I redesigned the Thrust Transfer Structure for Citron, MASA’s liquid rocket vehicle.
@@ -84,7 +123,6 @@ My work included:
 - supplier coordination for prototype retaining-ring samples
 - engine-side interface-ring topology optimization
 - topology-driven CAD redesign for manufacturability
-- tube end-fitting and interface development
 - static stress verification in ANSYS
 - global eigenvalue-buckling analysis
 - local wall-buckling analysis
@@ -157,30 +195,17 @@ Initial hand calculations used to establish and independently check the equation
 
 The GUI was used as a first-pass design-space filter rather than final structural proof. Its purpose was to identify promising configurations before higher-fidelity analysis.
 
-## Structural Trade Studies
+## Cross-Section and Material Trade Study
 
-The mathematically most efficient member was not automatically the best component for the complete system.
+In addition to sizing a single member geometry, I used the MATLAB tool to compare hollow circular and hollow square cross-sections across changes in outside dimension and wall thickness.
 
-For example, increasing tube diameter can greatly improve the area moment of inertia and buckling resistance without a proportional increase in mass. However, that same decision also:
+For each candidate section, the same analytical model reported cross-sectional area, axial stress, Euler or Johnson critical buckling load, and buckling factor of safety. This let me compare section geometry on a consistent basis and quantify how changes in member dimensions affected buckling performance.
 
-- increases joint size
-- consumes engine-bay volume
-- creates additional plumbing conflicts
-- requires larger brackets and interfaces
-- complicates manufacturing and assembly
+I also participated in team discussions around the broader member selection, where the structural results from the MATLAB tool were considered alongside packaging, fabrication, integration, and availability constraints. These discussions, together with input from other Structures team members, guided the final selection rather than the decision coming from the analytical model alone.
 
-Using the MATLAB tool alongside packaging and manufacturing discussions, I evaluated tradeoffs between:
+Composite tubing, including carbon fiber, was considered because of its potential mass savings. However, for a student-built launch vehicle, sourcing and fabricating suitable composite members would have been more difficult, and integrating metallic end fittings would introduce additional joint complexity. Structural validation would also require laminate-specific orthotropic material properties and more specialized failure criteria than the approximately isotropic aluminum model.
 
-- circular and square hollow sections
-- outside diameter and wall thickness
-- buckling resistance and packaging volume
-- minimum mass and structural robustness
-- analytical efficiency and practical manufacturability
-- aluminum and composite construction
-
-The selected circular 6061-T6 aluminum tubing provided sufficient analytical performance while remaining readily available, weldable, approximately isotropic, and straightforward to inspect and analyze.
-
-A composite tube could potentially reduce mass, but it would require laminate-specific properties, directional failure criteria, bonded metallic end fittings, and additional joint testing.
+The team ultimately selected hollow circular 6061-T6 aluminum tubing as the best overall fit for the TTS. My contribution was developing the sizing tool, performing the cross-section and buckling analysis, and participating in the team trade discussions that supported that decision.
 
 ## ANSYS Structural Verification
 
@@ -459,6 +484,8 @@ The connection uses:
 - a Smalley retaining ring for axial pin retention
 - two bolts connecting the bracket to the interface ring
 
+The tubular welded end-fitting concept and supporting weld calculations were developed by another Structures team member and incorporated into the current strut assembly.
+
 ### Retaining-Ring Development
 
 The initial clevis-pin retention concept used conventional C-clips. Although compact, the C-clips provided limited engagement with the pin groove and were not a robust choice for a vibration-sensitive rocket structure.
@@ -657,3 +684,5 @@ The final member geometry had to provide adequate structural performance while a
 
 </div>
 </details>
+
+</div>
