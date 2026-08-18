@@ -41,6 +41,7 @@ Current Summer 2026 TTS design integrating six hollow aluminum struts, compact c
 - clevis-pin retention concept developed using Smalley retaining rings
 - 2,965 N axial reference load used for isolated strut verification
 - analytical and FEA axial stress of approximately 23.4 MPa
+- 2.25× ideal global buckling factor of safety under the evaluated member-level load case, exceeding the 1.5× design requirement
 - global buckling FEA within approximately 3% of the Euler calculation
 - local wall-buckling result converged with respect to coupon length and mesh density
 - converged ideal local-buckling eigenvalue of approximately 2.13 MN
@@ -285,6 +286,21 @@ Using the 2,965 N reference load:
 <div style="text-align:center; font-size:1.2rem; margin:24px 0;">
   <em>P</em><sub>cr</sub> ≈ 6,667 N ≈ 1,499 lbf
 </div>
+
+<div style="text-align:center; font-size:1.2rem; margin:24px 0;">
+  FoS<sub>buckling</sub> =
+  <span style="display:inline-block; vertical-align:middle; text-align:center; margin:0 6px;">
+    <span style="display:block; border-bottom:1px solid currentColor; padding:0 10px;">
+      6,667 N
+    </span>
+    <span style="display:block; padding-top:2px;">
+      2,965 N
+    </span>
+  </span>
+  ≈ <strong>2.25</strong>
+</div>
+
+The isolated strut therefore achieved an ideal global buckling factor of safety of approximately **2.25**, exceeding the **1.5× structural requirement** for the evaluated member-level load case.
 
 <img src="/assets/images/tts_buckling_fea.png" alt="First global eigenvalue buckling mode of the TTS aluminum strut" style="width:100%; max-height:650px; object-fit:contain; margin:20px 0;">
 
@@ -535,10 +551,11 @@ The analysis showed that:
 
 1. the MATLAB tool reproduced the first-principles member calculations
 2. static FEA matched the analytical axial-stress result
-3. global buckling FEA matched Euler within approximately 3%
-4. the local-buckling result was length-converged
-5. the local-buckling result was mesh-converged
-6. local wall buckling does not govern the selected tube design
+3. the isolated strut achieved approximately **2.25× ideal global buckling factor of safety**, exceeding the **1.5× structural requirement**
+4. global buckling FEA matched Euler within approximately 3%
+5. the local-buckling result was length-converged
+6. the local-buckling result was mesh-converged
+7. local wall buckling does not govern the selected tube design
 
 The remaining design uncertainty is concentrated in:
 
