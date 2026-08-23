@@ -290,7 +290,7 @@ The final step for V1 was testing the assembly in its actual use environment.
 
 Rather than stopping at a bench-top fit check, I installed the mount on the bicycle and used the LED during night riding.
 
-<img class="video-gif" src="/images/bike-light-riding.gif" alt="Bicycle LED mount operating during night riding">
+<img class="video-gif" src="/images/mount_riding.gif" alt="Bicycle LED mount operating during night riding">
 <p class="caption">Functional testing of the V1 mount during night riding.</p>
 
 The prototype remained functional during use and demonstrated that the overall mounting architecture was viable.
