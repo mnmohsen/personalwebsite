@@ -8,7 +8,7 @@ skills:
   - Design for Additive Manufacturing
   - 3D Printing
   - Prototyping & Testing
-main-image: /assets/images/bike-light-mount/hero.png
+main-image: /assets/images/hero.png
 ---
 
 <style>
