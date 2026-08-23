@@ -93,7 +93,7 @@ The resulting assembly was designed in **SolidWorks**, manufactured in PETG usin
 
 The first functional version successfully mounted the lamp, retained its indexed angular adjustment, allowed the lamp assembly to slide off without tools, and reduced the handlebar attachment to only **two fasteners**.
 
-<img class="project-image" src="/assets/images/bike_hero.jpeg" alt="Completed removable bicycle LED light mount installed on bicycle">
+<img class="project-image" src="/assets/images/bike_hero.JPEG" alt="Completed removable bicycle LED light mount installed on bicycle">
 <p class="caption">Functional V1 prototype installed on the bicycle.</p>
 
 ## Starting With the Existing Product
