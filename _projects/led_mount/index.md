@@ -9,7 +9,7 @@ skills:
   - FDM 3D Printing
   - Prototyping
   - Design Iteration
-main-image: /images/bike-light-hero.jpg
+main-image: /hero_v3.png
 ---
 
 <style>
