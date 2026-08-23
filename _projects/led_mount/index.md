@@ -131,7 +131,7 @@ This separation allowed each portion of the design to serve a distinct function.
 
 The handlebar base provides structural support and alignment, while the lamp carrier can be removed independently whenever the light needs to be charged.
 
-<img class="project-image" src="/images/bike-light-cad.jpg" alt="SolidWorks CAD assembly of bicycle LED light mount">
+<img class="project-image" src="/images/mount_cad.png" alt="SolidWorks CAD assembly of bicycle LED light mount">
 <p class="caption">SolidWorks assembly showing the handlebar clamps, structural bridge, removable lamp carrier, and sliding interfaces.</p>
 
 ## Tool-Free Removal for Charging
