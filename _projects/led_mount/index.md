@@ -8,7 +8,7 @@ skills:
   - Design for Additive Manufacturing
   - 3D Printing
   - Prototyping & Testing
-main-image: /hero_v2.png
+main-image: /hero_v3.png
 ---
 
 <style>
