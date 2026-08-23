@@ -1,689 +1,235 @@
 ---
 layout: post
-title: Michigan Aeronautical Science Association
-description: Design and structural verification of the thrust transfer structure for MASA’s Citron liquid rocket, including analytical sizing, FEA, topology optimization, joint design, and system integration.
+title: Removable Bicycle LED Light Mount
+description: Designed, prototyped, and tested a two-fastener PETG bicycle light mount with tool-free lamp removal, indexed angle adjustment, and integrated snap-fit joints.
 skills:
+  - SolidWorks
   - Mechanical Design
-  - Structural Analysis
-  - Siemens NX
-  - MATLAB
-  - ANSYS
-  - Topology Optimization
-  - Finite Element Analysis
-  - Aerospace Structures
-  - Buckling Analysis
-  - Joint Design
-  - System Integration
-  - Design for Manufacturability
-  - Design Iteration
-
-main-image: /image_rockit.png
+  - Design for Additive Manufacturing
+  - 3D Printing
+  - Prototyping & Testing
+main-image: /assets/images/bike-light-mount/hero.jpg
 ---
 
 <style>
-.tts-project h2 {
-  font-size: 2rem !important;
-  font-weight: 700 !important;
-  line-height: 1.2 !important;
-  margin: 2.4rem 0 1rem !important;
+.bike-light-project h2 {
+  font-size: 1.85rem;
+  font-weight: 700;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
 }
 
-.tts-project h3 {
-  font-size: 1.5rem !important;
-  font-weight: 700 !important;
-  line-height: 1.25 !important;
-  margin: 2rem 0 0.8rem !important;
+.bike-light-project h3 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
 }
 
-.tts-project h4 {
-  font-size: 1.25rem !important;
-  font-weight: 700 !important;
-  line-height: 1.3 !important;
-  margin: 1.6rem 0 0.7rem !important;
+.bike-light-project p,
+.bike-light-project li {
+  line-height: 1.65;
 }
 
-.tts-project ul,
-.tts-project ol {
-  margin-top: 0.65rem !important;
-  margin-bottom: 1.25rem !important;
-  padding-left: 1.5rem !important;
+.bike-light-project .project-image {
+  width: 100%;
+  max-height: 650px;
+  object-fit: contain;
+  margin: 1.5rem 0 0.35rem 0;
 }
 
-.tts-project li {
-  font-size: 1.08rem !important;
-  line-height: 1.5 !important;
-  margin: 0.18rem 0 !important;
+.bike-light-project .caption {
+  font-size: 12px;
+  color: #666;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+}
+
+.bike-light-project .image-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin: 1.5rem 0 0.35rem 0;
+}
+
+.bike-light-project .image-grid img {
+  width: 100%;
+  height: 100%;
+  max-height: 480px;
+  object-fit: contain;
+}
+
+@media (max-width: 700px) {
+  .bike-light-project .image-grid {
+    grid-template-columns: 1fr;
+  }
 }
 </style>
 
-<div class="tts-project" markdown="1">
+<div class="bike-light-project" markdown="1">
 
-## Thrust Transfer Structure Design and Verification
+# Removable Bicycle LED Light Mount
 
-As part of the Michigan Aeronautical Science Association Structures team, I redesigned the Thrust Transfer Structure for Citron, MASA’s liquid rocket vehicle.
+I wanted a substantially brighter light for riding my bicycle at night, but the rechargeable LED lamp I had available was originally designed as a headlamp. Rather than replace it, I designed a dedicated mounting system that could securely integrate the lamp with my bicycle while preserving its original angle adjustment and allowing it to be quickly removed for charging.
 
-The TTS transfers engine thrust into the rocket airframe through six compression-loaded aluminum struts. My work combined first-principles structural analysis, automated design exploration, finite element analysis, joint design, packaging, and full-system CAD integration.
+The result was a multi-part PETG assembly designed in **SolidWorks**, manufactured with FDM 3D printing, and iterated through physical testing on the bicycle.
 
-<img src="/assets/images/tts_summer2026_conceptv2.png" alt="Current Citron thrust transfer structure assembly with six tubular struts and compact clevis-style joints" style="width:100%; max-height:750px; object-fit:contain; margin:20px 0;">
+The first functional prototype successfully mounted the lamp, retained its adjustable aiming mechanism, reduced the handlebar attachment to only **two fasteners**, and allowed the entire lamp carrier to slide off the bicycle without tools.
 
-<p style="font-size:12px; color:#666; margin-top:0;">
-Current Summer 2026 TTS design integrating six hollow aluminum struts, compact clevis-style joints, and preliminary engine and tank interface rings.
-</p>
+<img class="project-image" src="/assets/images/bike-light-mount/hero.jpg" alt="Completed removable LED bicycle light mount installed on bicycle">
+<p class="caption">Iteration 1 installed and tested on the bicycle.</p>
 
-### Current Results
+## Defining the Problem
 
-- six primary 6061-T6 aluminum struts
-- compact clevis-style top and bottom joints
-- engine-side interface ring redesigned using ANSYS topology optimization
-- topology result converted into simplified, manufacturable CAD
-- clevis-pin retention concept developed using Smalley retaining rings
-- 2,965 N axial reference load used for isolated strut verification
-- analytical and FEA axial stress of approximately 23.4 MPa
-- 2.25× ideal global buckling factor of safety under the evaluated member-level load case, exceeding the 1.5× design requirement
-- global buckling FEA within approximately 3% of the Euler calculation
-- local wall-buckling result converged with respect to coupon length and mesh density
-- converged ideal local-buckling eigenvalue of approximately 2.13 MN
-- local wall buckling screened out as a governing failure mode
+The lamp already contained a bright rechargeable LED, battery, controls, and a useful indexed pivot mechanism. The challenge was not designing another light—it was designing the mechanical system needed to turn the existing product into a practical bicycle light.
 
-## Where the TTS Sits in the Rocket
+My primary design goals were to:
 
-<img src="/assets/images/tts_rocket_context_sketch.png" alt="Mohamad sketching the location of the thrust transfer structure within the Citron rocket" style="width:100%; max-height:650px; object-fit:contain; margin:20px 0;">
+- securely mount the lamp to the handlebar,
+- retain its existing indexed angle adjustment,
+- allow the lamp to be removed easily for charging,
+- minimize the number of screws and loose components,
+- package the assembly around existing bicycle hardware and cables,
+- manufacture the prototype using FDM 3D printing, and
+- create a product that looked intentional rather than like a simple adapter bracket.
 
-<p style="font-size:12px; color:#666; margin-top:0;">
-Sketching the location of the thrust transfer structure relative to the engine, propulsion bay, tank structure, and surrounding rocket airframe.
-</p>
-
-The thrust transfer structure sits inside the lower portion of the rocket between the propulsion system and the vehicle structure.
-
-Its job is to:
-
-- receive thrust at the engine-side interface
-- carry the load primarily as axial compression through six struts
-- transfer the load into the tank-side and vehicle structure
-- fit around propulsion hardware, plumbing, injector interfaces, fasteners, and assembly tooling
-
-Although the basic load path sounds simple, the design is highly constrained.
-
-Increasing tube diameter may improve buckling resistance but consume valuable packaging volume. Larger joints may improve strength but interfere with plumbing. Additional adjustability may simplify assembly but introduce more components, tolerances, and possible failure points.
-
-The project therefore became a system-level mechanical design problem rather than only a structural calculation.
-
-## What I Owned
-
-My work included:
-
-- first-principles reaction-force and member-load calculations
-- MATLAB structural sizing GUI development
-- Euler and Johnson buckling implementation
-- parametric geometry and cross-section trade studies
-- six-strut TTS architecture development
-- compact clevis-style top and bottom joint design
-- clevis-pin retention and retaining-ring selection
-- supplier coordination for prototype retaining-ring samples
-- engine-side interface-ring topology optimization
-- topology-driven CAD redesign for manufacturability
-- static stress verification in ANSYS
-- global eigenvalue-buckling analysis
-- local wall-buckling analysis
-- coupon-length convergence
-- mesh convergence
-- full assembly CAD integration
-- identification of the remaining joint and interface risks
-
-## First-Principles Structural Sizing
-
-One of the first engineering questions was:
-
-**What structural members actually make sense for this application?**
-
-I began with free-body diagrams and hand calculations to estimate:
-
-- reaction forces
-- axial member loads
-- axial stress
-- Euler buckling load
-- factor of safety
-
-The calculations worked, but every change in rod length, mounting angle, diameter, wall thickness, or cross-section required another full set of calculations.
-
-To accelerate that process, I converted the analysis into a MATLAB structural sizing GUI.
-
-<img src="/assets/images/homepage_gui.png" alt="MATLAB GUI main interface for TTS geometry and load calculations" style="width:100%; max-height:550px; object-fit:contain; margin:20px 0;">
-
-<p style="font-size:12px; color:#666; margin-top:0;">
-MATLAB geometry and loading interface used to calculate reaction forces and axial member loads.
-</p>
-
-The tool models each strut as an idealized pin-pin two-force member carrying axial compression.
-
-<img src="/assets/images/gui_results.png" alt="MATLAB GUI results showing TTS member stress reactions and buckling performance" style="width:100%; max-height:550px; object-fit:contain; margin:20px 0;">
-
-<p style="font-size:12px; color:#666; margin-top:0;">
-Results interface reporting reaction forces, axial stress, critical buckling load, and factor of safety.
-</p>
-
-Key outputs include:
-
-- axial member force
-- reaction forces
-- cross-sectional area
-- axial stress
-- Euler or Johnson critical buckling load
-- buckling factor of safety
-- comparisons between candidate cross-sections
-
-I also developed parametric sweeps to visualize how the design changed across combinations of geometry variables.
-
-<img src="/assets/images/fixed_parasweep.png" alt="MATLAB parametric sweep comparing buckling performance across TTS member geometries" style="width:100%; max-height:550px; object-fit:contain; margin:20px 0;">
-
-<p style="font-size:12px; color:#666; margin-top:0;">
-Parametric sweep used to compare buckling performance across changing member dimensions.
-</p>
-
-This transformed the process from checking one geometry at a time into exploring complete design trends.
-
-The original tool relied primarily on Euler buckling. Euler theory is appropriate for slender columns, but it becomes less representative as the slenderness ratio decreases.
-
-I therefore expanded the tool to incorporate Johnson buckling behavior so the selected analytical model better matched the applicable slenderness regime.
-
-<img src="/assets/images/ttshandcalc1.png" alt="Initial hand calculations used to establish the TTS structural sizing model" style="width:100%; max-height:500px; object-fit:contain; margin:20px 0;">
-
-<p style="font-size:12px; color:#666; margin-top:0;">
-Initial hand calculations used to establish and independently check the equations later implemented in the MATLAB tool.
-</p>
-
-The GUI was used as a first-pass design-space filter rather than final structural proof. Its purpose was to identify promising configurations before higher-fidelity analysis.
-
-## Cross-Section and Material Trade Study
-
-In addition to sizing a single member geometry, I used the MATLAB tool to compare hollow circular and hollow square cross-sections across changes in outside dimension and wall thickness.
-
-For each candidate section, the same analytical model reported cross-sectional area, axial stress, Euler or Johnson critical buckling load, and buckling factor of safety. This let me compare section geometry on a consistent basis and quantify how changes in member dimensions affected buckling performance.
-
-I also participated in team discussions around the broader member selection, where the structural results from the MATLAB tool were considered alongside packaging, fabrication, integration, and availability constraints. These discussions, together with input from other Structures team members, guided the final selection rather than the decision coming from the analytical model alone.
-
-Composite tubing, including carbon fiber, was also considered because of its potential mass savings. However, sourcing and fabricating suitable composite tubes would have been more difficult for a student team. Structural analysis and validation would also be more involved because the composite would require orthotropic material properties and laminate-specific failure criteria rather than the simpler isotropic aluminum model.
-
-The team ultimately selected hollow circular 6061-T6 aluminum tubing as the best overall fit for the TTS. My contribution was developing the sizing tool, performing the cross-section and buckling analysis, and participating in the team trade discussions that supported that decision.
-
-## ANSYS Structural Verification
-
-After narrowing the design space analytically, I used ANSYS to verify the isolated strut behavior and investigate the relevant buckling modes.
-
-The selected tube geometry was:
-
-- 6061-T6 aluminum
-- 5/8-inch outside diameter
-- 1/8-inch wall thickness
-- 3/8-inch inside diameter
-- approximately 21-inch pin-center-to-pin-center length
-
-For the isolated member model, I used a 2,965 N axial reference load.
-
-This corresponds numerically to one-sixth of a 4,000 lbf system-thrust case. It was used as a controlled member-level reference load rather than a complete prediction of the final strut-force distribution.
-
-The actual member forces in the assembled TTS will depend on strut angle, ring stiffness, interface stiffness, manufacturing variation, load eccentricity, and unequal load sharing.
-
-### Static Axial Stress
-
-For the selected tube geometry, the cross-sectional area is approximately 126.7 mm².
-
-The analytical axial stress was:
-
-<div style="text-align:center; font-size:1.2rem; margin:24px 0;">
-  σ =
-  <span style="display:inline-block; vertical-align:middle; text-align:center; margin:0 6px;">
-    <span style="display:block; border-bottom:1px solid currentColor; padding:0 10px;">
-      F
-    </span>
-    <span style="display:block; padding-top:2px;">
-      A
-    </span>
-  </span>
+<div class="image-grid">
+  <img src="/assets/images/bike-light-mount/initial-sketch.jpg" alt="Initial hand sketch of bicycle light mounting concept">
+  <img src="/assets/images/bike-light-mount/original-headlamp.jpg" alt="LED lamp in its original headlamp configuration">
 </div>
+<p class="caption">Early concept sketch and the rechargeable LED lamp in its original head-mounted application.</p>
 
-<div style="text-align:center; font-size:1.2rem; margin:24px 0;">
-  σ =
-  <span style="display:inline-block; vertical-align:middle; text-align:center; margin:0 6px;">
-    <span style="display:block; border-bottom:1px solid currentColor; padding:0 10px;">
-      2,965 N
-    </span>
-    <span style="display:block; padding-top:2px;">
-      126.7 mm²
-    </span>
-  </span>
-  ≈ 23.4 MPa
+The initial sketches were useful for establishing the overall architecture before committing to detailed CAD: a permanent handlebar interface, a removable lamp carrier, and a mechanism that reused the lamp's existing angular adjustment features.
+
+## Mechanical Architecture
+
+I divided the design into two major assemblies:
+
+1. a **handlebar mount** that remains attached to the bicycle, and
+2. a **removable lamp carrier** that interfaces with the light.
+
+The two assemblies connect using integrated T-shaped sliding features. This allows the lamp and its carrier to slide off the fixed bicycle mount for charging without loosening the handlebar clamps.
+
+<img class="project-image" src="/assets/images/bike-light-mount/cad-assembly.jpg" alt="SolidWorks CAD model of bicycle LED light mount assembly">
+<p class="caption">SolidWorks assembly showing the handlebar clamps, structural bridge, removable lamp carrier, and sliding interface.</p>
+
+### Removable Sliding Interface
+
+Because charging requires access to the lamp away from the bicycle, I did not want the user to repeatedly remove mounting screws.
+
+Instead, I incorporated mating T-style rails between the two assemblies. The printed sliding surfaces were designed with approximately **0.25 mm of clearance per mating side**, providing enough manufacturing allowance for FDM printing while maintaining controlled alignment of the lamp.
+
+The rail carries and locates the lamp during use, while removal requires only sliding the lamp carrier out of the fixed base.
+
+<img class="project-image" src="/assets/images/bike-light-mount/slider-detail.jpg" alt="CAD detail of removable T rail interface">
+<p class="caption">T-style sliding interface used to separate the rechargeable lamp from the permanent handlebar mount.</p>
+
+## Reducing the Fastener Count
+
+A conventional split-clamp design could have used two screws per handlebar clamp, requiring four fasteners across the assembly.
+
+Instead, I designed one side of each C-clamp around an integrated **snap-in locating joint**. The joint constrains the relative motion and rotation of the clamp components while the screw on the opposite side generates the required clamping force.
+
+This reduced the complete handlebar attachment from **four fasteners to two** while also simplifying assembly.
+
+<img class="project-image" src="/assets/images/bike-light-mount/snap-joint-cad.jpg" alt="Snap fit locating joint used in bicycle handlebar clamp">
+<p class="caption">Integrated locating joint replaces one conventional fastener location on each C-clamp.</p>
+
+The geometry required physical iteration. Small dimensional differences significantly affected whether the parts could rotate into position, snap together, and remain properly constrained after assembly.
+
+Rather than repeatedly printing the complete mount, I produced smaller test sections containing only the critical joint geometry.
+
+<div class="image-grid">
+  <img src="/assets/images/bike-light-mount/snap-test-prototype.jpg" alt="Small 3D printed prototype used to test snap joint">
+  <img src="/assets/images/bike-light-mount/snap-final.jpg" alt="Final snap joint incorporated into handlebar clamp">
 </div>
+<p class="caption">Isolated joint prototype used to refine the snap-fit geometry before incorporating it into the complete assembly.</p>
 
-<img src="/assets/images/newmeshy.png" alt="ANSYS static structural stress result for the TTS aluminum strut" style="width:100%; max-height:650px; object-fit:contain; margin:20px 0;">
+## Preserving the Lamp's Angle Adjustment
 
-<p style="font-size:12px; color:#666; margin-top:0;">
-Static structural analysis of the isolated TTS strut under a 2,965 N compressive reference load.
-</p>
+The original headlamp contained indexed features that allowed the light to click between discrete aiming angles. I wanted to retain this functionality rather than replacing it with a fixed-angle mount.
 
-ANSYS predicted approximately 23.4 MPa through the uniform tube section, closely matching the analytical axial-stress calculation.
+I designed a compliant PETG tab that engages the lamp's existing indexing geometry. The first version was too flexible and susceptible to permanent deformation.
 
-This agreement verified that the simplified model’s:
+I iterated the feature by:
 
-- applied load
-- tube geometry
-- material properties
-- cross-sectional area
-- boundary conditions
+- increasing its section thickness,
+- tapering the section toward the root to improve bending stiffness and distribute stress,
+- maintaining enough compliance for repeated engagement with the lamp's indexed positions, and
+- changing print orientation so the primary bending loads were carried within continuous printed layers rather than across weaker interlayer bonds.
 
-were behaving as intended before progressing to buckling analysis.
+<img class="project-image" src="/assets/images/bike-light-mount/detent-iterations.jpg" alt="Iterations of PETG angular detent tab">
+<p class="caption">Iterations of the compliant indexing feature used to retain discrete lamp angles.</p>
 
-A separate higher-detail model that included the tube end cap geometry produced a larger local stress near the load-transfer region.
+This was an important design-for-additive-manufacturing consideration. FDM parts are anisotropic, so the geometry alone was not sufficient—the orientation of the part on the print bed directly influenced whether the compliant feature could survive repeated bending.
 
-This indicated that the tube to end-cap interface required joint-level investigation rather than treating the complete strut as a perfectly uniform member.
+## Designing the Printed Structure
 
-### Global Eigenvalue Buckling
+The mount was printed in **PETG** to provide greater toughness and compliance than a more brittle PLA prototype.
 
-Because the members carry compression, material yielding was not the only possible failure mode.
+The structural bridge incorporates ribs and gussets to increase local stiffness without converting the entire component into a solid section. These features also allowed me to explore geometry more representative of a molded consumer product rather than relying entirely on thick additive-manufactured walls.
 
-I first estimated the ideal global column-buckling load using Euler buckling for a pin-pin member:
+<img class="project-image" src="/assets/images/bike-light-mount/rib-detail.jpg" alt="Ribbed structural features on printed bicycle light mount">
+<p class="caption">Ribbed bridge geometry provides local stiffness while exploring molded-part design principles.</p>
 
-<div style="text-align:center; font-size:1.2rem; margin:24px 0;">
-  <em>P</em><sub>cr</sub> =
-  <span style="display:inline-block; vertical-align:middle; text-align:center; margin-left:6px;">
-    <span style="display:block; border-bottom:1px solid currentColor; padding:0 10px;">
-      π²EI
-    </span>
-    <span style="display:block; padding-top:2px;">
-      L²
-    </span>
-  </span>
-</div>
+Threaded connections were created using heat-set inserts rather than relying on printed polymer threads. Early testing showed that insert-hole geometry and installation quality were critical: incorrectly installed inserts could pull out of the surrounding PETG.
 
-The hand calculation predicted a critical buckling load of approximately 1,460 lbf.
+I adjusted the insert holes and installation process to achieve more reliable retention before assembling the complete prototype.
 
-I then performed a prestressed eigenvalue-buckling analysis using the solved static load case.
+<img class="project-image" src="/assets/images/bike-light-mount/heat-set-detail.jpg" alt="Heat set threaded insert installed in PETG bicycle light mount">
+<p class="caption">Heat-set inserts provide reusable metal threads at the clamp fasteners.</p>
 
-The first global buckling mode produced a load multiplier of 2.2485.
+## Prototype Installation Exposed Real Packaging Constraints
 
-Using the 2,965 N reference load:
+Installing the assembly on the actual bicycle revealed geometry that was easy to underestimate in isolation.
 
-<div style="text-align:center; font-size:1.2rem; margin:24px 0;">
-  <em>P</em><sub>cr</sub> = 2.2485 × 2,965 N
-</div>
+The existing handlebar/stem hardware protrudes into the region occupied by the mount, and cables further constrain the available packaging space. The prototype therefore had to fit the real bicycle rather than an idealized cylindrical handlebar.
 
-<div style="text-align:center; font-size:1.2rem; margin:24px 0;">
-  <em>P</em><sub>cr</sub> ≈ 6,667 N ≈ 1,499 lbf
-</div>
+<img class="project-image" src="/assets/images/bike-light-mount/bike-installation.jpg" alt="Prototype bicycle mount installed around existing handlebar hardware">
+<p class="caption">Physical installation exposed the true packaging environment around the handlebar, stem hardware, and cables.</p>
 
-<div style="text-align:center; font-size:1.2rem; margin:24px 0;">
-  FoS<sub>buckling</sub> =
-  <span style="display:inline-block; vertical-align:middle; text-align:center; margin:0 6px;">
-    <span style="display:block; border-bottom:1px solid currentColor; padding:0 10px;">
-      6,667 N
-    </span>
-    <span style="display:block; padding-top:2px;">
-      2,965 N
-    </span>
-  </span>
-  ≈ <strong>2.25</strong>
-</div>
+The clamp diameter also required iteration. Tightening the designed fit improved retention, but the combination of **smooth PETG against glossy painted steel** still created a low-friction interface.
 
-The isolated strut therefore achieved an ideal global buckling factor of safety of approximately **2.25**, exceeding the **1.5× structural requirement** for the evaluated member-level load case.
+Sanding the PETG contact surface substantially improved grip, confirming that interface friction—not simply structural stiffness—was a significant contributor to rotation of the assembly.
 
-<img src="/assets/images/tts_buckling_fea.png" alt="First global eigenvalue buckling mode of the TTS aluminum strut" style="width:100%; max-height:650px; object-fit:contain; margin:20px 0;">
+The current prototype remains secure during normal use, although sufficient externally applied torque can still rotate the mount around the handlebar. This remains one of the primary areas identified for the next iteration.
 
-<p style="font-size:12px; color:#666; margin-top:0;">
-First global buckling mode of the TTS strut. The predicted critical load was within approximately 3% of the Euler calculation.
-</p>
+## Functional Prototype
 
-The first mode showed the expected smooth lateral bow of an ideal pin-pin column, providing a qualitative check that the model was producing the correct global instability family.
+The first complete assembly validated the core architecture:
 
-The displacement magnitude displayed in an eigenvalue result is arbitrary. The meaningful outputs are the mode shape and load multiplier, not the displayed deformation value.
+- the lamp mounts securely enough for real bicycle testing,
+- indexed angle adjustment is retained,
+- the lamp can be removed from the bicycle without tools,
+- the T-style slider repeatedly installs and removes as intended,
+- integrated locating joints reduce the system to two clamp fasteners, and
+- the complete assembly packages around the actual bicycle controls and hardware.
 
-### Local Wall Buckling
+<img class="project-image" src="/assets/images/bike-light-mount/final-installed.jpg" alt="Completed LED bicycle light mount installed on bicycle">
+<p class="caption">Completed Iteration 1 assembly with the rechargeable LED installed.</p>
 
-Global column buckling involves the complete member bowing laterally while its cross-section remains approximately intact.
+<img class="project-image" src="/assets/images/bike-light-mount/night-riding.gif" alt="Bicycle light mount operating while bicycle is being ridden at night">
+<p class="caption">Functional testing of the mounted LED during bicycle operation.</p>
 
-Local buckling is different. It occurs when the tube wall itself wrinkles, ovalizes, or develops circumferential lobes.
+## What I Learned
 
-I created short tube coupon models to isolate the local wall-buckling family without requiring the complete 21-inch member.
+Although the product initially appeared to be a relatively simple mounting problem, physical prototyping exposed several interacting mechanical considerations: snap-fit tolerances, compliant-feature stiffness, FDM anisotropy, threaded insert retention, sliding-fit clearances, clamp friction, packaging constraints, assembly sequence, and user serviceability.
 
-<img src="/assets/images/locbuckling.png" alt="Refined ANSYS local wall buckling mode showing repeated helical wall lobing" style="width:100%; max-height:650px; object-fit:contain; margin:20px 0;">
+The project reinforced the value of using prototypes not simply to confirm that a CAD model can be manufactured, but to discover assumptions that are difficult to capture before the part interacts with the real system.
 
-<p style="font-size:12px; color:#666; margin-top:0;">
-Refined local wall-buckling mode showing repeated helical lobing of the tube wall.
-</p>
+## Current Status and Next Steps
 
-The local modes were identified by:
+**Iteration 1 is functional and has been tested on the bicycle.** The main architecture will be retained, while future work will focus on refining rather than replacing the concept.
 
-- repeated inward and outward wall lobes
-- cross-sectional distortion
-- a relatively straight overall member centerline
-- a repeating axial wavelength
-- a mode shape distinct from smooth global column bending
+Planned next steps include:
 
-Because the tube is circular and nearly axisymmetric, equivalent local modes can appear at different angular orientations or as helical combinations of closely spaced mode pairs.
+- increasing friction at the handlebar interface, potentially through an elastomeric liner or integrated high-friction surface,
+- refining the clamp diameter and preload,
+- further tuning the snap-fit and indexing features for repeatable assembly,
+- performing structural FEA on the complete load path and critical compliant features,
+- using the analysis to remove unnecessary material from low-stress regions, and
+- further developing the geometry toward manufacturable molded-part design practices.
 
-The visible deformation amplitude is arbitrary and was automatically scaled by ANSYS. The relevant quantities were the mode family and associated load multiplier.
-
-#### Coupon-Length Convergence
-
-I compared the same local-lobing family using different tube lengths:
-
-- 2.5-inch coupon: 2.1304 MN
-- 5-inch coupon: 2.1235 MN
-- difference: approximately 0.32%
-
-Doubling the coupon length introduced additional repetitions of the wall pattern but produced almost no change in the predicted local critical load.
-
-This demonstrated that the result was no longer meaningfully controlled by the coupon end conditions.
-
-#### Mesh Convergence
-
-I then compared the local-mode result using the baseline and refined solid meshes:
-
-- baseline mesh: 2.1304 MN
-- refined mesh: 2.1293 MN
-- difference: approximately 0.052%
-
-The same local-lobing family appeared in both models while the predicted load remained essentially unchanged.
-
-The local-buckling result was therefore both:
-
-- length-converged
-- mesh-converged
-
-The converged linear eigenvalue prediction was approximately 2.13 MN.
-
-Compared with the 2,965 N reference load, this value is roughly 718 times higher.
-
-That ratio is not a physical factor of safety. Linear eigenvalue buckling assumes ideal geometry, idealized constraints, and linear elastic material behavior.
-
-However, the difference is sufficiently large to screen local wall buckling out as a governing failure mode for the selected tube under the evaluated loading.
-
-The more credible member-level concern remains global column buckling, followed by the joint, weld, and interface behavior.
-
-## Engine-Side Ring Topology Optimization
-
-After establishing the six-strut architecture, I used ANSYS topology optimization to reduce material in the preliminary engine-side interface ring while maintaining the primary thrust load paths.
-
-The baseline model applied the full engine thrust through the central interface and transferred the load into the six strut-joint locations. Critical engine and joint interfaces were preserved while the remaining plate material was treated as the design region.
-
-<div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:18px; align-items:start; margin:24px 0;">
-
-  <div>
-    <img src="/assets/images/tts_ring_original.png"
-         alt="Original solid engine-side TTS interface ring before topology optimization"
-         style="width:100%; height:240px; object-fit:contain;">
-    <p style="font-size:12px; color:#666; margin-top:6px;">
-      <strong>Baseline:</strong> Original solid interface ring used to establish the load path and protected mounting regions.
-    </p>
-  </div>
-
-  <div>
-    <img src="/assets/images/tts_ring_topology.png"
-         alt="ANSYS topology optimization result for the TTS engine-side interface ring"
-         style="width:100%; height:240px; object-fit:contain;">
-    <p style="font-size:12px; color:#666; margin-top:6px;">
-      <strong>Topology result:</strong> Optimization concentrated material along the primary paths between the engine interface and strut joints while opening three low-value regions.
-    </p>
-  </div>
-
-  <div>
-    <img src="/assets/images/tts_ring_refined.png"
-         alt="Refined manufacturable TTS interface ring based on the topology optimization result"
-         style="width:100%; height:240px; object-fit:contain;">
-    <p style="font-size:12px; color:#666; margin-top:6px;">
-      <strong>Refined design:</strong> The raw density result was rebuilt as clean CAD with three through-pockets, smooth load paths, joint pads, and manufacturable fillets.
-    </p>
-  </div>
+The next iteration will use the lessons from physical testing to reduce mass, improve retention, and refine the product while preserving the removable two-fastener architecture demonstrated by the first prototype.
 
 </div>
-
-Rather than directly manufacturing the organic optimization mesh, I treated it as a load-path study. The result showed that the original continuous plate could be reorganized into a triangular three-lobed structure surrounding the central engine interface.
-
-As a load-magnitude sensitivity check, I repeated the optimization at 2,945 lbf and 4,000 lbf system-thrust cases. Both produced essentially the same three-lobed load-path architecture, indicating that the identified topology was insensitive to load magnitude over the evaluated range under the same loading direction and boundary conditions.
-
-I rebuilt the result as conventional CAD with:
-
-- three large through-pockets
-- continuous material around the engine interface
-- reinforced regions around the strut mounting holes
-- smooth transitions and fillets instead of element-scale topology features
-- constant plate thickness for straightforward machining
-
-The refined geometry is then evaluated in a separate static structural model using the same loading and interface assumptions as the baseline design. This provides a direct comparison of mass, stiffness, deformation, and stress after removing the low-value material.
-
-## Current Joint Design
-
-Once the basic tube behavior was established, the main uncertainty shifted to the joints and load-transfer interfaces.
-
-I developed compact clevis-style joints intended to:
-
-- maintain a clear axial load path
-- allow rotation about the clevis-pin axis
-- let each strut behave approximately as a two-force member
-- reduce joint size
-- reduce part count
-- simplify assembly
-- provide positive pin retention
-- connect cleanly to the interface rings
-
-### Bottom Joint
-
-<img src="/assets/images/newbotjoints.png" alt="Current lower TTS clevis-style joint using a Smalley retaining ring for clevis-pin retention" style="width:100%; max-height:650px; object-fit:contain; margin:20px 0;">
-
-<p style="font-size:12px; color:#666; margin-top:0;">
-Current lower joint design using a clevis pin and Smalley retaining ring at the strut connection, with two bolts attaching the bracket to the engine-side interface.
-</p>
-
-The bottom joint transfers load between the engine-side interface and the tubular strut.
-
-The connection uses:
-
-- a welded tube end cap
-- a clevis-style bracket
-- a clevis pin
-- a Smalley retaining ring for axial pin retention
-- two bolts connecting the bracket to the interface ring
-
-The welded tube end cap concept and supporting weld calculations were developed by Gabe Popso and incorporated into the current strut assembly.
-
-### Retaining-Ring Development
-
-The initial clevis-pin retention concept used conventional C-clips. Although compact, the C-clips provided limited engagement with the pin groove and were not a robust choice for a vibration-sensitive rocket structure.
-
-I therefore investigated alternative retaining-ring designs and transitioned to a Smalley retaining ring with greater circumferential engagement around the clevis pin.
-
-<div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:18px; align-items:start; margin:20px 0;">
-
-  <div>
-    <img src="/assets/images/bottomjoint.png"
-         alt="Earlier TTS clevis joint concept using conventional C-clips for clevis-pin retention"
-         style="width:100%; height:360px; object-fit:contain;">
-    <p style="font-size:12px; color:#666; margin-top:6px;">
-      <strong>Initial concept:</strong> Conventional C-clips provided a compact retention method but limited engagement around the clevis-pin groove.
-    </p>
-  </div>
-
-  <div>
-    <img src="/assets/images/retainingring.png"
-         alt="Smalley retaining ring selected for TTS clevis-pin retention"
-         style="width:100%; height:360px; object-fit:contain;">
-    <p style="font-size:12px; color:#666; margin-top:6px;">
-      <strong>Refined solution:</strong> Smalley retaining ring selected for greater circumferential engagement and positive axial pin retention.
-    </p>
-  </div>
-
-</div>
-
-After developing the revised groove and pin concept, I worked directly with Smalley to review the application and identify a compatible retaining ring. Their engineering team reviewed the concept, confirmed the retaining-ring approach was viable, and provided sample rings for prototype fit and retention testing.
-
-This progression moved the joint from an initial C-clip concept to a supplier-reviewed retention solution with physical hardware available for prototype evaluation.
-
-### Top Joint
-
-<img src="/assets/images/topjoint.png" alt="Closeup of the current upper TTS clevis-style joint" style="width:100%; max-height:650px; object-fit:contain; margin:20px 0;">
-
-<p style="font-size:12px; color:#666; margin-top:0;">
-Current upper joint design adapted to the tank-side interface while maintaining the same basic axial load-path intent.
-</p>
-
-The top joint follows the same basic structural principle but is adapted to the geometry and packaging of the tank-side interface.
-
-The real clevis joints permit rotation primarily about their pin axes.
-
-The simplified member and local-buckling models used idealized constraints to isolate the tube behavior. Those models were not intended to claim that the complete joints had already been structurally verified.
-
-The remaining joint-level work includes:
-
-- clevis pin shear
-- clevis pin bending
-- bearing stress around pin holes
-- bracket bending
-- bracket local yielding
-- bolt shear and tension
-- weld strength
-- heat-affected-zone properties
-- interface stiffness
-- eccentric load introduction
-- manufacturing tolerances
-- assembly access
-
-## System Integration
-
-The analytical sizing, finite element analysis, joint development, and packaging work were combined into the six-member assembly shown at the top of this page.
-
-The six-strut layout replaced an earlier overconstrained arrangement.
-
-Reducing the structure to six primary members created a clearer and more predictable load path without introducing redundant struts whose force distribution would depend heavily on:
-
-- manufacturing tolerances
-- joint stiffness
-- interface deformation
-- assembly variation
-
-The current interface rings are preliminary geometry used to establish:
-
-- overall structural layout
-- member locations
-- joint orientation
-- packaging envelope
-- surrounding-system clearances
-
-Their final thicknesses, bolt patterns, mounting features, and local reinforcement will be developed as the surrounding propulsion interfaces mature.
-
-## Current Engineering Conclusion
-
-The basic compression-member design is now supported by independent analytical and numerical evidence.
-
-The analysis showed that:
-
-1. the MATLAB tool reproduced the first-principles member calculations
-2. static FEA matched the analytical axial-stress result
-3. the isolated strut achieved approximately **2.25× ideal global buckling factor of safety**, exceeding the **1.5× structural requirement**
-4. global buckling FEA matched Euler within approximately 3%
-5. the local-buckling result was length-converged
-6. the local-buckling result was mesh-converged
-7. local wall buckling does not govern the selected tube design
-
-The remaining design uncertainty is concentrated in:
-
-- joint loading
-- weld behavior
-- interface-ring stiffness
-- unequal load sharing
-- thrust misalignment
-- geometric imperfections
-- nonlinear global buckling
-- vibration and dynamic loading
-- full-system structural behavior
-- physical test correlation
-
-The next major step is therefore not additional isolated local-wall analysis.
-
-It is higher-fidelity joint and full-assembly analysis followed by physical structural testing.
-
-## Background and Earlier Concepts
-
-The current design is the result of several earlier concepts and trade studies.
-
-These sections are included for readers who want the complete development history.
-
-<details>
-<summary><strong>Original Sleeve-Bearing and Ball-Joint Concept</strong></summary>
-<div markdown="1">
-
-Before developing the current clevis-style joints, I explored an adjustable joint architecture using custom sleeve bearings, a shoulder screw, and a ball-joint interface.
-
-<img src="/assets/images/tts_joint.png" alt="Earlier TTS joint concept using custom sleeve bearings and a ball-joint interface" style="width:100%; max-height:550px; object-fit:contain; margin:20px 0;">
-
-<p style="font-size:12px; color:#666; margin-top:0;">
-Earlier joint concept using custom sleeve bearings, a shoulder screw, and a ball-joint interface to provide alignment adjustment.
-</p>
-
-The concept was intended to improve:
-
-- alignment tolerance
-- assembly flexibility
-- accommodation of manufacturing variation
-
-However, the additional adjustability introduced:
-
-- more custom components
-- greater manufacturing complexity
-- a larger joint envelope
-- additional tolerance stackups
-- more possible failure points
-
-The later clevis-style design reduced the mechanism to a simpler and more compact axial load path.
-
-</div>
-</details>
-
-<details>
-<summary><strong>Original Full-System Architecture</strong></summary>
-<div markdown="1">
-
-Early in the project, I developed a full conceptual TTS architecture inspired by the <a href="https://www.kegrocket.com/" target="_blank">Keg rocket</a> structural layout.
-
-<img src="/assets/images/tts_conc1.png" alt="Early TTS architecture using perforated structural members and sheet-metal interfaces" style="width:100%; max-height:600px; object-fit:contain; margin:20px 0;">
-
-<p style="font-size:12px; color:#666; margin-top:0;">
-Early architecture exploring standardized perforated members, sheet-metal construction, and circular interfaces.
-</p>
-
-The concept explored whether standardized components could simplify fabrication and assembly.
-
-It was not carried forward because:
-
-- it consumed too much engine-bay volume
-- it created packaging conflicts
-- major thrust loads would have passed through fasteners in shear
-- its load path was less direct than the later axial-strut architecture
-- the propulsion team preferred a cleaner compression-member load path
-
-Although the concept was rejected, it helped establish what the final architecture needed to avoid.
-
-</div>
-</details>
-
-<details>
-<summary><strong>Additional Structural Trade-Study Background</strong></summary>
-<div markdown="1">
-
-The structural design space included tradeoffs between:
-
-- hollow circular and hollow square sections
-- outside diameter and wall thickness
-- buckling resistance and packaging volume
-- minimum mass and structural robustness
-- adjustability and joint simplicity
-- aluminum and composite construction
-- theoretical efficiency and practical manufacturability
-
-A mathematically optimal component is not necessarily the best system-level design.
-
-The final member geometry had to provide adequate structural performance while also fitting within the engine bay, connecting to manufacturable joints, preserving plumbing space, and remaining realistic for the team to fabricate and inspect.
-
-</div>
-</details>
-
-</div>
-
