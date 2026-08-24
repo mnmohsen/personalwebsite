@@ -238,19 +238,6 @@ I adjusted the insert holes and installation technique before assembling the com
 <img class="project-image" src="/images/bike-light-heatset.jpg" alt="Heat-set threaded insert installed in PETG bicycle mount">
 <p class="caption">Heat-set inserts provide reusable metal threads for the two primary clamp fasteners.</p>
 
-## Real-World Packaging
-
-Installing the first complete assembly on the bicycle exposed packaging constraints that were not obvious when considering the handlebar as a simple cylinder.
-
-Existing stem hardware protrudes into the mounting region, while brake cables and nearby components further restrict the available space.
-
-<img class="project-image" src="/images/bike-light-installed-top.jpg" alt="Bicycle mount installed around existing handlebar hardware and cables">
-<p class="caption">Physical installation revealed the actual packaging environment around the handlebar, stem hardware, and cables.</p>
-
-The final geometry had to accommodate these real components without preventing installation or adjustment.
-
-This was one of the clearest examples of why the physical prototype was valuable: the real bicycle contained small geometric constraints that were easy to overlook during initial CAD development.
-
 ## Clamp Retention and Friction
 
 The handlebar interface also required iteration.
