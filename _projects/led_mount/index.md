@@ -199,7 +199,7 @@ The first version was too thin and susceptible to excessive bending and permanen
 - maintaining enough compliance for repeated engagement with the lamp's detents, and
 - adjusting print orientation to improve strength.
 
-<img class="project-image" src="/images/bike-light-detent-iterations.jpg" alt="Iterations of compliant lamp angle indexing tab">
+<img class="project-image" src="/assets/images/angle_iterations.png" alt="Iterations of compliant lamp angle indexing tab">
 <p class="caption">Iterations of the compliant indexing feature used to retain discrete lamp aiming angles.</p>
 
 ### Designing Around FDM Anisotropy
