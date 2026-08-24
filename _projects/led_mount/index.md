@@ -220,7 +220,7 @@ PETG provided greater toughness and compliance than a more brittle PLA component
 
 The structural bridge incorporates ribs and gussets in several locations to increase local stiffness without simply making the entire structure solid.
 
-<img class="project-image" src="/images/bike-light-ribs.jpg" alt="Ribbed structural geometry on PETG bicycle light mount">
+<img class="project-image" src="/assets/images/riblets.png" alt="Ribbed structural geometry on PETG bicycle light mount">
 <p class="caption">Ribs and gussets increase local stiffness while reducing the need for uniformly thick solid sections.</p>
 
 The rib geometry also allowed me to explore design features more representative of molded consumer components, including tapered features, filleted transitions, and locally reinforced load paths.
