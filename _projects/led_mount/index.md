@@ -144,7 +144,7 @@ The printed sliding geometry was designed with approximately **0.25 mm of cleara
 
 Once installed, the rails constrain the lamp carrier during normal use. When charging is required, the carrier can simply slide out of the fixed mount.
 
-<img class="project-image" src="/images/bike-light-slider.jpg" alt="T-style sliding interface between lamp carrier and handlebar mount">
+<img class="project-image" src="/assets/images/tlatch.webp" alt="T-style sliding interface between lamp carrier and handlebar mount">
 <p class="caption">T-style sliding interface allows the lamp carrier to be removed without disturbing the handlebar clamps.</p>
 
 This preserved the convenience of a removable consumer product rather than turning the lamp into a permanently attached bicycle component.
