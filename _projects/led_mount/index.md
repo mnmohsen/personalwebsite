@@ -225,7 +225,7 @@ Improperly installed inserts could pull out of the surrounding PETG rather than 
 
 I adjusted the insert holes and installation technique before assembling the complete prototype.
 
-<img class="project-image" src="/images/bike-light-heatset.jpg" alt="Heat-set threaded insert installed in PETG bicycle mount">
+<img class="project-image" src="/assets/images/heat_inserts.png" alt="Heat-set threaded insert installed in PETG bicycle mount">
 <p class="caption">Heat-set inserts provide reusable metal threads for the two primary clamp fasteners.</p>
 
 ## Clamp Retention and Friction
