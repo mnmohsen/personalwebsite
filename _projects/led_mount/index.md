@@ -113,7 +113,7 @@ My initial requirements were to:
 - create geometry that looked intentional rather than simply attaching the lamp with a basic bracket.
 
 <div class="image-grid">
-  <img src="/images/bike-light-sketch.jpg" alt="Initial hand sketch of bicycle light mounting concept">
+  <img src="/assets/images/sketch.png" alt="Initial hand sketch of bicycle light mounting concept">
   <img src="/assets/images/headlamp.png" alt="LED lamp in its original headlamp configuration">
 </div>
 <p class="caption">Early concept sketch and the LED lamp in its original head-mounted configuration.</p>
