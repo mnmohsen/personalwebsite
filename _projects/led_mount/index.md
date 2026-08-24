@@ -281,9 +281,6 @@ It demonstrated that:
 - only two screws were required to clamp the entire assembly to the bicycle, and
 - the complete system could package around the actual bicycle hardware.
 
-<img class="project-image" src="/images/bike-light-final.jpg" alt="Completed bicycle LED mount with lamp installed">
-<p class="caption">Completed V1 assembly installed on the bicycle.</p>
-
 ## On-Bike Testing
 
 The final step for V1 was testing the assembly in its actual use environment.
