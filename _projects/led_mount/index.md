@@ -159,7 +159,7 @@ The feature constrains relative rotation and alignment between the mating clamp 
 
 This allowed each clamp to use only one screw, reducing the complete assembly from **four fasteners to two**.
 
-<img class="project-image" src="/images/bike-light-snap-cad.jpg" alt="Integrated snap-fit joint used to reduce clamp fastener count">
+<img class="project-image" src="/assets/images/snappy.png" alt="Integrated snap-fit joint used to reduce clamp fastener count">
 <p class="caption">Integrated locating joint replaces one conventional fastener location on each handlebar clamp.</p>
 
 ### Iterating the Snap-Fit Geometry
