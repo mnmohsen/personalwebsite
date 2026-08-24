@@ -173,16 +173,6 @@ Small dimensional changes had a large effect on whether the two pieces could:
 - remain constrained after installation, and
 - avoid excessive interference during assembly.
 
-Rather than repeatedly printing the entire mount, I isolated the critical geometry and produced small test pieces to evaluate the fit.
-
-<div class="image-grid">
-  <img src="/images/bike-light-snap-test.jpg" alt="Small printed test piece used to evaluate snap-fit geometry">
-  <img src="/images/bike-light-snap-final.jpg" alt="Final snap-fit geometry incorporated into complete bicycle light mount">
-</div>
-<p class="caption">Isolated prototype used to tune the locating joint before incorporating it into the complete assembly.</p>
-
-This made each iteration significantly faster and allowed the joint geometry to be refined independently from the rest of the mount.
-
 ## Retaining Indexed Angle Adjustment
 
 The original headlamp used a compliant click mechanism to lock the lamp at discrete aiming angles.
