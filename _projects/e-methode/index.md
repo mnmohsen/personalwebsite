@@ -60,7 +60,7 @@ I had substantial ownership across the development cycle, including mechanical a
 <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:18px; align-items:start; margin:24px 0;">
 
   <div>
-    <img src="/assets/images/unity_spotlight_product.jpg"
+    <img src="/assets/images/spotlight_assy.jpg"
          alt="Unity vehicle spotlight assembly showing handle, shaft, and spotlight head"
          style="width:100%; height:340px; object-fit:contain;">
 
@@ -74,7 +74,7 @@ I had substantial ownership across the development cycle, including mechanical a
   </div>
 
   <div>
-    <img src="/assets/images/unity_spotlight_installed.jpg"
+    <img src="/assets/images/Tremor_Spot.jpg"
          alt="Vehicle-mounted spotlight installed near the driver's A-pillar"
          style="width:100%; height:340px; object-fit:cover;">
 
