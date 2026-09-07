@@ -219,7 +219,7 @@ The optimization removed approximately **40% of the baseline material** while mi
 <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:18px; align-items:start; margin:24px 0;">
 
   <div>
-    <img src="/assets/images/tts_top_ring_original.png"
+    <img src="/assets/images/topring_old.png"
          alt="Original tank-side TTS interface ring before topology optimization"
          style="width:100%; height:240px; object-fit:contain;">
     <p style="font-size:12px; color:#666; margin-top:6px;">
@@ -228,7 +228,7 @@ The optimization removed approximately **40% of the baseline material** while mi
   </div>
 
   <div>
-    <img src="/assets/images/tts_top_ring_topology.png"
+    <img src="/assets/images/topring_structopt.png"
          alt="ANSYS topology optimization result for the tank-side TTS interface ring"
          style="width:100%; height:240px; object-fit:contain;">
     <p style="font-size:12px; color:#666; margin-top:6px;">
