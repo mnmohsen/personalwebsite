@@ -58,7 +58,7 @@ My work centered on redesigning the mechanical and thermal architecture, develop
      style="width:100%; max-height:650px; object-fit:contain; margin:20px 0;">
 
 <p style="font-size:12px; color:#666; margin-top:0;">
-Public product image. Proprietary CAD, drawings, dimensions, and internal design details are omitted from this page.
+Public product image of similar unity spotlight. Proprietary CAD, drawings, dimensions, and internal design details are omitted from this page.
 </p>
 
 ### Current Results
