@@ -60,9 +60,9 @@ main-image: /image_rockit.png
 
 ## Thrust Transfer Structure Design and Verification
 
-As part of the Michigan Aeronautical Science Association Structures team, I redesigned the Thrust Transfer Structure for Citron, MASA’s liquid rocket vehicle.
+As part of the Michigan Aeronautical Science Association Structures team, I am redesigning the Thrust Transfer Structure for Citron, MASA’s upcoming liquid rocket vehicle.
 
-The TTS transfers engine thrust into the rocket airframe through six compression-loaded aluminum struts. My work combined first-principles structural analysis, automated design exploration, finite element analysis, joint design, packaging, and full-system CAD integration.
+The TTS transfers engine thrust into the rocket airframe through six compression loaded aluminum struts. My work combined first-principles structural analysis, automated design exploration, finite element analysis, joint design, packaging, and full-system CAD integration.
 
 <img src="/assets/images/newttscover.png" alt="Current Citron thrust transfer structure assembly with six tubular struts and compact clevis-style joints" style="width:100%; max-height:750px; object-fit:contain; margin:20px 0;">
 
