@@ -237,7 +237,7 @@ The optimization removed approximately **40% of the baseline material** while mi
   </div>
 
   <div>
-    <img src="/assets/images/tts_top_ring_refined.png"
+    <img src="/assets/images/fullynewtopring.png"
          alt="Refined manufacturable tank-side TTS ring with material retained beneath the top joints"
          style="width:100%; height:240px; object-fit:contain;">
     <p style="font-size:12px; color:#666; margin-top:6px;">
