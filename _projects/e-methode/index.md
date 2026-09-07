@@ -15,7 +15,7 @@ skills:
   - Supplier Coordination
   - Design Iteration
 
-main-image: /methode_2.png
+main-image: /methode_2upscaled.png
 ---
 
 <style>
