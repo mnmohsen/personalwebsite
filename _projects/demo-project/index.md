@@ -74,8 +74,9 @@ Current TTS design integrating six hollow aluminum struts, compact clevis-style 
 
 - six primary 6061-T6 aluminum struts
 - compact clevis-style top and bottom joints
-- engine-side interface ring redesigned using ANSYS topology optimization
-- topology result converted into simplified, manufacturable CAD
+- tank-side and engine-side interface rings redesigned using ANSYS topology optimization
+- approximately 40% material removed in the top-ring optimization while minimizing compliance under the shock load multiplied by the 1.5 design safety factor
+- topology results converted into simplified, manufacturable CAD, with contact area preserved beneath the top joints
 - clevis-pin retention concept developed using Smalley retaining rings
 - 2,965 N axial reference load used for isolated strut verification
 - analytical and FEA axial stress of approximately 23.4 MPa
@@ -120,13 +121,14 @@ My work included:
 - compact clevis-style top and bottom joint design
 - clevis-pin retention and retaining-ring selection
 - supplier coordination for prototype retaining-ring samples
-- engine-side interface-ring topology optimization
-- topology-driven CAD redesign for manufacturability
+- tank-side and engine-side interface-ring topology optimization
+- top-ring static structural evaluation under the factored shock load
+- topology-driven CAD redesign for manufacturability and preservation of top-joint contact area
 - static stress verification in ANSYS
 - global eigenvalue-buckling analysis
 - local wall-buckling analysis
 - coupon-length convergence
-- mesh convergence
+- mesh convergence and investigation of the nonconvergent top-ring stress peak
 - full assembly CAD integration
 - identification of the remaining joint and interface risks
 
@@ -207,6 +209,100 @@ Composite tubing, including carbon fiber, was also considered because of its pot
 The team ultimately selected hollow circular 6061-T6 aluminum tubing as the best overall fit for the TTS. My contribution was developing the sizing tool, performing the cross-section and buckling analysis, and participating in the team trade discussions that supported that decision.
 
 ## ANSYS Structural Verification
+
+### Tank-Side Ring Topology Optimization
+
+I optimized the top, tank-side interface ring using the same general ANSYS workflow as the engine-side ring. The model used the shock load supplied by Jesse, multiplied by the 1.5 design safety factor, as the applied design load.
+
+The optimization removed approximately **40% of the baseline material** while minimizing compliance to retain stiffness under the evaluated loading.
+
+<div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:18px; align-items:start; margin:24px 0;">
+
+  <div>
+    <img src="/assets/images/tts_top_ring_original.png"
+         alt="Original tank-side TTS interface ring before topology optimization"
+         style="width:100%; height:240px; object-fit:contain;">
+    <p style="font-size:12px; color:#666; margin-top:6px;">
+      <strong>Baseline:</strong> Original top ring evaluated using the shock load with a 1.5 design safety factor.
+    </p>
+  </div>
+
+  <div>
+    <img src="/assets/images/tts_top_ring_topology.png"
+         alt="ANSYS topology optimization result for the tank-side TTS interface ring"
+         style="width:100%; height:240px; object-fit:contain;">
+    <p style="font-size:12px; color:#666; margin-top:6px;">
+      <strong>Topology result:</strong> Approximately 40% material removal with a minimum-compliance objective.
+    </p>
+  </div>
+
+  <div>
+    <img src="/assets/images/tts_top_ring_refined.png"
+         alt="Refined manufacturable tank-side TTS ring with material retained beneath the top joints"
+         style="width:100%; height:240px; object-fit:contain;">
+    <p style="font-size:12px; color:#666; margin-top:6px;">
+      <strong>Refined design:</strong> Manufacturable CAD with material added beneath the top joints to preserve their contact area.
+    </p>
+  </div>
+
+</div>
+
+I used the topology result to guide material removal and relied primarily on the static structural results to refine the design. I rebuilt the raw optimization geometry as manufacturable CAD and added material beneath the top joints to preserve the contact area that transfers load into the ring.
+
+During the static analysis, a localized peak stress continued increasing as I refined the mesh. This nonconvergent behavior was consistent with a stress singularity, so I did not use that peak as a converged physical stress for assessing the ring.
+
+### Engine-Side Ring Topology Optimization
+
+After establishing the six-strut architecture, I used ANSYS topology optimization to reduce material in the preliminary engine-side interface ring while maintaining the primary thrust load paths.
+
+The baseline model applied the full engine thrust through the central interface and transferred the load into the six strut-joint locations. Critical engine and joint interfaces were preserved while the remaining plate material was treated as the design region.
+
+<div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:18px; align-items:start; margin:24px 0;">
+
+  <div>
+    <img src="/assets/images/tts_ring_original.png"
+         alt="Original solid engine-side TTS interface ring before topology optimization"
+         style="width:100%; height:240px; object-fit:contain;">
+    <p style="font-size:12px; color:#666; margin-top:6px;">
+      <strong>Baseline:</strong> Original solid interface ring used to establish the load path and protected mounting regions.
+    </p>
+  </div>
+
+  <div>
+    <img src="/assets/images/tts_ring_topology.png"
+         alt="ANSYS topology optimization result for the TTS engine-side interface ring"
+         style="width:100%; height:240px; object-fit:contain;">
+    <p style="font-size:12px; color:#666; margin-top:6px;">
+      <strong>Topology result:</strong> Optimization concentrated material along the primary paths between the engine interface and strut joints while opening three low-value regions.
+    </p>
+  </div>
+
+  <div>
+    <img src="/assets/images/tts_ring_refined.png"
+         alt="Refined manufacturable TTS interface ring based on the topology optimization result"
+         style="width:100%; height:240px; object-fit:contain;">
+    <p style="font-size:12px; color:#666; margin-top:6px;">
+      <strong>Refined design:</strong> The raw density result was rebuilt as clean CAD with three through-pockets, smooth load paths, joint pads, and manufacturable fillets.
+    </p>
+  </div>
+
+</div>
+
+Rather than directly manufacturing the organic optimization mesh, I treated it as a load-path study. The result showed that the original continuous plate could be reorganized into a triangular three-lobed structure surrounding the central engine interface.
+
+As a load-magnitude sensitivity check, I repeated the optimization at 2,945 lbf and 4,000 lbf system-thrust cases. Both produced essentially the same three-lobed load-path architecture, indicating that the identified topology was insensitive to load magnitude over the evaluated range under the same loading direction and boundary conditions.
+
+I rebuilt the result as conventional CAD with:
+
+- three large through-pockets
+- continuous material around the engine interface
+- reinforced regions around the strut mounting holes
+- smooth transitions and fillets instead of element-scale topology features
+- constant plate thickness for straightforward machining
+
+The refined geometry is then evaluated in a separate static structural model using the same loading and interface assumptions as the baseline design. This provides a direct comparison of mass, stiffness, deformation, and stress after removing the low-value material.
+
+### Isolated Strut Verification
 
 After narrowing the design space analytically, I used ANSYS to verify the isolated strut behavior and investigate the relevant buckling modes.
 
@@ -399,57 +495,6 @@ However, the difference is sufficiently large to screen local wall buckling out 
 
 The more credible member-level concern remains global column buckling, followed by the joint, weld, and interface behavior.
 
-## Engine-Side Ring Topology Optimization
-
-After establishing the six-strut architecture, I used ANSYS topology optimization to reduce material in the preliminary engine-side interface ring while maintaining the primary thrust load paths.
-
-The baseline model applied the full engine thrust through the central interface and transferred the load into the six strut-joint locations. Critical engine and joint interfaces were preserved while the remaining plate material was treated as the design region.
-
-<div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:18px; align-items:start; margin:24px 0;">
-
-  <div>
-    <img src="/assets/images/tts_ring_original.png"
-         alt="Original solid engine-side TTS interface ring before topology optimization"
-         style="width:100%; height:240px; object-fit:contain;">
-    <p style="font-size:12px; color:#666; margin-top:6px;">
-      <strong>Baseline:</strong> Original solid interface ring used to establish the load path and protected mounting regions.
-    </p>
-  </div>
-
-  <div>
-    <img src="/assets/images/tts_ring_topology.png"
-         alt="ANSYS topology optimization result for the TTS engine-side interface ring"
-         style="width:100%; height:240px; object-fit:contain;">
-    <p style="font-size:12px; color:#666; margin-top:6px;">
-      <strong>Topology result:</strong> Optimization concentrated material along the primary paths between the engine interface and strut joints while opening three low-value regions.
-    </p>
-  </div>
-
-  <div>
-    <img src="/assets/images/tts_ring_refined.png"
-         alt="Refined manufacturable TTS interface ring based on the topology optimization result"
-         style="width:100%; height:240px; object-fit:contain;">
-    <p style="font-size:12px; color:#666; margin-top:6px;">
-      <strong>Refined design:</strong> The raw density result was rebuilt as clean CAD with three through-pockets, smooth load paths, joint pads, and manufacturable fillets.
-    </p>
-  </div>
-
-</div>
-
-Rather than directly manufacturing the organic optimization mesh, I treated it as a load-path study. The result showed that the original continuous plate could be reorganized into a triangular three-lobed structure surrounding the central engine interface.
-
-As a load-magnitude sensitivity check, I repeated the optimization at 2,945 lbf and 4,000 lbf system-thrust cases. Both produced essentially the same three-lobed load-path architecture, indicating that the identified topology was insensitive to load magnitude over the evaluated range under the same loading direction and boundary conditions.
-
-I rebuilt the result as conventional CAD with:
-
-- three large through-pockets
-- continuous material around the engine interface
-- reinforced regions around the strut mounting holes
-- smooth transitions and fillets instead of element-scale topology features
-- constant plate thickness for straightforward machining
-
-The refined geometry is then evaluated in a separate static structural model using the same loading and interface assumptions as the baseline design. This provides a direct comparison of mass, stiffness, deformation, and stress after removing the low-value material.
-
 ## Current Joint Design
 
 Once the basic tube behavior was established, the main uncertainty shifted to the joints and load-transfer interfaces.
@@ -571,17 +616,19 @@ Their final thicknesses, bolt patterns, mounting features, and local reinforceme
 
 ## Current Engineering Conclusion
 
-The basic compression-member design is now supported by independent analytical and numerical evidence.
+The work now combines topology-driven redesign of both interface rings with independent analytical and numerical evidence supporting the basic compression-member design.
 
 The analysis showed that:
 
-1. the MATLAB tool reproduced the first-principles member calculations
-2. static FEA matched the analytical axial-stress result
-3. the isolated strut achieved approximately **2.25× ideal global buckling factor of safety**, exceeding the **1.5× structural requirement**
-4. global buckling FEA matched Euler within approximately 3%
-5. the local-buckling result was length-converged
-6. the local-buckling result was mesh-converged
-7. local wall buckling does not govern the selected tube design
+1. top-ring optimization removed approximately **40% of the baseline material** while minimizing compliance under the factored shock load; the CAD refinement preserved top-joint contact area and manufacturability
+2. engine-side ring topology optimization guided a simplified, manufacturable load-path design
+3. the MATLAB tool reproduced the first-principles member calculations
+4. static FEA matched the analytical axial-stress result
+5. the isolated strut achieved approximately **2.25× ideal global buckling factor of safety**, exceeding the **1.5× structural requirement**
+6. global buckling FEA matched Euler within approximately 3%
+7. the local-buckling result was length-converged
+8. the local-buckling result was mesh-converged
+9. local wall buckling does not govern the selected tube design
 
 The remaining design uncertainty is concentrated in:
 
