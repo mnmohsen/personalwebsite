@@ -14,7 +14,7 @@ skills:
   - Electrical Debugging
   - Supplier Coordination
 
-main-image: /methode.png
+main-image: /methode_2.png
 ---
 
 <style>
