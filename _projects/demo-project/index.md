@@ -572,24 +572,7 @@ Current upper joint design adapted to the tank-side interface while maintaining 
 
 The top joint follows the same basic structural principle but is adapted to the geometry and packaging of the tank-side interface.
 
-The real clevis joints permit rotation primarily about their pin axes.
-
-The simplified member and local-buckling models used idealized constraints to isolate the tube behavior. Those models were not intended to claim that the complete joints had already been structurally verified.
-
-The remaining joint-level work includes:
-
-- clevis pin shear
-- clevis pin bending
-- bearing stress around pin holes
-- bracket bending
-- bracket local yielding
-- bolt shear and tension
-- weld strength
-- heat-affected-zone properties
-- interface stiffness
-- eccentric load introduction
-- manufacturing tolerances
-- assembly access
+The clevis joints permit rotation primarily about their pin axes.
 
 ## System Integration
 
@@ -611,41 +594,6 @@ The current interface rings are preliminary geometry used to establish:
 - joint orientation
 - packaging envelope
 - surrounding-system clearances
-
-Their final thicknesses, bolt patterns, mounting features, and local reinforcement will be developed as the surrounding propulsion interfaces mature.
-
-## Current Engineering Conclusion
-
-The work now combines topology-driven redesign of both interface rings with independent analytical and numerical evidence supporting the basic compression-member design.
-
-The analysis showed that:
-
-1. top-ring optimization removed approximately **40% of the baseline material** while minimizing compliance under the factored shock load; the CAD refinement preserved top-joint contact area and manufacturability
-2. engine-side ring topology optimization guided a simplified, manufacturable load-path design
-3. the MATLAB tool reproduced the first-principles member calculations
-4. static FEA matched the analytical axial-stress result
-5. the isolated strut achieved approximately **2.25× ideal global buckling factor of safety**, exceeding the **1.5× structural requirement**
-6. global buckling FEA matched Euler within approximately 3%
-7. the local-buckling result was length-converged
-8. the local-buckling result was mesh-converged
-9. local wall buckling does not govern the selected tube design
-
-The remaining design uncertainty is concentrated in:
-
-- joint loading
-- weld behavior
-- interface-ring stiffness
-- unequal load sharing
-- thrust misalignment
-- geometric imperfections
-- nonlinear global buckling
-- vibration and dynamic loading
-- full-system structural behavior
-- physical test correlation
-
-The next major step is therefore not additional isolated local-wall analysis.
-
-It is higher-fidelity joint and full-assembly analysis followed by physical structural testing.
 
 ## Background and Earlier Concepts
 
