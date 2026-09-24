@@ -14,11 +14,20 @@ main-image: /AAHOM_logo.jpg
 
 ---
 
-## A Mechanical Reset for a Hands-On Exhibit
+## Making a Magnetic Museum Exhibit Easier to Reset
 
-For the Ann Arbor Hands-On Museum, **I designed, built, and tested a lever-driven mechanism to separate steel balls from permanent magnets.** The mechanism resets a magnetic launcher that demonstrates how successive magnet stages increase a ball's speed.
+A steel ball rolls toward a permanent magnet, accelerates, and strikes it. The collision transfers momentum through the magnet and the balls touching its opposite side, launching the outermost ball down the track. Repeating this process through multiple stages increases the outgoing ball's speed.
 
-I own the lever, linkage, carriage, and plate attachment, with a focus on intuitive operation for children and straightforward maintenance for museum staff.
+Our team is adapting this magnetic launcher into a hands-on exhibit for the Ann Arbor Hands-On Museum, letting children see and feel magnetic forces in action.
+
+<div style="display: flex; justify-content: center; margin: 20px 0;">
+  {% include youtube-video.html id="A5auE6Idx-g" autoplay="false" width="500px" %}
+</div>
+<p style="text-align:center;"><em>Launcher prototype demonstrating the magnetic acceleration and collision sequence.</em></p>
+
+**The challenge is resetting it:** after a launch, steel balls remain strongly attracted to the magnets. Children need a simple way to separate and reposition them for another turn.
+
+**I designed, built, and tested a lever-driven reset mechanism**, owning the lever, linkage, carriage, and spring-steel plate attachment. My work focuses on making that interaction intuitive while keeping wear components easy for museum staff to replace.
 
 ## Current Design: A Wheeled Reset Carriage
 
