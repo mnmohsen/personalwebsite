@@ -35,6 +35,11 @@ I developed the lever and connecting linkage in SolidWorks to move the separator
 
 I built and bench-tested the lever-and-plate mechanism, demonstrating separation of the ball from the permanent magnet. That testing informed the carriage and plate-mounting changes in the current design.
 
+<div style="display: flex; justify-content: center; margin: 20px 0;">
+  {% include youtube-video.html id="1jsW6OI1SYc" autoplay="false" width="500px" %}
+</div>
+<p style="text-align:center;"><em>Bench test of the lever-driven plate separation mechanism.</em></p>
+
 <img src="/assets/images/mdp-lever-shaft-concept.png" alt="Earlier lever-and-linkage design with a carriage guided by two shafts" style="width:100%; max-height:460px; object-fit:contain; margin: 20px 0;">
 <p><em>Earlier shaft-guided design, before the move to the wheeled carriage shown above.</em></p>
 
