@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Lever-Driven Reset for a Magnetic Launcher
-description: Designed and bench-tested a lever-driven reset mechanism for the Ann Arbor Hands-On Museum, integrating a dual-purpose spring-steel plate, friction clamp, and serviceable wheeled carriage.
+description: Designed and bench-tested a lever-driven reset mechanism for the Ann Arbor Hands-On Museum, with a dual-purpose spring-steel plate, friction clamp, and redesigned wheeled carriage.
 skills:
   - Mechanism Design
   - SolidWorks
@@ -14,56 +14,57 @@ main-image: /AAHOM_logo.jpg
 
 ---
 
-## The Challenge
+## A Mechanical Reset for a Hands-On Exhibit
 
-A magnetic launcher accelerates steel balls through successive magnet stages. Resetting it requires separating the balls from those magnets, an awkward task for children using a museum exhibit.
+For the Ann Arbor Hands-On Museum, **I designed, built, and tested a lever-driven mechanism to separate steel balls from permanent magnets.** The mechanism resets a magnetic launcher that demonstrates how successive magnet stages increase a ball's speed.
 
-For the Ann Arbor Hands-On Museum, **I designed, built, and bench-tested a lever-driven reset mechanism**, alongside launcher and impact-shield prototyping. My responsibility covers the lever, linkage, plate attachment, and carriage. The design must make reset intuitive while allowing museum staff to service parts subjected to repeated use.
+I own the lever, linkage, carriage, and plate attachment, with a focus on intuitive operation for children and straightforward maintenance for museum staff.
 
-## Turning a Handle Motion into Ball Separation
+## Current Design: A Wheeled Reset Carriage
 
-My first reset design used a handwheel and power screw to translate the plate carriage. We built and tested it, but the screw-driven motion made the moment of magnetic separation difficult to feel. Because that interaction is part of the exhibit's educational purpose, I moved to lever actuation to give users a more direct sense of the magnetic resistance.
+My latest design combines the lever mechanism with a **two-level 80/20 track**. The upper level supports the balls and magnets; the lower level guides the reset carriage on wheels.
 
-I designed the lever and connecting linkage in SolidWorks to move spring-steel separator plates along the track. The lever provides mechanical advantage, while the connecting rods transmit motion to the reset carriages. This gives the visitor one handle to operate instead of pulling directly against the magnets.
+I replaced the earlier sliding-shaft arrangement with rolling contact to improve carriage motion and concentrate routine wear in replaceable wheels. I also designed a **friction clamp** that holds the spring-steel plate without drilling through it, simplifying fabrication and replacement. I am currently building this revision.
 
-I built and tested the lever-and-plate mechanism, demonstrating that the plate could separate the ball from the permanent magnet. That bench work informed both the carriage redesign and the way the plate is attached.
+<img src="/assets/images/mdp-wheeled-reset.png" alt="Current lever reset design with a wheeled carriage, two-level track, and spring-steel plate attachment" style="width:100%; max-height:460px; object-fit:contain; margin: 20px 0;">
+<p><em>Current design: the upper track carries the launch components while the lower track guides the wheeled carriage.</em></p>
 
-Handle length controls the tradeoff between input force and handle travel. We will compare lengths at the museum to assess which feels comfortable and intuitive for children.
+## Building and Testing the Lever Mechanism
 
-## Giving the Spring-Steel Plate Two Jobs
+I developed the lever and connecting linkage in SolidWorks to move the separator plates along the launcher. The lever provides mechanical advantage, and the connecting rods transmit handle motion to the reset carriages.
 
-I developed the plate to **protect the magnet during launch and separate the ball during reset**. A replaceable strip takes the repeated ball impacts, while its integration into the carriage makes it part of the reset mechanism.
+I built and bench-tested the lever-and-plate mechanism, demonstrating separation of the ball from the permanent magnet. That testing informed the carriage and plate-mounting changes in the current design.
 
-I compared spring-steel shield configurations through physical testing. A shorter configuration showed the most promising balance of launch performance and durability in those tests.
+<img src="/assets/images/mdp-lever-shaft-concept.png" alt="Earlier lever-and-linkage design with a carriage guided by two shafts" style="width:100%; max-height:460px; object-fit:contain; margin: 20px 0;">
+<p><em>Earlier shaft-guided design, before the move to the wheeled carriage shown above.</em></p>
 
-<img src="/assets/images/platetesting.png" alt="Physical testing of spring-steel impact shield configurations" style="width:100%; max-height:460px; object-fit:contain; margin: 20px 0;">
+Handle length affects both input force and travel. Planned museum trials will compare lever lengths to assess comfort and ease of operation for children.
+
+## One Plate, Two Functions
+
+I developed a replaceable spring-steel plate to **protect the magnet during launch and separate the ball during reset**. This lets one component handle repeated impacts and provide the contact surface for the reset mechanism.
+
+I compared shield configurations through physical testing. A shorter configuration showed the most promising balance of launch performance and durability in those tests. Early handheld separation experiments then established the concept I incorporated into the lever assembly.
 
 <div style="text-align:center; margin: 20px 0;">
   <img src="/assets/images/poc_platefull.gif" alt="Early handheld test of the spring-steel plate separating a ball from a magnet" style="max-width:800px; width:100%; height:auto;">
-  <p><em>Early separation testing established the plate concept used in the lever mechanism.</em></p>
+  <p><em>Early testing of the plate's separation function.</em></p>
 </div>
 
-I then designed a **friction clamp** to retain the strip without drilling through hardened spring steel. This eliminates a difficult fabrication step and allows the plate to be replaced without fasteners passing through it.
+## Earlier Iteration: Learning from the Power Screw
 
-## Making Wear Parts Easier to Replace
+My first reset design used a handwheel and power screw to translate the plate carriage. We built and tested it, but the screw-driven motion made magnetic separation difficult to feel.
 
-I redesigned the shaft-guided carriage around a **two-level 80/20 track**. The upper level carries the balls and magnets; the lower level guides the reset carriage on wheels.
+That feedback changed the design direction. I moved to lever actuation to give visitors a more direct sense of magnetic resistance while retaining mechanical advantage.
 
-The change replaces sliding contact at the carriage with rolling contact. My intent is to concentrate routine wear in replaceable wheels, making maintenance less involved than replacing a worn carriage. I am currently building this revision.
+<img src="/assets/images/whiteboard.png" alt="Early reset mechanism concept sketches" style="width:100%; max-height:300px; object-fit:contain; margin: 20px 0;">
 
-<div style="display:flex; flex-wrap:wrap; gap:20px; justify-content:center; margin:20px 0;">
-  <div style="flex:1 1 280px; min-width:0; text-align:center;">
-    <img src="/assets/images/mdp-lever-shaft-concept.png" alt="Earlier lever reset design with a carriage guided by two shafts" style="width:100%; max-height:460px; object-fit:contain;">
-    <p><em>Earlier shaft-guided carriage.</em></p>
-  </div>
-  <div style="flex:1 1 280px; min-width:0; text-align:center;">
-    <img src="/assets/images/mdp-wheeled-reset.png" alt="Redesigned lever reset with a wheeled carriage on the lower level of an 80/20 track" style="width:100%; max-height:460px; object-fit:contain;">
-    <p><em>Current wheeled carriage and two-level track.</em></p>
-  </div>
+<div style="display: flex; justify-content: center; margin: 20px 0;">
+  {% include youtube-video.html id="mnxXMfzArDM" autoplay="false" width="900px" %}
 </div>
 
-## Supporting the Launcher Design
+## Launcher Development
 
-I also helped build and test permanent-magnet launcher prototypes to investigate magnet spacing, ball spacing, and track constraints. Our team selected permanent magnets to keep the launch sequence visible and avoid the powered controls and thermal management associated with electromagnets.
+Alongside the reset work, I helped build and test permanent-magnet launcher prototypes, investigating magnet spacing, ball spacing, and track constraints. Our team selected permanent magnets to preserve the visible launch sequence while avoiding powered controls and thermal-management requirements.
 
 <img src="/assets/images/permalauncher.png" alt="Permanent-magnet launcher prototype showing the magnet, impact surface, and ball path" style="width:100%; max-height:460px; object-fit:contain; margin: 20px 0;">
