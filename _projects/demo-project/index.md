@@ -38,14 +38,18 @@ I also revised the pin-retention design to use **Smalley retaining rings with gr
     <p><em>Latest assembly with the updated rod ends and individual engine-side mounting brackets.</em></p>
   </div>
   <div>
-    <img src="/assets/images/newbotjoints.png" alt="Lower clevis joint detail showing the strut connection, mounting bracket, and clevis-pin retention" style="width:100%; height:480px; object-fit:contain;">
-    <p><em>Joint development: compact bracket, clevis pin, and retaining ring.</em></p>
+    <img src="/assets/images/topjoint.png" alt="Upper clevis joint detail showing the strut connection at the tank-side interface" style="width:100%; height:480px; object-fit:contain;">
+    <p><em>Upper joint: compact clevis connection at the tank-side interface.</em></p>
   </div>
 </div>
 
 I integrated these connections into the six-strut NX assembly, incorporating the welded tube-end design developed by teammate Gabe Popso.
 
 **Assembly analysis:** I extended the structural work to a simplified full-assembly FEA model. Rod axial stresses of approximately **22 MPa** were consistent with first-principles estimates, providing an initial check of axial load transfer through the connected structure ahead of preliminary design review.
+
+<img src="/assets/images/tts-assembly-fea.png" alt="Simplified ANSYS assembly model used to evaluate axial load transfer through the TTS" style="width:100%; max-height:600px; object-fit:contain; margin:20px 0;">
+
+*Initial assembly FEA used to compare rod axial stresses with first-principles estimates.*
 
 ## Turning Topology Results into Manufacturable Rings
 
