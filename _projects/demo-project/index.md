@@ -34,7 +34,7 @@ I also revised the pin-retention design to use **Smalley retaining rings with gr
 
 <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px; align-items:start; margin:24px 0;">
   <div>
-    <img src="/assets/images/tts-current-assembly.png" alt="Latest Siemens NX assembly of the six-strut TTS with updated spherical rod ends" style="width:100%; height:480px; object-fit:contain;">
+    <img src="/assets/images/nxphoto.png" alt="Latest Siemens NX assembly of the six-strut TTS with updated spherical rod ends" style="width:100%; height:480px; object-fit:contain;">
     <p><em>Latest assembly with the updated rod ends and individual engine-side mounting brackets.</em></p>
   </div>
   <div>
