@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Lever-Driven Reset for a Magnetic Launcher
+title: Multidisciplinary Design Program
 description: Designed and bench-tested a lever-driven reset mechanism for the Ann Arbor Hands-On Museum, with a dual-purpose spring-steel plate, friction clamp, and redesigned wheeled carriage.
 skills:
   - Mechanism Design
