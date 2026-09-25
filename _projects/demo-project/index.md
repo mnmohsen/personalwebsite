@@ -1,683 +1,98 @@
 ---
 layout: post
 title: Michigan Aeronautical Science Association
-description: Design and structural verification of the thrust transfer structure for MASA’s Citron liquid rocket, including analytical sizing, FEA, topology optimization, joint design, and system integration.
+description: Designed the thrust transfer structure for MASA's Citron liquid rocket, combining structural sizing, compact joint design, topology-driven ring development, and assembly integration in Siemens NX.
 skills:
   - Mechanical Design
-  - Structural Analysis
   - Siemens NX
-  - MATLAB
+  - Structural Analysis
   - ANSYS
-  - Topology Optimization
-  - Finite Element Analysis
-  - Aerospace Structures
-  - Buckling Analysis
+  - MATLAB
   - Joint Design
-  - System Integration
+  - Topology Optimization
   - Design for Manufacturability
-  - Design Iteration
+  - System Integration
 
 main-image: /image_rockit.png
 ---
 
-<style>
-.tts-project h2 {
-  font-size: 2rem !important;
-  font-weight: 700 !important;
-  line-height: 1.2 !important;
-  margin: 2.4rem 0 1rem !important;
-}
+## Designing the Structure That Transfers Rocket Thrust
 
-.tts-project h3 {
-  font-size: 1.5rem !important;
-  font-weight: 700 !important;
-  line-height: 1.25 !important;
-  margin: 2rem 0 0.8rem !important;
-}
+A rocket engine needs a structural connection to push the rest of the vehicle. For MASA's Citron liquid rocket, the **thrust transfer structure (TTS)** carries that force from the engine into the tank-side structure through six aluminum struts, fitting around propulsion hardware and plumbing.
 
-.tts-project h4 {
-  font-size: 1.25rem !important;
-  font-weight: 700 !important;
-  line-height: 1.3 !important;
-  margin: 1.6rem 0 0.7rem !important;
-}
+As the **Responsible Engineer**, I developed the strut sizing tools, designed compact joints, refined interface rings, and integrated the assembly in Siemens NX. The central challenge was balancing compression strength and low mass with limited space, practical fabrication, and assembly access.
 
-.tts-project ul,
-.tts-project ol {
-  margin-top: 0.65rem !important;
-  margin-bottom: 1.25rem !important;
-  padding-left: 1.5rem !important;
-}
+<img src="/assets/images/newttscover.png" alt="Thrust transfer structure shown within Citron's propulsion bay, connecting the engine-side and tank-side interfaces" style="width:100%; max-height:750px; object-fit:contain; margin:20px 0;">
 
-.tts-project li {
-  font-size: 1.08rem !important;
-  line-height: 1.5 !important;
-  margin: 0.18rem 0 !important;
-}
-</style>
+*TTS within the rocket: six struts carry thrust across the propulsion bay. Interface geometry shown reflects this design iteration.*
 
-<div class="tts-project" markdown="1">
+## Designing the Joints Around the Hardware
 
-## Thrust Transfer Structure Design and Verification
+The connections had to fit around propulsion hardware while transferring load from the struts into the mounting interfaces. I designed compact clevis-style brackets and pin connections, then selected **PTFE-lined spherical rod ends to reduce joint play**, coordinating with Timken/Aurora on OEM pricing.
 
-As part of the Michigan Aeronautical Science Association Structures team, I am redesigning the Thrust Transfer Structure for Citron, MASA’s upcoming liquid rocket vehicle.
+I also revised the pin-retention design to use **Smalley retaining rings with greater circumferential engagement**. Working with Smalley's engineers, I reviewed the groove and pin concept, selected a compatible ring, and obtained samples for prototype evaluation.
 
-The TTS transfers engine thrust into the rocket airframe through six compression loaded aluminum struts. My work combined first-principles structural analysis, automated design exploration, finite element analysis, joint design, packaging, and full-system CAD integration.
+<div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px; align-items:start; margin:24px 0;">
+  <div>
+    <img src="/assets/images/tts-current-assembly.png" alt="Latest Siemens NX assembly of the six-strut TTS with updated spherical rod ends" style="width:100%; height:480px; object-fit:contain;">
+    <p><em>Latest assembly with the updated rod ends and individual engine-side mounting brackets.</em></p>
+  </div>
+  <div>
+    <img src="/assets/images/newbotjoints.png" alt="Lower clevis joint detail showing the strut connection, mounting bracket, and clevis-pin retention" style="width:100%; height:480px; object-fit:contain;">
+    <p><em>Joint development: compact bracket, clevis pin, and retaining ring.</em></p>
+  </div>
+</div>
 
-<img src="/assets/images/newttscover.png" alt="Current Citron thrust transfer structure assembly with six tubular struts and compact clevis-style joints" style="width:100%; max-height:750px; object-fit:contain; margin:20px 0;">
+I integrated these connections into the six-strut NX assembly, incorporating the welded tube-end design developed by teammate Gabe Popso.
 
-<p style="font-size:12px; color:#666; margin-top:0;">
-Current TTS design integrating six hollow aluminum struts, compact clevis-style joints, and preliminary engine and tank interface rings.
-</p>
+**Assembly analysis:** I extended the structural work to a simplified full-assembly FEA model. Rod axial stresses of approximately **22 MPa** were consistent with first-principles estimates, providing an initial check of axial load transfer through the connected structure ahead of preliminary design review.
 
-### Current Results
+## Turning Topology Results into Manufacturable Rings
 
-- six primary 6061-T6 aluminum struts
-- compact clevis-style top and bottom joints
-- tank-side and engine-side interface rings redesigned using ANSYS topology optimization
-- approximately 40% material removed in the top-ring optimization while minimizing compliance under the shock load multiplied by the 1.5 design safety factor
-- topology results converted into simplified, manufacturable CAD, with contact area preserved beneath the top joints
-- clevis-pin retention concept developed using Smalley retaining rings
-- 2,965 N axial reference load used for isolated strut verification
-- analytical and FEA axial stress of approximately 23.4 MPa
-- 2.25× ideal global buckling factor of safety under the evaluated member-level load case, exceeding the 1.5× design requirement
-- global buckling FEA within approximately 3% of the Euler calculation
-- local wall-buckling result converged with respect to coupon length and mesh density
-- converged ideal local-buckling eigenvalue of approximately 2.13 MN
-- local wall buckling screened out as a governing failure mode
-
-## Where the TTS Sits in the Rocket
-
-<img src="/assets/images/tts_rocket_context_sketch.png" alt="Mohamad sketching the location of the thrust transfer structure within the Citron rocket" style="width:100%; max-height:650px; object-fit:contain; margin:20px 0;">
-
-<p style="font-size:12px; color:#666; margin-top:0;">
-Sketching the location of the thrust transfer structure relative to the engine, propulsion bay, tank structure, and surrounding rocket airframe.
-</p>
-
-The thrust transfer structure sits inside the lower portion of the rocket between the propulsion system and the vehicle structure.
-
-Its job is to:
-
-- receive thrust at the engine-side interface
-- carry the load primarily as axial compression through six struts
-- transfer the load into the tank-side and vehicle structure
-- fit around propulsion hardware, plumbing, injector interfaces, fasteners, and assembly tooling
-
-Although the basic load path sounds simple, the design is highly constrained.
-
-Increasing tube diameter may improve buckling resistance but consume valuable packaging volume. Larger joints may improve strength but interfere with plumbing. Additional adjustability may simplify assembly but introduce more components, tolerances, and possible failure points.
-
-The project therefore became a system-level mechanical design problem rather than only a structural calculation.
-
-## What I Owned
-
-My work included:
-
-- first-principles reaction-force and member-load calculations
-- MATLAB structural sizing GUI development
-- Euler and Johnson buckling implementation
-- parametric geometry and cross-section trade studies
-- six-strut TTS architecture development
-- compact clevis-style top and bottom joint design
-- clevis-pin retention and retaining-ring selection
-- supplier coordination for prototype retaining-ring samples
-- tank-side and engine-side interface-ring topology optimization
-- top-ring static structural evaluation under the factored shock load
-- topology-driven CAD redesign for manufacturability and preservation of top-joint contact area
-- static stress verification in ANSYS
-- global eigenvalue-buckling analysis
-- local wall-buckling analysis
-- coupon-length convergence
-- mesh convergence and investigation of the nonconvergent top-ring stress peak
-- full assembly CAD integration
-- identification of the remaining joint and interface risks
-
-## First-Principles Structural Sizing
-
-One of the first engineering questions was:
-
-**What structural members actually make sense for this application?**
-
-I began with free-body diagrams and hand calculations to estimate:
-
-- reaction forces
-- axial member loads
-- axial stress
-- Euler buckling load
-- factor of safety
-
-The calculations worked, but every change in rod length, mounting angle, diameter, wall thickness, or cross-section required another full set of calculations.
-
-To accelerate that process, I converted the analysis into a MATLAB structural sizing GUI.
-
-<img src="/assets/images/homepage_gui.png" alt="MATLAB GUI main interface for TTS geometry and load calculations" style="width:100%; max-height:550px; object-fit:contain; margin:20px 0;">
-
-<p style="font-size:12px; color:#666; margin-top:0;">
-MATLAB geometry and loading interface used to calculate reaction forces and axial member loads.
-</p>
-
-The tool models each strut as an idealized pin-pin two-force member carrying axial compression.
-
-<img src="/assets/images/gui_results.png" alt="MATLAB GUI results showing TTS member stress reactions and buckling performance" style="width:100%; max-height:550px; object-fit:contain; margin:20px 0;">
-
-<p style="font-size:12px; color:#666; margin-top:0;">
-Results interface reporting reaction forces, axial stress, critical buckling load, and factor of safety.
-</p>
-
-Key outputs include:
-
-- axial member force
-- reaction forces
-- cross-sectional area
-- axial stress
-- Euler or Johnson critical buckling load
-- buckling factor of safety
-- comparisons between candidate cross-sections
-
-I also developed parametric sweeps to visualize how the design changed across combinations of geometry variables.
-
-<img src="/assets/images/fixed_parasweep.png" alt="MATLAB parametric sweep comparing buckling performance across TTS member geometries" style="width:100%; max-height:550px; object-fit:contain; margin:20px 0;">
-
-<p style="font-size:12px; color:#666; margin-top:0;">
-Parametric sweep used to compare buckling performance across changing member dimensions.
-</p>
-
-This transformed the process from checking one geometry at a time into exploring complete design trends.
-
-The original tool relied primarily on Euler buckling. Euler theory is appropriate for slender columns, but it becomes less representative as the slenderness ratio decreases.
-
-I therefore expanded the tool to incorporate Johnson buckling behavior so the selected analytical model better matched the applicable slenderness regime.
-
-<img src="/assets/images/ttshandcalc1.png" alt="Initial hand calculations used to establish the TTS structural sizing model" style="width:100%; max-height:500px; object-fit:contain; margin:20px 0;">
-
-<p style="font-size:12px; color:#666; margin-top:0;">
-Initial hand calculations used to establish and independently check the equations later implemented in the MATLAB tool.
-</p>
-
-The GUI was used as a first-pass design-space filter rather than final structural proof. Its purpose was to identify promising configurations before higher-fidelity analysis.
-
-## Cross-Section and Material Trade Study
-
-In addition to sizing a single member geometry, I used the MATLAB tool to compare hollow circular and hollow square cross-sections across changes in outside dimension and wall thickness.
-
-For each candidate section, the same analytical model reported cross-sectional area, axial stress, Euler or Johnson critical buckling load, and buckling factor of safety. This let me compare section geometry on a consistent basis and quantify how changes in member dimensions affected buckling performance.
-
-I also participated in team discussions around the broader member selection, where the structural results from the MATLAB tool were considered alongside packaging, fabrication, integration, and availability constraints. These discussions, together with input from other Structures team members, guided the final selection rather than the decision coming from the analytical model alone.
-
-Composite tubing, including carbon fiber, was also considered because of its potential mass savings. However, sourcing and fabricating suitable composite tubes would have been more difficult for a student team. Structural analysis and validation would also be more involved because the composite would require orthotropic material properties and laminate-specific failure criteria rather than the simpler isotropic aluminum model.
-
-The team ultimately selected hollow circular 6061-T6 aluminum tubing as the best overall fit for the TTS. My contribution was developing the sizing tool, performing the cross-section and buckling analysis, and participating in the team trade discussions that supported that decision.
-
-## ANSYS Structural Verification
-
-### Tank-Side Ring Topology Optimization
-
-I optimized the top, tank-side interface ring using the same general ANSYS workflow as the engine-side ring. The model used the shock load supplied by Jesse, multiplied by the 1.5 design safety factor, as the applied design load.
-
-The optimization removed approximately **40% of the baseline material** while minimizing compliance to retain stiffness under the evaluated loading.
+I used ANSYS topology optimization to explore material removal from the interface rings while preserving their mounting regions. In the tank-side ring study, the optimization removed **approximately 40% of the baseline material** with a minimum-compliance objective under the factored design load.
 
 <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:18px; align-items:start; margin:24px 0;">
-
   <div>
-    <img src="/assets/images/topring_old.png"
-         alt="Original tank-side TTS interface ring before topology optimization"
-         style="width:100%; height:240px; object-fit:contain;">
-    <p style="font-size:12px; color:#666; margin-top:6px;">
-      <strong>Baseline:</strong> Original top ring evaluated using the shock load with a 1.5 design safety factor.
-    </p>
+    <img src="/assets/images/topring_old.png" alt="Baseline tank-side interface ring" style="width:100%; height:240px; object-fit:contain;">
+    <p><strong>Baseline:</strong> Continuous ring with the required mounting interfaces.</p>
   </div>
-
   <div>
-    <img src="/assets/images/topring_structopt.png"
-         alt="ANSYS topology optimization result for the tank-side TTS interface ring"
-         style="width:100%; height:240px; object-fit:contain;">
-    <p style="font-size:12px; color:#666; margin-top:6px;">
-      <strong>Topology result:</strong> Approximately 40% material removal with a minimum-compliance objective.
-    </p>
+    <img src="/assets/images/topring_structopt.png" alt="ANSYS topology result indicating material removal from the tank-side ring" style="width:100%; height:240px; object-fit:contain;">
+    <p><strong>Optimization:</strong> Approximately 40% material removal in the topology result.</p>
   </div>
-
   <div>
-    <img src="/assets/images/fullynewtopring.png"
-         alt="Refined manufacturable tank-side TTS ring with material retained beneath the top joints"
-         style="width:100%; height:240px; object-fit:contain;">
-    <p style="font-size:12px; color:#666; margin-top:6px;">
-      <strong>Refined design:</strong> Manufacturable CAD with material added beneath the top joints to preserve their contact area.
-    </p>
+    <img src="/assets/images/fullynewtopring.png" alt="Refined ring CAD with simplified cutouts and preserved support beneath the joints" style="width:100%; height:240px; object-fit:contain;">
+    <p><strong>CAD refinement:</strong> Simplified geometry with material retained beneath the joints.</p>
   </div>
-
 </div>
 
-I used the topology result to guide material removal and relied primarily on the static structural results to refine the design. I rebuilt the raw optimization geometry as manufacturable CAD and added material beneath the top joints to preserve the contact area that transfers load into the ring.
+I translated the optimization into conventional CAD, using the load paths to guide cutouts and preserving contact area beneath the top joints. An earlier engine-side ring study followed the same approach, replacing the raw topology geometry with through-pockets, fillets, and constant plate thickness for machining.
 
-During the static analysis, a localized peak stress continued increasing as I refined the mesh. This nonconvergent behavior was consistent with a stress singularity, so I did not use that peak as a converged physical stress for assessing the ring.
+## Sizing the Struts with a MATLAB Design Tool
 
-### Engine-Side Ring Topology Optimization
+I built a MATLAB GUI from free-body diagrams and first-principles calculations to compare strut geometries. It calculates member loads, axial stress, and Euler or Johnson buckling predictions, with parameter sweeps for length, angle, cross-section, and wall thickness.
 
-After establishing the six-strut architecture, I used ANSYS topology optimization to reduce material in the preliminary engine-side interface ring while maintaining the primary thrust load paths.
+<img src="/assets/images/fixed_parasweep.png" alt="MATLAB sizing tool showing a parameter sweep of strut buckling performance" style="width:100%; max-height:550px; object-fit:contain; margin:20px 0;">
 
-The baseline model applied the full engine thrust through the central interface and transferred the load into the six strut-joint locations. Critical engine and joint interfaces were preserved while the remaining plate material was treated as the design region.
+*Parameter sweeps made it possible to compare geometry trends before committing to detailed CAD and FEA.*
 
-<div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:18px; align-items:start; margin:24px 0;">
+My circular-versus-square tube studies supported the team's selection of **6061-T6 round tubing with a 5/8-inch outside diameter and 1/8-inch wall**. The selection balanced buckling resistance with packaging, availability, and fabrication needs.
 
+## Checking Strut Analysis Against First Principles
+
+Earlier member-level studies established the analytical checks used to assess the strut models:
+
+- **Axial stress:** The isolated strut model predicted approximately **23.4 MPa** under a 2,965 N reference load, matching the hand calculation.
+- **Global buckling:** The idealized pin-ended strut's eigenvalue prediction agreed with Euler buckling within **approximately 3%**.
+- **Local wall buckling:** I compared coupon lengths and mesh densities to check the stability of the predicted local mode.
+
+<div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px; align-items:start; margin:24px 0;">
   <div>
-    <img src="/assets/images/tts_ring_original.png"
-         alt="Original solid engine-side TTS interface ring before topology optimization"
-         style="width:100%; height:240px; object-fit:contain;">
-    <p style="font-size:12px; color:#666; margin-top:6px;">
-      <strong>Baseline:</strong> Original solid interface ring used to establish the load path and protected mounting regions.
-    </p>
+    <img src="/assets/images/newmeshy.png" alt="ANSYS isolated-strut axial stress result checked against the analytical calculation" style="width:100%; height:360px; object-fit:contain;">
+    <p><em>Isolated-strut stress model checked against force divided by cross-sectional area.</em></p>
   </div>
-
   <div>
-    <img src="/assets/images/tts_ring_topology.png"
-         alt="ANSYS topology optimization result for the TTS engine-side interface ring"
-         style="width:100%; height:240px; object-fit:contain;">
-    <p style="font-size:12px; color:#666; margin-top:6px;">
-      <strong>Topology result:</strong> Optimization concentrated material along the primary paths between the engine interface and strut joints while opening three low-value regions.
-    </p>
+    <img src="/assets/images/tts_buckling_fea.png" alt="ANSYS global buckling mode for the idealized pin-ended strut" style="width:100%; height:360px; object-fit:contain;">
+    <p><em>Member-level buckling mode compared with the Euler prediction.</em></p>
   </div>
-
-  <div>
-    <img src="/assets/images/tts_ring_refined.png"
-         alt="Refined manufacturable TTS interface ring based on the topology optimization result"
-         style="width:100%; height:240px; object-fit:contain;">
-    <p style="font-size:12px; color:#666; margin-top:6px;">
-      <strong>Refined design:</strong> The raw density result was rebuilt as clean CAD with three through-pockets, smooth load paths, joint pads, and manufacturable fillets.
-    </p>
-  </div>
-
-</div>
-
-Rather than directly manufacturing the organic optimization mesh, I treated it as a load-path study. The result showed that the original continuous plate could be reorganized into a triangular three-lobed structure surrounding the central engine interface.
-
-As a load-magnitude sensitivity check, I repeated the optimization at 2,945 lbf and 4,000 lbf system-thrust cases. Both produced essentially the same three-lobed load-path architecture, indicating that the identified topology was insensitive to load magnitude over the evaluated range under the same loading direction and boundary conditions.
-
-I rebuilt the result as conventional CAD with:
-
-- three large through-pockets
-- continuous material around the engine interface
-- reinforced regions around the strut mounting holes
-- smooth transitions and fillets instead of element-scale topology features
-- constant plate thickness for straightforward machining
-
-The refined geometry is then evaluated in a separate static structural model using the same loading and interface assumptions as the baseline design. This provides a direct comparison of mass, stiffness, deformation, and stress after removing the low-value material.
-
-### Isolated Strut Verification
-
-After narrowing the design space analytically, I used ANSYS to verify the isolated strut behavior and investigate the relevant buckling modes.
-
-The selected tube geometry was:
-
-- 6061-T6 aluminum
-- 5/8-inch outside diameter
-- 1/8-inch wall thickness
-- 3/8-inch inside diameter
-- approximately 21-inch pin-center-to-pin-center length
-
-For the isolated member model, I used a 2,965 N axial reference load.
-
-This corresponds numerically to one-sixth of a 4,000 lbf system-thrust case. It was used as a controlled member-level reference load rather than a complete prediction of the final strut-force distribution.
-
-The actual member forces in the assembled TTS will depend on strut angle, ring stiffness, interface stiffness, manufacturing variation, load eccentricity, and unequal load sharing.
-
-### Static Axial Stress
-
-For the selected tube geometry, the cross-sectional area is approximately 126.7 mm².
-
-The analytical axial stress was:
-
-<div style="text-align:center; font-size:1.2rem; margin:24px 0;">
-  σ =
-  <span style="display:inline-block; vertical-align:middle; text-align:center; margin:0 6px;">
-    <span style="display:block; border-bottom:1px solid currentColor; padding:0 10px;">
-      F
-    </span>
-    <span style="display:block; padding-top:2px;">
-      A
-    </span>
-  </span>
-</div>
-
-<div style="text-align:center; font-size:1.2rem; margin:24px 0;">
-  σ =
-  <span style="display:inline-block; vertical-align:middle; text-align:center; margin:0 6px;">
-    <span style="display:block; border-bottom:1px solid currentColor; padding:0 10px;">
-      2,965 N
-    </span>
-    <span style="display:block; padding-top:2px;">
-      126.7 mm²
-    </span>
-  </span>
-  ≈ 23.4 MPa
-</div>
-
-<img src="/assets/images/newmeshy.png" alt="ANSYS static structural stress result for the TTS aluminum strut" style="width:100%; max-height:650px; object-fit:contain; margin:20px 0;">
-
-<p style="font-size:12px; color:#666; margin-top:0;">
-Static structural analysis of the isolated TTS strut under a 2,965 N compressive reference load.
-</p>
-
-ANSYS predicted approximately 23.4 MPa through the uniform tube section, closely matching the analytical axial-stress calculation.
-
-This agreement verified that the simplified model’s:
-
-- applied load
-- tube geometry
-- material properties
-- cross-sectional area
-- boundary conditions
-
-were behaving as intended before progressing to buckling analysis.
-
-A separate higher-detail model that included the tube end cap geometry produced a larger local stress near the load-transfer region.
-
-This indicated that the tube to end-cap interface required joint-level investigation rather than treating the complete strut as a perfectly uniform member.
-
-### Global Eigenvalue Buckling
-
-Because the members carry compression, material yielding was not the only possible failure mode.
-
-I first estimated the ideal global column-buckling load using Euler buckling for a pin-pin member:
-
-<div style="text-align:center; font-size:1.2rem; margin:24px 0;">
-  <em>P</em><sub>cr</sub> =
-  <span style="display:inline-block; vertical-align:middle; text-align:center; margin-left:6px;">
-    <span style="display:block; border-bottom:1px solid currentColor; padding:0 10px;">
-      π²EI
-    </span>
-    <span style="display:block; padding-top:2px;">
-      L²
-    </span>
-  </span>
-</div>
-
-The hand calculation predicted a critical buckling load of approximately 1,460 lbf.
-
-I then performed a prestressed eigenvalue-buckling analysis using the solved static load case.
-
-The first global buckling mode produced a load multiplier of 2.2485.
-
-Using the 2,965 N reference load:
-
-<div style="text-align:center; font-size:1.2rem; margin:24px 0;">
-  <em>P</em><sub>cr</sub> = 2.2485 × 2,965 N
-</div>
-
-<div style="text-align:center; font-size:1.2rem; margin:24px 0;">
-  <em>P</em><sub>cr</sub> ≈ 6,667 N ≈ 1,499 lbf
-</div>
-
-<div style="text-align:center; font-size:1.2rem; margin:24px 0;">
-  FoS<sub>buckling</sub> =
-  <span style="display:inline-block; vertical-align:middle; text-align:center; margin:0 6px;">
-    <span style="display:block; border-bottom:1px solid currentColor; padding:0 10px;">
-      6,667 N
-    </span>
-    <span style="display:block; padding-top:2px;">
-      2,965 N
-    </span>
-  </span>
-  ≈ <strong>2.25</strong>
-</div>
-
-The isolated strut therefore achieved an ideal global buckling factor of safety of approximately **2.25**, exceeding the **1.5× structural requirement** for the evaluated member-level load case.
-
-<img src="/assets/images/tts_buckling_fea.png" alt="First global eigenvalue buckling mode of the TTS aluminum strut" style="width:100%; max-height:650px; object-fit:contain; margin:20px 0;">
-
-<p style="font-size:12px; color:#666; margin-top:0;">
-First global buckling mode of the TTS strut. The predicted critical load was within approximately 3% of the Euler calculation.
-</p>
-
-The first mode showed the expected smooth lateral bow of an ideal pin-pin column, providing a qualitative check that the model was producing the correct global instability family.
-
-The displacement magnitude displayed in an eigenvalue result is arbitrary. The meaningful outputs are the mode shape and load multiplier, not the displayed deformation value.
-
-### Local Wall Buckling
-
-Global column buckling involves the complete member bowing laterally while its cross-section remains approximately intact.
-
-Local buckling is different. It occurs when the tube wall itself wrinkles, ovalizes, or develops circumferential lobes.
-
-I created short tube coupon models to isolate the local wall-buckling family without requiring the complete 21-inch member.
-
-<img src="/assets/images/locbuckling.png" alt="Refined ANSYS local wall buckling mode showing repeated helical wall lobing" style="width:100%; max-height:650px; object-fit:contain; margin:20px 0;">
-
-<p style="font-size:12px; color:#666; margin-top:0;">
-Refined local wall-buckling mode showing repeated helical lobing of the tube wall.
-</p>
-
-The local modes were identified by:
-
-- repeated inward and outward wall lobes
-- cross-sectional distortion
-- a relatively straight overall member centerline
-- a repeating axial wavelength
-- a mode shape distinct from smooth global column bending
-
-Because the tube is circular and nearly axisymmetric, equivalent local modes can appear at different angular orientations or as helical combinations of closely spaced mode pairs.
-
-The visible deformation amplitude is arbitrary and was automatically scaled by ANSYS. The relevant quantities were the mode family and associated load multiplier.
-
-#### Coupon-Length Convergence
-
-I compared the same local-lobing family using different tube lengths:
-
-- 2.5-inch coupon: 2.1304 MN
-- 5-inch coupon: 2.1235 MN
-- difference: approximately 0.32%
-
-Doubling the coupon length introduced additional repetitions of the wall pattern but produced almost no change in the predicted local critical load.
-
-This demonstrated that the result was no longer meaningfully controlled by the coupon end conditions.
-
-#### Mesh Convergence
-
-I then compared the local-mode result using the baseline and refined solid meshes:
-
-- baseline mesh: 2.1304 MN
-- refined mesh: 2.1293 MN
-- difference: approximately 0.052%
-
-The same local-lobing family appeared in both models while the predicted load remained essentially unchanged.
-
-The local-buckling result was therefore both:
-
-- length-converged
-- mesh-converged
-
-The converged linear eigenvalue prediction was approximately 2.13 MN.
-
-Compared with the 2,965 N reference load, this value is roughly 718 times higher.
-
-That ratio is not a physical factor of safety. Linear eigenvalue buckling assumes ideal geometry, idealized constraints, and linear elastic material behavior.
-
-However, the difference is sufficiently large to screen local wall buckling out as a governing failure mode for the selected tube under the evaluated loading.
-
-The more credible member-level concern remains global column buckling, followed by the joint, weld, and interface behavior.
-
-## Current Joint Design
-
-Once the basic tube behavior was established, the main uncertainty shifted to the joints and load-transfer interfaces.
-
-I developed compact clevis-style joints intended to:
-
-- maintain a clear axial load path
-- allow rotation about the clevis-pin axis
-- let each strut behave approximately as a two-force member
-- reduce joint size
-- reduce part count
-- simplify assembly
-- provide positive pin retention
-- connect cleanly to the interface rings
-
-### Bottom Joint
-
-<img src="/assets/images/newbotjoints.png" alt="Current lower TTS clevis-style joint using a Smalley retaining ring for clevis-pin retention" style="width:100%; max-height:650px; object-fit:contain; margin:20px 0;">
-
-<p style="font-size:12px; color:#666; margin-top:0;">
-Current lower joint design using a clevis pin and Smalley retaining ring at the strut connection, with two bolts attaching the bracket to the engine-side interface.
-</p>
-
-The bottom joint transfers load between the engine-side interface and the tubular strut.
-
-The connection uses:
-
-- a welded tube end cap
-- a clevis-style bracket
-- a clevis pin
-- a Smalley retaining ring for axial pin retention
-- two bolts connecting the bracket to the interface ring
-
-The welded tube end cap concept and supporting weld calculations were developed by Gabe Popso and incorporated into the current strut assembly.
-
-### Retaining-Ring Development
-
-The initial clevis-pin retention concept used conventional C-clips. Although compact, the C-clips provided limited engagement with the pin groove and were not a robust choice for a vibration-sensitive rocket structure.
-
-I therefore investigated alternative retaining-ring designs and transitioned to a Smalley retaining ring with greater circumferential engagement around the clevis pin.
-
-<div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:18px; align-items:start; margin:20px 0;">
-
-  <div>
-    <img src="/assets/images/bottomjoint.png"
-         alt="Earlier TTS clevis joint concept using conventional C-clips for clevis-pin retention"
-         style="width:100%; height:360px; object-fit:contain;">
-    <p style="font-size:12px; color:#666; margin-top:6px;">
-      <strong>Initial concept:</strong> Conventional C-clips provided a compact retention method but limited engagement around the clevis-pin groove.
-    </p>
-  </div>
-
-  <div>
-    <img src="/assets/images/retainingring.png"
-         alt="Smalley retaining ring selected for TTS clevis-pin retention"
-         style="width:100%; height:360px; object-fit:contain;">
-    <p style="font-size:12px; color:#666; margin-top:6px;">
-      <strong>Refined solution:</strong> Smalley retaining ring selected for greater circumferential engagement and positive axial pin retention.
-    </p>
-  </div>
-
-</div>
-
-After developing the revised groove and pin concept, I worked directly with Smalley to review the application and identify a compatible retaining ring. Their engineering team reviewed the concept, confirmed the retaining-ring approach was viable, and provided sample rings for prototype fit and retention testing.
-
-This progression moved the joint from an initial C-clip concept to a supplier-reviewed retention solution with physical hardware available for prototype evaluation.
-
-### Top Joint
-
-<img src="/assets/images/topjoint.png" alt="Closeup of the current upper TTS clevis-style joint" style="width:100%; max-height:650px; object-fit:contain; margin:20px 0;">
-
-<p style="font-size:12px; color:#666; margin-top:0;">
-Current upper joint design adapted to the tank-side interface while maintaining the same basic axial load-path intent.
-</p>
-
-The top joint follows the same basic structural principle but is adapted to the geometry and packaging of the tank-side interface.
-
-The clevis joints permit rotation primarily about their pin axes.
-
-## System Integration
-
-The analytical sizing, finite element analysis, joint development, and packaging work were combined into the six-member assembly shown at the top of this page.
-
-The six-strut layout replaced an earlier overconstrained arrangement.
-
-Reducing the structure to six primary members created a clearer and more predictable load path without introducing redundant struts whose force distribution would depend heavily on:
-
-- manufacturing tolerances
-- joint stiffness
-- interface deformation
-- assembly variation
-
-The current interface rings are preliminary geometry used to establish:
-
-- overall structural layout
-- member locations
-- joint orientation
-- packaging envelope
-- surrounding-system clearances
-
-## Background and Earlier Concepts
-
-The current design is the result of several earlier concepts and trade studies.
-
-These sections are included for readers who want the complete development history.
-
-<details>
-<summary><strong>Original Sleeve-Bearing and Ball-Joint Concept</strong></summary>
-<div markdown="1">
-
-Before developing the current clevis-style joints, I explored an adjustable joint architecture using custom sleeve bearings, a shoulder screw, and a ball-joint interface.
-
-<img src="/assets/images/tts_joint.png" alt="Earlier TTS joint concept using custom sleeve bearings and a ball-joint interface" style="width:100%; max-height:550px; object-fit:contain; margin:20px 0;">
-
-<p style="font-size:12px; color:#666; margin-top:0;">
-Earlier joint concept using custom sleeve bearings, a shoulder screw, and a ball-joint interface to provide alignment adjustment.
-</p>
-
-The concept was intended to improve:
-
-- alignment tolerance
-- assembly flexibility
-- accommodation of manufacturing variation
-
-However, the additional adjustability introduced:
-
-- more custom components
-- greater manufacturing complexity
-- a larger joint envelope
-- additional tolerance stackups
-- more possible failure points
-
-The later clevis-style design reduced the mechanism to a simpler and more compact axial load path.
-
-</div>
-</details>
-
-<details>
-<summary><strong>Original Full-System Architecture</strong></summary>
-<div markdown="1">
-
-Early in the project, I developed a full conceptual TTS architecture inspired by the <a href="https://www.kegrocket.com/" target="_blank">Keg rocket</a> structural layout.
-
-<img src="/assets/images/tts_conc1.png" alt="Early TTS architecture using perforated structural members and sheet-metal interfaces" style="width:100%; max-height:600px; object-fit:contain; margin:20px 0;">
-
-<p style="font-size:12px; color:#666; margin-top:0;">
-Early architecture exploring standardized perforated members, sheet-metal construction, and circular interfaces.
-</p>
-
-The concept explored whether standardized components could simplify fabrication and assembly.
-
-It was not carried forward because:
-
-- it consumed too much engine-bay volume
-- it created packaging conflicts
-- major thrust loads would have passed through fasteners in shear
-- its load path was less direct than the later axial-strut architecture
-- the propulsion team preferred a cleaner compression-member load path
-
-Although the concept was rejected, it helped establish what the final architecture needed to avoid.
-
-</div>
-</details>
-
-<details>
-<summary><strong>Additional Structural Trade-Study Background</strong></summary>
-<div markdown="1">
-
-The structural design space included tradeoffs between:
-
-- hollow circular and hollow square sections
-- outside diameter and wall thickness
-- buckling resistance and packaging volume
-- minimum mass and structural robustness
-- adjustability and joint simplicity
-- aluminum and composite construction
-- theoretical efficiency and practical manufacturability
-
-A mathematically optimal component is not necessarily the best system-level design.
-
-The final member geometry had to provide adequate structural performance while also fitting within the engine bay, connecting to manufacturable joints, preserving plumbing space, and remaining realistic for the team to fabricate and inspect.
-
-</div>
-</details>
-
 </div>
