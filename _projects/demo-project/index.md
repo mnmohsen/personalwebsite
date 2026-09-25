@@ -47,7 +47,7 @@ I integrated these connections into the six-strut NX assembly, incorporating the
 
 **Assembly analysis:** I extended the structural work to a simplified full-assembly FEA model. Rod axial stresses of approximately **22 MPa** were consistent with first-principles estimates, providing an initial check of axial load transfer through the connected structure ahead of preliminary design review.
 
-<img src="/assets/images/tts-assembly-fea.png" alt="Simplified ANSYS assembly model used to evaluate axial load transfer through the TTS" style="width:100%; max-height:600px; object-fit:contain; margin:20px 0;">
+<img src="/assets/images/fullassyfea.png" alt="Simplified ANSYS assembly model used to evaluate axial load transfer through the TTS" style="width:100%; max-height:600px; object-fit:contain; margin:20px 0;">
 
 *Initial assembly FEA used to compare rod axial stresses with first-principles estimates.*
 
