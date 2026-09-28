@@ -45,11 +45,17 @@ I also revised the pin-retention design to use **Smalley retaining rings with gr
 
 I integrated these connections into the six-strut NX assembly, incorporating the welded tube-end design developed by teammate Gabe Popso.
 
-**Assembly analysis:** I extended the structural work to a simplified full-assembly FEA model. Rod axial stresses of approximately **22 MPa** were consistent with first-principles estimates, providing an initial check of axial load transfer through the connected structure ahead of preliminary design review.
+**Assembly analysis:** I refined the ANSYS assembly model with revolute pin connections to represent rotation at the clevis joints. Under the evaluated thrust load, rod midspan stresses of **22.26–22.42 MPa agreed within 0.4%** of my **22.34 MPa** first-principles prediction.
 
-<img src="/assets/images/fullassyfea.png" alt="Simplified ANSYS assembly model used to evaluate axial load transfer through the TTS" style="width:100%; max-height:600px; object-fit:contain; margin:20px 0;">
+<img src="/assets/images/tts_vm_stress.png" alt="ANSYS assembly stress analysis with rod midspan probes showing approximately 22.26 to 22.42 MPa" style="width:100%; max-height:600px; object-fit:contain; margin:20px 0;">
 
-*Initial assembly FEA used to compare rod axial stresses with first-principles estimates.*
+*Rod midspan von Mises stresses compared with the analytical axial-stress prediction.*
+
+I also evaluated the assembly's eigenvalue buckling modes and compared the predicted behavior with a pin-ended Euler estimate. The calculation used the full **24-inch bearing-center spacing** to account for the end connections as well as the tube.
+
+<img src="/assets/images/tts_buckling.png" alt="Predicted eigenvalue buckling mode showing lateral bowing of a strut in the assembly with revolute pin connections" style="width:100%; max-height:600px; object-fit:contain; margin:20px 0;">
+
+*Predicted assembly buckling mode with revolute pin connections; deformation is scaled to show the mode shape.*
 
 ## Turning Topology Results into Manufacturable Rings
 
