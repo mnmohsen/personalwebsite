@@ -37,7 +37,7 @@ Testing the wheeled version revealed that wheel alignment was difficult to maint
 
 The separator plate serves two functions: **protecting the magnet during launch and separating the ball during reset**. The earlier spring-steel strip separated the ball from the magnet, but residual magnetic attraction left the ball sticking to the plate.
 
-I tested **0.015-, 0.024-, and 0.029-inch full-hard 301 stainless-steel strips**, selecting the **0.024-inch thickness** for the current mechanism. In testing, the selected plate released the ball without the sticking seen with the earlier strip and made the lever noticeably easier to pull.
+I tested **0.015, 0.024, and 0.029 inch full-hard 301 stainless-steel strips**, selecting the **0.024-inch thickness** for the current mechanism. In testing, the selected plate released the ball without the sticking seen with the earlier strip and made the lever noticeably easier to pull.
 
 My **friction clamp** retains the plate without drilling through the hardened sheet, simplifying fabrication and allowing the strip to be replaced independently of the carriage.
 
