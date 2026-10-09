@@ -52,7 +52,7 @@ I developed the lever and connecting linkage in SolidWorks, then built a prototy
 
 <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px; align-items:start; margin:24px 0;">
   <div>
-    <img src="/assets/images/mdp-lever-shaft-concept.png" alt="Earlier lever reset concept using two guide shafts" style="width:100%; height:300px; object-fit:contain;">
+    <img src="/assets/images/resetmechanismdiagram2.png" alt="Earlier lever reset concept using two guide shafts" style="width:100%; height:300px; object-fit:contain;">
     <p><em>Initial shaft-guided carriage concept.</em></p>
   </div>
   <div>
