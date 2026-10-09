@@ -23,7 +23,7 @@ Our team is developing a hands-on magnetic launcher for the Ann Arbor Hands-On M
 <p><em>Latest assembly: the lever and linkage move the separator carriage beneath the launch track.</em></p>
 
 <div style="display:flex; justify-content:center; margin:20px 0;">
-  {% include youtube-video.html id="NEW_RESET_VIDEO_ID" autoplay="false" width="700px" %}
+  {% include youtube-video.html id="P3r4Mu3PauQ" autoplay="false" width="700px" %}
 </div>
 <p style="text-align:center;"><em>Bench demonstration of the latest reset mechanism with bearing-pad guidance and the selected stainless-steel plate.</em></p>
 
