@@ -20,12 +20,12 @@ Our team is developing a hands-on magnetic launcher for the Ann Arbor Hands-On M
 **The challenge is resetting it:** the balls remain strongly attracted to the magnets after a launch. **I designed, built, and tested a lever-driven reset mechanism**, owning the lever, linkage, carriage, and separator-plate attachment to make that interaction easier for children and simpler to maintain.
 
 <img src="/assets/images/newest_angled_under20mb.webp" alt="Latest lever-driven reset assembly with a two-level 80/20 track, bearing-pad carriage, and stainless-steel separator plate" style="width:100%; max-height:600px; object-fit:contain; margin:20px 0;">
-<p><em>Latest assembly: the lever and linkage move the separator carriage beneath the launch track.</em></p>
+<p><em>Latest assembly: the lever and linkage move the three separator carriages beneath the launch track.</em></p>
 
 <div style="display:flex; justify-content:center; margin:20px 0;">
   {% include youtube-video.html id="ZtSGx-a_6Y8" autoplay="false" width="700px" %}
 </div>
-<p style="text-align:center;"><em>Bench demonstration of the latest reset mechanism with bearing-pad guidance and the selected stainless-steel plate.</em></p>
+<p style="text-align:center;"><em>Bench demonstration of the latest three stage reset mechanism with bearing pad guidance and the selected stainless steel plate.</em></p>
 
 ## Smoother Motion with Bearing Pads
 
