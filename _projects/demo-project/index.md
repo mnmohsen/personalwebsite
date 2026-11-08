@@ -22,7 +22,7 @@ A rocket engine needs a structural connection to push the rest of the vehicle. F
 
 As the **Responsible Engineer**, I developed the strut sizing tools, designed compact joints, refined interface rings, and integrated the assembly in Siemens NX. The central challenge was balancing compression strength and low mass with limited space, practical fabrication, and assembly access.
 
-<img src="/assets/images/newttscover.png" alt="Thrust transfer structure shown within Citron's propulsion bay, connecting the engine-side and tank-side interfaces" style="width:100%; max-height:750px; object-fit:contain; margin:20px 0;">
+<img src="/assets/images/ttswithinrealrocket.png" alt="Thrust transfer structure shown within Citron's propulsion bay, connecting the engine-side and tank-side interfaces" style="width:100%; max-height:750px; object-fit:contain; margin:20px 0;">
 
 *TTS within the rocket: six struts carry thrust across the propulsion bay. Interface geometry shown reflects this design iteration.*
 
