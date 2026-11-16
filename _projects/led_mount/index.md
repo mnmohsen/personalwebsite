@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Removable Bicycle LED Light Mount
-description: Designed, prototyped, and tested a two-fastener PETG bicycle light mount with tool-free removal, indexed aiming, and integrated snap-fit joints.
+description: Designed, prototyped, and tested a PETG bicycle light mount with tool free removal, indexed aiming, and integrated snap fit joints.
 skills:
   - SolidWorks
   - Mechanical Design
