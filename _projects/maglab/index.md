@@ -3,7 +3,6 @@ layout: post
 title: Magnetometer Laboratory
 description: NASA-funded sensor system integration and experimental validation exploring compact alternatives to conventional drone magnetometer architectures.
 skills:
-  - Hardware Integration
   - Sensor Systems
   - MATLAB
   - Python
@@ -76,22 +75,6 @@ Outdoor experimental setup showing the quad-magnetometer platform before testing
 
 This phase moved the work from controlled validation into realistic operating conditions where environmental noise, propulsion behavior, and practical testing constraints became part of the engineering challenge.
 
-## Analysis and Experimental Findings
-
-Using MATLAB and Python, I analyzed 37 flight datasets comparing powered and unpowered operating conditions.
-
-Power spectral density analysis revealed distinct frequency-domain interference signatures associated with drone propulsion electronics.
-
-These findings helped determine whether signal filtering could realistically improve measurement quality enough to reduce reliance on mechanically cumbersome boom-mounted architectures.
-
-The most valuable lesson from this work was understanding that solving engineering measurement problems often requires both hardware and analytical solutions.
-
-Mechanical separation solves the problem physically.
-
-Signal analysis solves the problem computationally.
-
-Good engineering comes from understanding when each approach makes sense.
-
 ## Research Poster
 
 This work was presented through the University of Michigan Undergraduate Research Opportunity Program.
@@ -102,14 +85,12 @@ This work was presented through the University of Michigan Undergraduate Researc
 
 My contributions included:
 
-- sensor hardware integration
 - validation test setup support
 - quad-magnetometer system integration
 - Raspberry Pi synchronized acquisition integration
 - MATLAB and Python signal analysis
 - power spectral density analysis
 - experimental dataset interpretation
-- feasibility evaluation of compact sensing architectures
 
 ## Key Takeaways
 
